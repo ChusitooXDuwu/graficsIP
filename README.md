@@ -21,10 +21,24 @@ Un portal completo de visualizaciones interactivas para el libro "Introducción 
 | **📚 Libro Mejorado**   | IPBook completo con visualizaciones | [Ver Libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/portada.html)                      |
 | **🧮 Math Explorer**    | Explorador del módulo Math          | [Usar Math](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/math-module-explorer.html)         |
 | **🎲 Módulo Random**    | Simuladores de aleatoriedad         | [Explorar Random](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html) |
+| **➕ Demo append()**    | Visualización del método append     | [Ver append()](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel1/append-demo.html)               |
 
 ## 📖 Contenido del Proyecto
 
 ### 🎯 Visualizaciones Individuales (`/visualizations/`)
+
+#### Nivel 1 - Conceptos Básicos
+
+- **🐍 Explorador de Tipos de Datos**
+
+  - Visualización interactiva de int, float, str
+  - Ejemplos y conversiones entre tipos
+  - Integrado en Sección 1.3 del libro
+
+- **➕ Demo del Método append()**
+  - Animación de cómo append() agrega elementos a listas
+  - Visualización paso a paso del crecimiento de listas
+  - Integrado en Sección 3.3 del libro
 
 #### Nivel 2 - Tomando Decisiones
 
@@ -149,13 +163,14 @@ Todas las visualizaciones tienen URLs permanentes:
 
 ## 📊 Estado del Proyecto
 
-| Métrica                     | Valor           | Estado         |
-| --------------------------- | --------------- | -------------- |
-| **Visualizaciones Activas** | 2               | ✅ Funcionando |
-| **Secciones Mejoradas**     | 1 (Sección 2.6) | ✅ Completado  |
-| **Libro Completo**          | 1               | ✅ Disponible  |
-| **Auto-Deploy**             | GitHub Pages    | ✅ Activo      |
-| **Testing**                 | GitHub Actions  | ✅ Activo      |
+| Métrica                     | Valor          | Estado         |
+| --------------------------- | -------------- | -------------- |
+| **Visualizaciones Activas** | 3              | ✅ Funcionando |
+| **Secciones Mejoradas**     | 3              | ✅ Completado  |
+| **Niveles Cubiertos**       | 3 (1, 2, 3)    | ✅ Parcial     |
+| **Libro Completo**          | 1              | ✅ Disponible  |
+| **Auto-Deploy**             | GitHub Pages   | ✅ Activo      |
+| **Testing**                 | GitHub Actions | ✅ Activo      |
 
 ## 🚀 Roadmap y Próximas Características
 
