@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Slicing &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nivel3/seccion3-4';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/nivel3/seccion3-4.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Recorrido de secuencias" href="seccion3-5.html" />
+    <link rel="prev" title="Listas" href="seccion3-3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduccion/index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/programar.html">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel2/intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-2.html">Lógica y valores de verdad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-3.html">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-5.html">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-8.html">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion3-3.html">Listas</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel4/intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-2.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-4.html">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nivel3/seccion3-4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Slicing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-basico-inicio-y-fin">Slicing básico: inicio y fin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-intermedio-posiciones-negativas">Slicing intermedio: posiciones negativas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-avanzado-cambiando-el-paso">Slicing avanzado: cambiando el paso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slices-sobre-listas">Slices sobre listas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reemplazando-slices-por-ciclos">Reemplazando slices por ciclos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-listas-usando-slices">Modificar listas usando slices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimo-comun-multiplo">Mínimo Común Múltiplo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="slicing">
+<h1>Slicing<a class="headerlink" href="#slicing" title="Link to this heading">#</a></h1>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es presentar la herramienta de <em>slicing</em> ofrecida por Python y demostrar su uso sobre listas y cadenas.</p>
+</div>
+<p>La expresión <em>slicing</em> hace referencia a la operación por medio de la cual se extraen elementos de una secuencia, tal como una lista o una cadena de caracteres. Dependiendo del caso, los elementos podrían ser consecutivos o podrían estar separados dentro de la secuencia original. Dado que esta operación es de uso bastante frecuente, Python ofrece características que hacen posible construir <em>slices</em> de forma breve, sin tener que construir funciones especializadas para hacerlo.</p>
+<p>Esta sección explica cómo crear <em>slices</em> en Python a partir de listas y cadenas de caracteres <a class="footnote-reference brackets" href="#tipos" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Además, se presentará la forma en la cual se podrían implementar funcionalidades equivalentes utlizando ciclos.</p>
+<section id="slicing-basico-inicio-y-fin">
+<h2>Slicing básico: inicio y fin<a class="headerlink" href="#slicing-basico-inicio-y-fin" title="Link to this heading">#</a></h2>
+<p>Supongamos que tenemos la siguiente cadena de caracteres con la que inicia el himno de Colombia:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span> <span class="o">=</span> <span class="s1">&#39;¡Oh, gloria inmarcesible! ¡Oh, júbilo inmortal!&#39;</span>
+</pre></div>
+</div>
+<p>En secciones anteriores ya hemos estudiado cómo podemos hacer para extraer elementos de esta cadena usando paréntesis cuadrados y una posición numerada desde cero.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&#39;¡&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;O&#39;</span>
+</pre></div>
+</div>
+<p>Para extraer más de un elemento podemos indicar la posición inicial y la posición final usando <code class="docutils literal notranslate"><span class="pre">':'</span></code> como separador. Eso lo hemos hecho en los siguientes ejemplos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>
+<span class="go">&#39;¡Oh, gloria&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>
+<span class="go">&#39;Oh, gloria&#39;</span>
+</pre></div>
+</div>
+<p>En el primer caso estamos extrayendo un <em>slice</em> de la cadena original que tiene sólo los caracteres desde la posición 0 hasta la 11 (excluida), mientras que en el segundo caso lo hacemos desde la posición 1 hasta la 11 (excluida). Es decir que, la posición inicial se incluye dentro del <em>slice</em> resultante, pero la posición final <strong>siempre queda por fuera</strong>.</p>
+<p>Es también frecuente que se quiera extraer un conjunto de elementos que se encuentran al final o al principio de una cadena. En estos casos lo que se debe hacer es no incluir explícitamente el inicio o el fin, pero sí utilizar el separador <code class="docutils literal notranslate"><span class="pre">':'</span></code>. Si no se quiere dejar el espacio vacío, otra alternativa es usar None para la posición. Esto puede verse en los siguientes ejemplos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="mi">30</span><span class="p">:]</span>
+<span class="go">&#39; júbilo inmortal!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[:</span><span class="mi">30</span><span class="p">]</span>
+<span class="go">&#39;¡Oh, gloria inmarcesible! ¡Oh,&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="kc">None</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span>
+<span class="go">&#39;¡Oh, gloria inmarcesible! ¡Oh,&#39;</span>
+</pre></div>
+</div>
+<p>En el primer caso, se extrae un <em>slice</em> con los caracteres que se encuentran a partir de la posición 30. En el segundo caso, se extrae un <em>slice</em> con los caracteres que se encuentran desde el inicio de la cadena hasta el caracter 30 (excluido).</p>
+<p>Algo para notar es que hay una diferencia importante entre no incluir el fin e incluir un valor explícito: como la última posición nunca se incluye en el <em>slice</em>, al no incluir la posición final se está asumiento que se debe llegar hasta el final; si por el contrario se hiciera explícita la última posición, el último valor no se incluiría en el <em>slice</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="mi">40</span><span class="p">:]</span>
+<span class="go">&#39;mortal!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="mi">40</span><span class="p">:</span><span class="mi">46</span><span class="p">]</span>
+<span class="go">&#39;mortal&#39;</span>
+</pre></div>
+</div>
+<p>Veamos ahora cómo podríamos hacer para extraer la primera frase del himno. Recuerde que el método <code class="docutils literal notranslate"><span class="pre">index</span></code> permite saber en qué posición aparece un determinado caracter dentro de una cadena.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="n">cadena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;¡&#39;</span><span class="p">)</span> <span class="p">:</span> <span class="n">cadena</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;¡Oh, gloria inmarcesible!&#39;</span>
+</pre></div>
+</div>
+<p>Finalmente, si no se incluyen ni la posición inicial ni la final, se entiende que se quiere un <em>slice</em> que incluya todos los elementos. En el caso de las listas, esto es equivalente a crear una <strong>copia</strong> de la estructura original.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear una copia de la cadena original</span>
+<span class="n">cadena2</span> <span class="o">=</span> <span class="n">cadena</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</section>
+<section id="slicing-intermedio-posiciones-negativas">
+<h2>Slicing intermedio: posiciones negativas<a class="headerlink" href="#slicing-intermedio-posiciones-negativas" title="Link to this heading">#</a></h2>
+<p>Algo muy interesante en Python con respecto a los <em>slices</em>, es que las posiciones de inicio y de fin no necesariamente tienen que ser números positivos: si se usan números negativos, Python asume que se están referenciando las posiciones numeradas desde la última hasta la primera, empezando con -1. Esto se presenta claramente en la <a class="reference internal" href="#id2"><span class="std std-numref">figura 29</span></a>, en la que hemos numerado las posiciones:</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/slicing.png"><img alt="../_images/slicing.png" src="../_images/slicing.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Posiciones numeradas en una cadena</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Acá podemos ver que cada caracter tiene dos números que indican la posición: uno positivo y uno negativo. Por ejemplo, la última posición de la cadena es la <code class="docutils literal notranslate"><span class="pre">11</span></code> (uno menos que el tamaño de la cadena) y es también la posición <code class="docutils literal notranslate"><span class="pre">-1</span></code>. El penúltimo caracter se encuentra en la posición <code class="docutils literal notranslate"><span class="pre">10</span></code> o, más explícitamente, en la posición <code class="docutils literal notranslate"><span class="pre">-2</span></code>. Finalmente, veamos que el primer caracter de la cadena se encuentra en la posición <code class="docutils literal notranslate"><span class="pre">0</span></code>y en la posición <code class="docutils literal notranslate"><span class="pre">-12</span></code>. Es decir que el primer caracter se puede encontrar siempre multiplicando por <code class="docutils literal notranslate"><span class="pre">-1</span></code> el tamaño de la cadena.</p>
+<p>Veamos ahora un ejemplo en que consultamos posiciones negativas sobre nuestra cadena de ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;l&#39;</span>
+</pre></div>
+</div>
+<p>Las posiciones positivas y negativas son equivalentes y son intercambiables. En los siguientes ejemplos se pueden ver combinaciones de posiciones positivas y negativas para indicar el inicio y el fin de un <em>slice</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="o">-</span><span class="mi">47</span><span class="p">:</span> <span class="o">-</span><span class="mi">36</span><span class="p">]</span>
+<span class="go">&#39;¡Oh, gloria&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="o">-</span><span class="mi">36</span><span class="p">]</span>
+<span class="go">&#39;¡Oh, gloria&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="o">-</span><span class="mi">47</span><span class="p">:</span> <span class="mi">11</span><span class="p">]</span>
+<span class="go">&#39;¡Oh, gloria&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[</span><span class="o">-</span><span class="mi">47</span><span class="p">:]</span>
+<span class="go">&#39;¡Oh, gloria inmarcesible! ¡Oh, júbilo inmortal!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;¡Oh, gloria inmarcesible! ¡Oh, júbilo inmortal&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="slicing-avanzado-cambiando-el-paso">
+<h2>Slicing avanzado: cambiando el paso<a class="headerlink" href="#slicing-avanzado-cambiando-el-paso" title="Link to this heading">#</a></h2>
+<p>Estudiaremos ahora el tercer parámetro disponible para describir un <em>slice</em> en Python, el cual también se separa usando el caracter <code class="docutils literal notranslate"><span class="pre">':'</span></code>. Este tercer parámetro, que tiene como valor por defecto <code class="docutils literal notranslate"><span class="pre">1</span></code>, indica cómo se deben recorrer las posiciones desde el inicio hasta el fin. Así, cuando su valor es <code class="docutils literal notranslate"><span class="pre">1</span></code> con cada <em>paso</em> se va a sumar <code class="docutils literal notranslate"><span class="pre">1</span></code> a la posición actual, mientras que cuando el valor es <code class="docutils literal notranslate"><span class="pre">-2</span></code> con cada <em>paso</em> se resta <code class="docutils literal notranslate"><span class="pre">2</span></code> a la posición actual.</p>
+<p>Veamos cómo funciona esto sobre nuestra cadena de ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;¡h lraimreil!¡h úioimra!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;!armioiú h¡!liermiarl h¡&#39;</span>
+</pre></div>
+</div>
+<p>En el primer caso, se extrae toda la cadena con un paso de 2: se parte de la posición 0  y se extraen las letras de la cadena, avanzando de 2 en 2 hasta llegar al final de la cadena. En el segundo caso, el paso es -2: se parte de la última posición y se extraen las posiciones retrocediendo de 2 en 2 hasta llegar a la cadena.</p>
+<p>El tercer parámetro de un <em>slice</em> es particularmente útil para invertir una cadena. Así, un <em>slice</em> descrito como <code class="docutils literal notranslate"><span class="pre">[::-1]</span></code> siempre servirá para obtener una cadena invertida.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cadena</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;!latromni olibúj ,hO¡ !elbisecramni airolg ,hO¡&#39;</span>
+</pre></div>
+</div>
+<p>Al usar el parámetro del <em>paso</em>, se debe tener cuidado de construir una expresión coherente. Por ejemplo, si se quiere recorrer desde la posición <code class="docutils literal notranslate"><span class="pre">0</span></code> hasta la <code class="docutils literal notranslate"><span class="pre">5</span></code>, el paso no podría ser <code class="docutils literal notranslate"><span class="pre">-1</span></code> porque desde <code class="docutils literal notranslate"><span class="pre">0</span></code> sería imposible llegar a <code class="docutils literal notranslate"><span class="pre">5</span></code> restando <code class="docutils literal notranslate"><span class="pre">1</span></code>cada vez. Tampoco tendría sentido intentar ir de <code class="docutils literal notranslate"><span class="pre">-1</span></code> a <code class="docutils literal notranslate"><span class="pre">0</span></code> con un paso de <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+</section>
+<section id="slices-sobre-listas">
+<h2>Slices sobre listas<a class="headerlink" href="#slices-sobre-listas" title="Link to this heading">#</a></h2>
+<p>En las secciones anteriores hemos ilustrado el uso de <em>slices</em> sólo sobre cadenas de caracteres. Sin embargo, es posible también aplicar estas mismas técnicas sobre listas, como se muestra a continuación:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span>
+<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="go">[0, 1, 2, 3, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
+<span class="go">[5, 6, 7, 8, 9, 10]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">[2, 4, 6, 8]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">[10, 8, 6, 4, 2, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">[10, 8, 6, 4, 2]</span>
+</pre></div>
+</div>
+<p>Aunque sencillos, estos ejemplos muestran que el mecanismo de <em>slicing</em> se aplica exactamente igual sobre listas que sobre cadenas de caracteres.</p>
+</section>
+<section id="reemplazando-slices-por-ciclos">
+<h2>Reemplazando slices por ciclos<a class="headerlink" href="#reemplazando-slices-por-ciclos" title="Link to this heading">#</a></h2>
+<p>La funcionlidad de <em>slicing</em> de Python es muy útil porque simplifica el uso de operaciones que se requieren frecuentemente. Sin embargo, no muchos lenguajes ofrecen capacidades comparables para describir <em>slices</em> como en Python, así que es conveniente saber cómo reemplazar esta funcionalidad con funciones basadas en ciclos.</p>
+<p>En el siguiente fragmento de código mostramos la función <code class="docutils literal notranslate"><span class="pre">extraer_slice</span></code>, la cual permite construir <em>slices</em> de forma prácticamente equivalente a como lo hace Python con su sintaxis especializada.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">extraer_slice</span><span class="p">(</span><span class="n">elementos</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">inicio</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">fin</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">paso</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot; Extrae un slice de una lista.</span>
+<span class="sd">  Parámetros:</span>
+<span class="sd">    elementos (list): la lista de la que se van a extraer los elementos.</span>
+<span class="sd">    inicio (int): la primera posición desde la que se van a extraer los elementos. Puede ser un número negativo.</span>
+<span class="sd">    fin (int): la última posición de la que se van a extraer los elementos. Puede ser un número negativo.</span>
+<span class="sd">    paso (int): indica cada cuántas posiciones se va a extraer un elemento. Puede ser un número negativo.</span>
+<span class="sd">  Retorno:</span>
+<span class="sd">    (list): Una lista con los elementos extraídos desde &#39;inicio&#39; hasta &#39;fin&#39;, donde los elementos extraídos están separados por &#39;paso&#39; posiciones.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">tam</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">elementos</span><span class="p">)</span>
+  <span class="c1"># Si la posición inicial es negativa, se busca el número positivo equivalente</span>
+  <span class="k">if</span> <span class="n">inicio</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">inicio</span> <span class="o">=</span> <span class="n">tam</span> <span class="o">+</span> <span class="n">inicio</span>
+  <span class="c1"># Asegurar que el inicio siempre esté dentro de la lista</span>
+  <span class="n">inicio</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inicio</span><span class="p">)</span> 
+  <span class="n">inicio</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">inicio</span><span class="p">,</span> <span class="n">tam</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="c1"># Si la posición final es negativa, se busca el número positivo equivalente</span>
+  <span class="k">if</span> <span class="n">fin</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">fin</span> <span class="o">=</span> <span class="n">tam</span> <span class="o">+</span> <span class="n">fin</span>
+
+  <span class="c1"># Preparar la lista resultante</span>
+  <span class="nb">slice</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">posicion</span> <span class="o">=</span> <span class="n">inicio</span>
+  <span class="c1"># El ciclo se repite mientras siga siendo posible avanzar desde</span>
+  <span class="c1"># la posición actual hacia la posición final y se estén consultando</span>
+  <span class="c1"># posiciones que estén dentro de la lista</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">posicion</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">posicion</span> <span class="o">&lt;</span> <span class="n">tam</span><span class="p">)</span> <span class="ow">and</span> \ 
+        <span class="p">((</span><span class="n">posicion</span> <span class="o">&lt;</span> <span class="n">fin</span> <span class="ow">and</span> <span class="n">paso</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">posicion</span> <span class="o">&gt;</span> <span class="n">fin</span> <span class="ow">and</span> <span class="n">paso</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)):</span>
+    <span class="nb">slice</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elementos</span><span class="p">[</span><span class="n">posicion</span><span class="p">])</span>
+    <span class="n">posicion</span> <span class="o">+=</span> <span class="n">paso</span>  
+  <span class="k">return</span> <span class="nb">slice</span>
+</pre></div>
+</div>
+<p>Las principales diferencias entre esta función y las funcionalidad nativa de Python son las siguientes:</p>
+<ul class="simple">
+<li><p>Nuestra función no tiene valores por defecto, así que todos los parámetros son obligatorios.</p></li>
+<li><p>Se debe especificar explícitamente el fin del recorrido (no se puede dejar en blanco).</p></li>
+</ul>
+<p>Veamos ahora cómo se comporta la función cuando se aplica a una lista de números.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">extraer_slice</span><span class="p">(</span><span class="n">valores</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">[2, 3, 4, 5, 6, 7, 8]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">extraer_slice</span><span class="p">(</span><span class="n">valores</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">[2, 5, 8]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">extraer_slice</span><span class="p">(</span><span class="n">valores</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">[2, 5, 8]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">extraer_slice</span><span class="p">(</span><span class="n">valores</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
+<span class="go">[9, 6, 3]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extraer_slice</span><span class="p">(</span><span class="n">valores</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">[5, 6, 7, 8, 9, 10]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">extraer_slice</span><span class="p">(</span><span class="n">valores</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">[10, 9, 8, 7, 6]</span>
+</pre></div>
+</div>
+</section>
+<section id="modificar-listas-usando-slices">
+<h2>Modificar listas usando slices<a class="headerlink" href="#modificar-listas-usando-slices" title="Link to this heading">#</a></h2>
+<p>Además de permitir la extracción de partes de una cadena o de una lista, los <em>slices</em> también tienen un rol importante en la modificación de los elementos de una lista.</p>
+<p>Empecemos por el caso más sencillo, en el cual se calcula un slice con sólo una posición:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span>
+<span class="go">[0, 99, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+</pre></div>
+</div>
+<p>Si en cambio calculamos un <em>slice</em> que pueda tener uno o más valores, es necesario que el valor que asignemos sea también una lista para que pueda remplazar a los elementos del <em>slice</em>. En el siguiente ejemplo, primero remplazamos el <em>slice</em> de tamaño 1 que se calcula entre las posiciones 3 y 4. A continuación, calculamos un <em>slice</em> que va desde la posición 4 hasta la 7 y lo reemplazamos por la lista que sólo tiene el número 97. Finalmente reemplazamos todos los elementos que se encuentran a partir de la posición 5 por los elementos de la lista <code class="docutils literal notranslate"><span class="pre">[96,</span> <span class="pre">95,</span> <span class="pre">94]</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">98</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span>
+<span class="go">[0, 99, 2, 98, 4, 5, 6, 7, 8, 9, 10]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">97</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span>
+<span class="go">[0, 99, 2, 98, 97, 7, 8, 9, 10]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">96</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">94</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span>
+<span class="go">[0, 99, 2, 98, 97, 96, 95, 94]</span>
+</pre></div>
+</div>
+<p>En los ejemplos anteriores, sólo utilizamos el avance por defecto (1). Si queremos utilizar un avance diferente, positivo o negativo, tenemos que tener en cuenta que los valores que vayamos a asignar tienen que tener exactamente el mismo tamaño que el <em>slice</em> que se esté calculando. Observemos los siguientes ejemplos que ilustran este punto.</p>
+<ul class="simple">
+<li><p>Después de haber inicializado de nuevo la lista de valores, intentamos asignarle una lista de tamaño 1 a un <em>slice</em> de tamaño 6: Python nos advierte del error de manera muy explícita.</p></li>
+<li><p>En el siguiente intento, asignamos los valores <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'d',</span> <span class="pre">'e',</span> <span class="pre">'f']</span></code> al mismo slice lo cual sí funciona y modifica la lista de acuerdo a lo que esperábamos.</p></li>
+<li><p>Finalmente, calculamos un <em>slice</em> empezando desde la última posición y hacemos la asignación de un nuevo conjunto de valores: <code class="docutils literal notranslate"><span class="pre">['x',</span> <span class="pre">'y',</span> <span class="pre">'z']</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">ValueError</span>: <span class="n">attempt to assign sequence of size 1 to extended slice of size 6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span>
+<span class="go">[&#39;a&#39;, 1, &#39;b&#39;, 3, &#39;c&#39;, 5, &#39;d&#39;, 7, &#39;e&#39;, 9, &#39;f&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valores</span>
+<span class="go">[&#39;a&#39;, 1, &#39;z&#39;, 3, &#39;c&#39;, 5, &#39;y&#39;, 7, &#39;e&#39;, 9, &#39;x&#39;]</span>
+</pre></div>
+</div>
+<section id="minimo-comun-multiplo">
+<h3>Mínimo Común Múltiplo<a class="headerlink" href="#minimo-comun-multiplo" title="Link to this heading">#</a></h3>
+<p>Para cerrar esta sección vamos a presentar un ejercicio en el cual la modificación de listas son <em>slices</em> resulta de mucha utilidad.</p>
+<p>El <strong>mínimo común múltiplo</strong> de dos enteros es el número menor que es múltiplo de ambos enteros. Existen varios algoritmos para encontrar este número, pero acá vamos a presentar una propuesta que basada en el uso de <em>slices</em> y en la idea de que el mínimo común múltiplo nunca puede ser superior a la multiplicación de los dos enteros.</p>
+<p>El algoritmo que vamos a utilizar se basa en el siguiente esquema:</p>
+<ol class="arabic simple">
+<li><p>Construir dos listas de valores booleanos que tenga un tamaño igual al máximo valor posible del mínimo común múltiplo. Llenar esas listas con el valor <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p>Poner el valor <code class="docutils literal notranslate"><span class="pre">True</span></code> en todas las posiciones de la primera lista que correspondan a un múltiplo del primer entero.</p></li>
+<li><p>Poner el valor <code class="docutils literal notranslate"><span class="pre">True</span></code> en todas las posiciones de la segunda lista que correspondan a un múltiplo del segundo entero.</p></li>
+<li><p>Buscar la posición en la cual tanto en la primera lista como en la segunda lista se encuentre el valor <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ol>
+<p>La siguiente función implementa el algoritmo y utiliza <em>slices</em> para modificar fácilmente las listas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">minimo_comun_multiplo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+  <span class="n">maximo</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+  <span class="n">multiplos_a</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">maximo</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Crea la primera lista</span>
+  <span class="n">multiplos_a</span><span class="p">[</span><span class="n">a</span><span class="p">::</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span><span class="o">*</span><span class="n">b</span> <span class="c1"># Marca con True los múltiplos de a</span>
+  <span class="n">multiplos_b</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">maximo</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Crea la segunda lista</span>
+  <span class="n">multiplos_b</span><span class="p">[</span><span class="n">b</span><span class="p">::</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span> <span class="c1"># Marca con True los múltiplos de b</span>
+  <span class="c1"># Empieza la búsqueda del mcm</span>
+  <span class="n">encontre_mcm</span> <span class="o">=</span> <span class="kc">False</span>
+  <span class="n">candidato_mcm</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+  <span class="k">while</span> <span class="ow">not</span> <span class="n">encontre_mcm</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">multiplos_a</span><span class="p">[</span><span class="n">candidato_mcm</span><span class="p">]</span> <span class="ow">and</span> <span class="n">multiplos_b</span><span class="p">[</span><span class="n">candidato_mcm</span><span class="p">]:</span>
+      <span class="n">encontre_mcm</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">candidato_mcm</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">candidato_mcm</span>
+</pre></div>
+</div>
+<p>A continuación se muestran vairos llamado a la función y el resultado que se obtiene en cada caso.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">minimo_comun_multiplo</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="go">12</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minimo_comun_multiplo</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minimo_comun_multiplo</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="go">8</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minimo_comun_multiplo</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="go">70</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minimo_comun_multiplo</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="go">36</span>
+</pre></div>
+</div>
+<p>Para complementar este ejemplo, presentamos una segunda versión de la función en la cual se utilizan dos elementos que no se han estudiado hasta ahora: la función <code class="docutils literal notranslate"><span class="pre">zip</span></code> y el tipo de dato <code class="docutils literal notranslate"><span class="pre">tuple</span></code>. La primera parte de esta solución es idéntica a la anterior, pero utiliza otro mecanismo para buscar el mínimo común múltiplo.</p>
+<ol class="arabic simple">
+<li><p>Primero, la función <code class="docutils literal notranslate"><span class="pre">zip</span></code> se encarga de construir parejas de valores de las dos listas (el primer elemento de una lista se empareja con el primer elemento de la segunda lista, el segundo con el segundo y así sucesivamente).</p></li>
+<li><p>Luego, se utiliza el método <code class="docutils literal notranslate"><span class="pre">index</span></code> del tipo <code class="docutils literal notranslate"><span class="pre">list</span></code> para buscar la posición de un elemento. En este caso, lo que se busca es una pareja en la cual los dos valores sean <code class="docutils literal notranslate"><span class="pre">True</span></code>. La posición en la que esta pareja se encuentre debería ser el valor del mínimo común múltiplo.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">minimo_comun_multiplo_zip</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+  <span class="n">maximo</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+  <span class="n">multiplos_a</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">maximo</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">multiplos_a</span><span class="p">[</span><span class="n">a</span><span class="p">::</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span><span class="o">*</span><span class="n">b</span>
+  <span class="n">multiplos_b</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">maximo</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">multiplos_b</span><span class="p">[</span><span class="n">b</span><span class="p">::</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">*</span> <span class="n">a</span>
+  <span class="n">parejas</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">multiplos_a</span><span class="p">,</span> <span class="n">multiplos_b</span><span class="p">))</span>
+  <span class="n">candidato_mcm</span> <span class="o">=</span> <span class="n">parejas</span><span class="o">.</span><span class="n">index</span><span class="p">((</span><span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
+  <span class="k">return</span> <span class="n">candidato_mcm</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">minimo_comun_multiplo_zip</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="go">12</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minimo_comun_multiplo_zip</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="go">70</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minimo_comun_multiplo_zip</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="go">36</span>
+</pre></div>
+</div>
+<p>Finalmente vamos a presentar una solución a este problema que es considerablemente más eficiente y que se basa en que el mínimo común múltiplo se puede calcular a partir del máximo común divisor.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6febd0a4-7e24-4f8c-ac7a-c1b8287d2ab8">
+<span class="eqno">(9)<a class="headerlink" href="#equation-6febd0a4-7e24-4f8c-ac7a-c1b8287d2ab8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  mcm(a, b)= \frac{|a·b|}{MCD(a, b)}
+\end{equation}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">minimo_comun_multiplo_rapido</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+  <span class="n">mcm</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">mcm</span>
+</pre></div>
+</div>
+<p>En este caso estamos usando la función para calcular el máximo común divisor que provee Python en su módulo math, pero podríamos implementar nuestra propia función si fuera necesario (en otro punto de este libro se propone este problema).</p>
+</section>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Escriba una función que le sirva para <em>reconocer</em> si una palabra es o no palíndrome (se lee igual al derecho y al revés). Su función sólo debe utilizar slices.</p></li>
+<li><p>Escriba una función que le permita reconocer si una frase es palíndrome (se deben ignorar los espacios, signos de puntuación y mayúsculas o minúsculas). Por ejemplo, “Anita lava la tina” es una frase palíndrome. <em>Ayuda</em>: el módulo <code class="docutils literal notranslate"><span class="pre">string</span></code> declara el valor <code class="docutils literal notranslate"><span class="pre">ascii_letters</span></code> que podría serle de utilidad. Eliminar los caracteres que no le sirvan probablemente requerirá de un ciclo.</p></li>
+<li><p>Escriba una función que utilice <em>slices</em> para extraer las palabras que están en las posiciones impares de una frase. Por ejemplo, si se aplicara la función a la primera frase de este enunciado el resultado debería ser: <code class="docutils literal notranslate"><span class="pre">['Escriba',</span> <span class="pre">'función',</span> <span class="pre">'utilice',</span> <span class="pre">'para',</span> <span class="pre">'las',</span> <span class="pre">'que',</span> <span class="pre">'en',</span> <span class="pre">'posiciones',</span> <span class="pre">'de',</span> <span class="pre">'frase']</span></code>.</p></li>
+<li><p>Escriba una función que extraiga la primera palabra de una frase (hasta el primer espacio).</p></li>
+<li><p>Escriba una función que extraiga la última frase de un párrafo (desde el último punto).</p></li>
+<li><p>Escriba una función que calcule los números primos hasta un cierto límite utilizando el algoritmo conocido como la Criba de Eratóstenes. El principio fundamental de este algoritmo es que una vez se sabe que un número es primo, ninguno de los múltiplos de ese número va a ser un número primo así que no es necesario verificar nada sobre ellos. La modificación de listas con <em>slices</em> es particularmente útil para solucionar este problema. <em>Ayuda:</em> Recuerde que las listas se pueden construir usando repeticiones (ej: <code class="docutils literal notranslate"><span class="pre">[False]*50</span></code>).</p></li>
+</ol>
+</section>
+<section id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Link to this heading">#</a></h2>
+<p>Otros lenguajes, como Julia o Go, ofrecen capacidades similares a las que ofrece Python para hacer <em>slicing</em>. Sin embargo, al no ser una característica particularmente difundida, es importante tener la capacidad para escribir los algoritmos equivalentes.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="tipos" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Aunque en esta sección nos concentramos en listas y cadenas de caracteres, otros tipos de datos pueden soportar <em>slicing</em> también. En particular, soportar estas operaciones requiere la implementación cuidadosa del método <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./nivel3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="seccion3-3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Listas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="seccion3-5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Recorrido de secuencias</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-basico-inicio-y-fin">Slicing básico: inicio y fin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-intermedio-posiciones-negativas">Slicing intermedio: posiciones negativas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-avanzado-cambiando-el-paso">Slicing avanzado: cambiando el paso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slices-sobre-listas">Slices sobre listas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reemplazando-slices-por-ciclos">Reemplazando slices por ciclos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-listas-usando-slices">Modificar listas usando slices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimo-comun-multiplo">Mínimo Común Múltiplo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
