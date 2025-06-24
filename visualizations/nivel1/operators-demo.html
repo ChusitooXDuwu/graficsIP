@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎪 Visualizador de Operadores - IPBook</title>
+    <link rel="stylesheet" href="../../shared/css/common.css">
+    <style>
+        .operator-section {
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .operator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .operator-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .operator-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .operator-card.active {
+            border-color: var(--success-color);
+            background: #f0fff0;
+        }
+        
+        .operator {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .operator-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .calculator {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #dee2e6;
+        }
+        
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .input-field {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.1em;
+            min-width: 80px;
+        }
+        
+        .operator-display {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .result {
+            background: var(--success-color);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .explanation {
+            background: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .example {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="viz-nav">
+        <a href="../../index.html">🏠 Inicio</a>
+        <a href="../index.html">🎯 Visualizaciones</a>
+        <a href="../../docs/integration-guide.html">📚 Guía</a>
+        <span style="margin-left: auto; color: rgba(255,255,255,0.7);">Nivel 1 › Operadores</span>
+    </nav>
+    
+    <div class="viz-container">
+        <div class="viz-header">
+            <h1>🎪 Visualizador de Operadores</h1>
+            <p>Explora operadores matemáticos, de comparación y lógicos de manera interactiva</p>
+        </div>
+        
+        <!-- Tabs para diferentes tipos de operadores -->
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('aritmeticos')">➕ Aritméticos</button>
+            <button class="tab" onclick="showTab('comparacion')">⚖️ Comparación</button>
+            <button class="tab" onclick="showTab('logicos')">🧠 Lógicos</button>
+        </div>
+        
+        <!-- Operadores Aritméticos -->
+        <div id="aritmeticos" class="tab-content active">
+            <div class="operator-section">
+                <h3>➕ Operadores Aritméticos</h3>
+                <div class="operator-grid">
+                    <div class="operator-card" onclick="selectOperator('+', 'suma')">
+                        <div class="operator">+</div>
+                        <div class="operator-name">Suma</div>
+                        <div>5 + 3 = 8</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('-', 'resta')">
+                        <div class="operator">-</div>
+                        <div class="operator-name">Resta</div>
+                        <div>5 - 3 = 2</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('*', 'multiplicación')">
+                        <div class="operator">*</div>
+                        <div class="operator-name">Multiplicación</div>
+                        <div>5 * 3 = 15</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('/', 'división')">
+                        <div class="operator">/</div>
+                        <div class="operator-name">División</div>
+                        <div>6 / 3 = 2.0</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('//', 'división entera')">
+                        <div class="operator">//</div>
+                        <div class="operator-name">División Entera</div>
+                        <div>7 // 3 = 2</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('%', 'módulo')">
+                        <div class="operator">%</div>
+                        <div class="operator-name">Módulo</div>
+                        <div>7 % 3 = 1</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('**', 'potencia')">
+                        <div class="operator">**</div>
+                        <div class="operator-name">Potencia</div>
+                        <div>2 ** 3 = 8</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Operadores de Comparación -->
+        <div id="comparacion" class="tab-content">
+            <div class="operator-section">
+                <h3>⚖️ Operadores de Comparación</h3>
+                <div class="operator-grid">
+                    <div class="operator-card" onclick="selectOperator('==', 'igual a')">
+                        <div class="operator">==</div>
+                        <div class="operator-name">Igual a</div>
+                        <div>5 == 5 → True</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('!=', 'diferente de')">
+                        <div class="operator">!=</div>
+                        <div class="operator-name">Diferente de</div>
+                        <div>5 != 3 → True</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('<', 'menor que')">
+                        <div class="operator">&lt;</div>
+                        <div class="operator-name">Menor que</div>
+                        <div>3 < 5 → True</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('>', 'mayor que')">
+                        <div class="operator">&gt;</div>
+                        <div class="operator-name">Mayor que</div>
+                        <div>5 > 3 → True</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('<=', 'menor o igual')">
+                        <div class="operator">&lt;=</div>
+                        <div class="operator-name">Menor o igual</div>
+                        <div>3 <= 5 → True</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('>=', 'mayor o igual')">
+                        <div class="operator">&gt;=</div>
+                        <div class="operator-name">Mayor o igual</div>
+                        <div>5 >= 5 → True</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Operadores Lógicos -->
+        <div id="logicos" class="tab-content">
+            <div class="operator-section">
+                <h3>🧠 Operadores Lógicos</h3>
+                <div class="operator-grid">
+                    <div class="operator-card" onclick="selectOperator('and', 'y lógico')">
+                        <div class="operator">and</div>
+                        <div class="operator-name">Y lógico</div>
+                        <div>True and False → False</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('or', 'o lógico')">
+                        <div class="operator">or</div>
+                        <div class="operator-name">O lógico</div>
+                        <div>True or False → True</div>
+                    </div>
+                    <div class="operator-card" onclick="selectOperator('not', 'negación')">
+                        <div class="operator">not</div>
+                        <div class="operator-name">Negación</div>
+                        <div>not True → False</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Calculadora Interactiva -->
+        <div class="calculator">
+            <h3>🧮 Calculadora Interactiva</h3>
+            <div class="input-group">
+                <input type="text" id="valor1" class="input-field" placeholder="Valor 1" value="5">
+                <div class="operator-display" id="operatorDisplay">+</div>
+                <input type="text" id="valor2" class="input-field" placeholder="Valor 2" value="3">
+                <button class="btn" onclick="calculate()">= Calcular</button>
+            </div>
+            <div class="result" id="result">Resultado: 8</div>
+            <div class="explanation" id="explanation">
+                La <strong>suma</strong> combina dos números para obtener su total.
+            </div>
+        </div>
+        
+        <!-- Ejemplos Prácticos -->
+        <div class="examples">
+            <div class="example">
+                <h4>💡 Ejemplo: Calculadora de Edad</h4>
+                <div class="code-block">
+año_actual = 2024<br>
+año_nacimiento = 2000<br>
+edad = año_actual - año_nacimiento<br>
+print(f"Tienes {edad} años")
+                </div>
+            </div>
+            <div class="example">
+                <h4>💡 Ejemplo: Verificar Paridad</h4>
+                <div class="code-block">
+número = 15<br>
+es_par = número % 2 == 0<br>
+print(f"¿{número} es par? {es_par}")
+                </div>
+            </div>
+            <div class="example">
+                <h4>💡 Ejemplo: Lógica Combinada</h4>
+                <div class="code-block">
+edad = 20<br>
+tiene_licencia = True<br>
+puede_conducir = edad >= 18 and tiene_licencia<br>
+print(f"¿Puede conducir? {puede_conducir}")
+                </div>
+            </div>
+        </div>
+        
+        <div class="integration-info">
+            <h4>🔗 Integrar en GitBook</h4>
+            <div class="code-block">
+{% embed url="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel1/operators-demo.html" %}
+Explora operadores matemáticos, de comparación y lógicos de Python
+{% endembed %}
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../shared/js/utils.js"></script>
+    <script>
+        let currentOperator = '+';
+        let currentOperatorName = 'suma';
+        
+        function showTab(tabName) {
+            // Ocultar todos los contenidos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Mostrar el contenido seleccionado
+            document.getElementById(tabName).classList.add('active');
+            
+            // Actualizar tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        
+        function selectOperator(op, name) {
+            currentOperator = op;
+            currentOperatorName = name;
+            
+            // Remover clase active de todas las cards
+            document.querySelectorAll('.operator-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Agregar clase active a la card seleccionada
+            event.currentTarget.classList.add('active');
+            
+            // Actualizar la calculadora
+            document.getElementById('operatorDisplay').textContent = op;
+            
+            // Configurar valores por defecto según el operador
+            setDefaultValues(op);
+            
+            // Calcular automáticamente
+            calculate();
+        }
+        
+        function setDefaultValues(op) {
+            const valor1 = document.getElementById('valor1');
+            const valor2 = document.getElementById('valor2');
+            
+            switch(op) {
+                case '+':
+                    valor1.value = '5'; valor2.value = '3'; break;
+                case '-':
+                    valor1.value = '10'; valor2.value = '4'; break;
+                case '*':
+                    valor1.value = '6'; valor2.value = '7'; break;
+                case '/':
+                    valor1.value = '15'; valor2.value = '3'; break;
+                case '//':
+                    valor1.value = '17'; valor2.value = '5'; break;
+                case '%':
+                    valor1.value = '17'; valor2.value = '5'; break;
+                case '**':
+                    valor1.value = '2'; valor2.value = '4'; break;
+                case '==':
+                    valor1.value = '5'; valor2.value = '5'; break;
+                case '!=':
+                    valor1.value = '5'; valor2.value = '3'; break;
+                case '<':
+                    valor1.value = '3'; valor2.value = '7'; break;
+                case '>':
+                    valor1.value = '8'; valor2.value = '5'; break;
+                case '<=':
+                    valor1.value = '5'; valor2.value = '5'; break;
+                case '>=':
+                    valor1.value = '7'; valor2.value = '3'; break;
+                case 'and':
+                    valor1.value = 'True'; valor2.value = 'False'; break;
+                case 'or':
+                    valor1.value = 'True'; valor2.value = 'False'; break;
+                case 'not':
+                    valor1.value = 'True'; valor2.value = ''; break;
+            }
+        }
+        
+        function calculate() {
+            const valor1Input = document.getElementById('valor1').value;
+            const valor2Input = document.getElementById('valor2').value;
+            const resultDiv = document.getElementById('result');
+            const explanationDiv = document.getElementById('explanation');
+            
+            try {
+                let result;
+                let explanation = '';
+                
+                // Convertir valores según el tipo de operador
+                let val1, val2;
+                
+                if (['and', 'or', 'not'].includes(currentOperator)) {
+                    // Operadores lógicos
+                    val1 = valor1Input.toLowerCase() === 'true';
+                    if (currentOperator !== 'not') {
+                        val2 = valor2Input.toLowerCase() === 'true';
+                    }
+                } else if (['==', '!=', '<', '>', '<=', '>='].includes(currentOperator)) {
+                    // Operadores de comparación - intentar como números primero
+                    const num1 = parseFloat(valor1Input);
+                    const num2 = parseFloat(valor2Input);
+                    if (!isNaN(num1) && !isNaN(num2)) {
+                        val1 = num1;
+                        val2 = num2;
+                    } else {
+                        val1 = valor1Input;
+                        val2 = valor2Input;
+                    }
+                } else {
+                    // Operadores aritméticos
+                    val1 = parseFloat(valor1Input);
+                    val2 = parseFloat(valor2Input);
+                    
+                    if (isNaN(val1) || (isNaN(val2) && currentOperator !== 'not')) {
+                        throw new Error('Valores deben ser números');
+                    }
+                }
+                
+                // Calcular resultado
+                switch(currentOperator) {
+                    case '+':
+                        result = val1 + val2;
+                        explanation = `La <strong>suma</strong> combina ${val1} y ${val2} para obtener ${result}.`;
+                        break;
+                    case '-':
+                        result = val1 - val2;
+                        explanation = `La <strong>resta</strong> quita ${val2} de ${val1} para obtener ${result}.`;
+                        break;
+                    case '*':
+                        result = val1 * val2;
+                        explanation = `La <strong>multiplicación</strong> repite ${val1} un total de ${val2} veces.`;
+                        break;
+                    case '/':
+                        if (val2 === 0) throw new Error('No se puede dividir por cero');
+                        result = val1 / val2;
+                        explanation = `La <strong>división</strong> reparte ${val1} en ${val2} partes iguales.`;
+                        break;
+                    case '//':
+                        if (val2 === 0) throw new Error('No se puede dividir por cero');
+                        result = Math.floor(val1 / val2);
+                        explanation = `La <strong>división entera</strong> da solo la parte entera de ${val1} ÷ ${val2}.`;
+                        break;
+                    case '%':
+                        if (val2 === 0) throw new Error('No se puede dividir por cero');
+                        result = val1 % val2;
+                        explanation = `El <strong>módulo</strong> da el resto de dividir ${val1} entre ${val2}.`;
+                        break;
+                    case '**':
+                        result = Math.pow(val1, val2);
+                        explanation = `La <strong>potencia</strong> eleva ${val1} a la ${val2} potencia.`;
+                        break;
+                    case '==':
+                        result = val1 === val2;
+                        explanation = `<strong>Igual a</strong>: ¿${val1} es exactamente igual a ${val2}?`;
+                        break;
+                    case '!=':
+                        result = val1 !== val2;
+                        explanation = `<strong>Diferente de</strong>: ¿${val1} es diferente de ${val2}?`;
+                        break;
+                    case '<':
+                        result = val1 < val2;
+                        explanation = `<strong>Menor que</strong>: ¿${val1} es menor que ${val2}?`;
+                        break;
+                    case '>':
+                        result = val1 > val2;
+                        explanation = `<strong>Mayor que</strong>: ¿${val1} es mayor que ${val2}?`;
+                        break;
+                    case '<=':
+                        result = val1 <= val2;
+                        explanation = `<strong>Menor o igual</strong>: ¿${val1} es menor o igual a ${val2}?`;
+                        break;
+                    case '>=':
+                        result = val1 >= val2;
+                        explanation = `<strong>Mayor o igual</strong>: ¿${val1} es mayor o igual a ${val2}?`;
+                        break;
+                    case 'and':
+                        result = val1 && val2;
+                        explanation = `<strong>Y lógico</strong>: Ambos ${val1} y ${val2} deben ser verdaderos.`;
+                        break;
+                    case 'or':
+                        result = val1 || val2;
+                        explanation = `<strong>O lógico</strong>: Al menos uno de ${val1} o ${val2} debe ser verdadero.`;
+                        break;
+                    case 'not':
+                        result = !val1;
+                        explanation = `<strong>Negación</strong>: Invierte el valor de verdad de ${val1}.`;
+                        break;
+                }
+                
+                resultDiv.textContent = `Resultado: ${result}`;
+                resultDiv.style.background = 'var(--success-color)';
+                explanationDiv.innerHTML = explanation;
+                
+            } catch (error) {
+                resultDiv.textContent = `Error: ${error.message}`;
+                resultDiv.style.background = 'var(--error-color)';
+                explanationDiv.innerHTML = 'Verifica que los valores sean correctos para este operador.';
+            }
+        }
+        
+        // Calcular automáticamente cuando cambien los inputs
+        document.getElementById('valor1').addEventListener('input', calculate);
+        document.getElementById('valor2').addEventListener('input', calculate);
+        
+        // Calcular inicialmente
+        document.addEventListener('DOMContentLoaded', function() {
+            calculate();
+            console.log('🎪 Visualizador de Operadores cargado');
+        });
+    </script>
+</body>
+</html> 

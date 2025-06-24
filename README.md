@@ -15,13 +15,18 @@ Un portal completo de visualizaciones interactivas para el libro "Introducción 
 
 ## 🚀 Acceso Rápido
 
-| 🎯 Opción               | 📝 Descripción                      | 🔗 Enlace                                                                                                      |
-| ----------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **🎯 Portal Principal** | Página principal con navegación     | [Abrir Portal](https://chusitooxduwu.github.io/graficsIP/)                                                     |
-| **📚 Libro Mejorado**   | IPBook completo con visualizaciones | [Ver Libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/portada.html)                      |
-| **🧮 Math Explorer**    | Explorador del módulo Math          | [Usar Math](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/math-module-explorer.html)         |
-| **🎲 Módulo Random**    | Simuladores de aleatoriedad         | [Explorar Random](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html) |
-| **➕ Demo append()**    | Visualización del método append     | [Ver append()](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel1/append-demo.html)               |
+| 🎯 Opción               | 📝 Descripción                      | 🔗 Enlace                                                                                                  |
+| ----------------------- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **🎯 Portal Principal** | Página principal con navegación     | [Abrir Portal](https://chusitooxduwu.github.io/graficsIP/)                                                 |
+| **📚 Libro Mejorado**   | IPBook completo con visualizaciones | [Ver Libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/portada.html)                  |
+| **🎪 Operadores**       | Visualizador de operadores Python   | [Explorar](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel1/operators-demo.html)            |
+| **🔄 Condicionales**    | Simulador de if/elif/else           | [Simular](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/conditionals-simulator.html)     |
+| **🔁 Bucles for**       | Demo de bucles e iteraciones        | [Ver Bucles](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel3/for-loops-demo.html)          |
+| **🧮 Math Explorer**    | Explorador del módulo Math          | [Usar Math](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/math-module-explorer.html)     |
+| **🎲 Random Explorer**  | Explorador del módulo Random        | [Usar Random](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html) |
+| **🐍 Tipos de Datos**   | Explorador de tipos básicos         | [Explorar](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel1/data-types-explorer.html)       |
+| **➕ Demo append()**    | Visualización del método append     | [Ver Demo](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel1/append-demo.html)               |
+| **🎪 Demo Completa**    | Tour completo del proyecto          | [Ver Demo](https://chusitooxduwu.github.io/graficsIP/demo.html)                                            |
 
 ## 📖 Contenido del Proyecto
 
@@ -165,9 +170,9 @@ Todas las visualizaciones tienen URLs permanentes:
 
 | Métrica                     | Valor          | Estado         |
 | --------------------------- | -------------- | -------------- |
-| **Visualizaciones Activas** | 3              | ✅ Funcionando |
-| **Secciones Mejoradas**     | 3              | ✅ Completado  |
-| **Niveles Cubiertos**       | 3 (1, 2, 3)    | ✅ Parcial     |
+| **Visualizaciones Activas** | 6              | ✅ Funcionando |
+| **Secciones Mejoradas**     | 6              | ✅ Completado  |
+| **Niveles Cubiertos**       | 3 (1, 2, 3)    | ✅ Completo    |
 | **Libro Completo**          | 1              | ✅ Disponible  |
 | **Auto-Deploy**             | GitHub Pages   | ✅ Activo      |
 | **Testing**                 | GitHub Actions | ✅ Activo      |
