@@ -1,6 +1,5 @@
 format: jb-book
 root: portada
-numbered: true
 
 parts:
   - caption: Contenido

@@ -16,18 +16,22 @@ latex:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/ChusitooXDuwu/graficsIP  # Online location of your book
-  path_to_book: ipbook-enhanced  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  url: https://github.com/ChusitooXDuwu/graficsIP # Online location of your book
+  path_to_book: ipbook-enhanced # Optional path to your book, relative to the repository root
+  branch: main # Which branch of the repository should be used when creating links (optional)
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# HTML book settings
 html:
   favicon: "https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"
   use_issues_button: true
   use_repository_button: true
   use_edit_page_button: true
+  navbar_number_sections: true
   announcement: "📚 Esta es una versión mejorada del IPBook con visualizaciones interactivas. <a href='https://chusitooxduwu.github.io/graficsIP/'>Ver portal de visualizaciones</a>"
+  extra_footer: <a href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas y Computación</a> - Universidad de los Andes
+  google_analytics_id: ""
+  home_page_in_navbar: true
+  baseurl: https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/
 
 # Enable MyST parser with additional extensions
 parse:
@@ -60,12 +64,3 @@ sphinx:
       navigation_with_keys: false
       show_navbar_depth: 2
       announcement_text: "📊 ¡Nueva característica! Explora las visualizaciones interactivas integradas en el Nivel 2."
-
-# Book settings
-html:
-  navbar_number_sections: true
-  extra_footer: <a href="http://sistemas.uniandes.edu.co">Departamento de Ingeniería de Sistemas y Computación</a> - Universidad de los Andes
-  google_analytics_id: ""
-  home_page_in_navbar: true
-  baseurl: http://cupi2-ip.github.io/IPBook
-
