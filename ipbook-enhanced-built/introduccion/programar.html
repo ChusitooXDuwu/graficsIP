@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>¿Qué es programar? &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'introduccion/programar';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/introduccion/programar.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Prácticas fundamentales" href="practicas.html" />
+    <link rel="prev" title="Introducción" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel2/intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-2.html">Lógica y valores de verdad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-3.html">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-5.html">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-8.html">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel3/intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-3.html">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-4.html">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel4/intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-2.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-4.html">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/introduccion/programar.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>¿Qué es programar?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="que-es-programar">
+<h1>¿Qué es programar?<a class="headerlink" href="#que-es-programar" title="Link to this heading">#</a></h1>
+<p><strong>Programar</strong> es la acción de escribir un conjunto <strong>instrucciones</strong> (un <strong>programa</strong>) para que un computador las ejecute. Por ejemplo, el siguiente es el primer programa que la mayoría de programadores escribe:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hola, mundo!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Cuando alguien decide <strong>ejecutar</strong> (o correr) este programa, el computador va a
+mostrar en la pantalla un mensaje que dice <code class="docutils literal notranslate"><span class="pre">Hola,</span> <span class="pre">mundo!</span></code>.</p>
+<figure class="align-default" id="hello-world">
+<a class="reference internal image-reference" href="../_images/hola_mundo.png"><img alt="../_images/hola_mundo.png" src="../_images/hola_mundo.png" style="width: 60%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Ejecución del primer programa</span><a class="headerlink" href="#hello-world" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Aunque sencillo, este programa nos permite ilustrar varias ideas importantes. En primer lugar, el programa se escribió usando el <strong>lenguaje de programación</strong> Python. Así como en español tenemos reglas de gramática y un conjunto de palabras para combinar (vocabulario), un lenguaje de programación tiene reglas de sintaxis, una colección de librerías con programas que se pueden reutilizar (el vocabulario) y unas herramientas que permiten ejecutar los programas que se escriban con ese lenguaje. En nuestro ejemplo, estamos siguiendo las reglas de sintaxis de Python, usamos una función llamada <code class="docutils literal notranslate"><span class="pre">print</span></code> y ejecutaremos el programa usando el intérprete <a class="footnote-reference brackets" href="#interprete" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> de Python <a class="footnote-reference brackets" href="#c" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<p>Programar no es en sí misma una actividad difícil, pero sí es una actividad compleja que involucra varios elementos y habilidades complementarias. La más importante posiblemente sea la habilidad para <strong>resolver problemas</strong>, que en realidad es una combinación de otras habilidades como comprensión de lectura, abstracción, descomposición, razonamiento abstracto y creatividad. Con esto queremos decir que, para programar, es necesario ser capaz de resolver problemas independientemente de que haya tecnología y computadores involucrados.</p>
+<p>Otro componente para resaltar es el <strong>pensamiento algorítmico</strong>, el cual hace referencia a una cierta forma de aproximarse a la resolución de problemas. El término <strong>algoritmo</strong> hace referencia a las instrucciones para resolver un determinado problema. Un ejemplo común de algoritmo son las instrucciones para fritar un huevo, o las instrucciones que se encuentran en el envase de un Shampoo. Pensamiento algorítmico hace referencia a la habilidad para describir cómo se debe llegar a la solución de un problema en términos de una serie de instrucciones que alguien más pueda repetir.</p>
+<p>En nuestras vidas resolvemos problemas todo el tiempo (manejar un carro, entrar a nuestra oficina, pagar los recibos de servicios públicos, organizar nuestra casa), pero no necesariamente somos capaces de explicarle a alguien más cada uno de estos procesos con el nivel de detalle suficiente para que los pueda hacer exactamente igual. Cuando empecemos a programar nos daremos cuenta que uno de los obstáculos más grandes va a ser vencer la tentación de darle al computador órdenes demasiado complejas. Por el contrario, programar requiere user órdenes relativamente sencillas que permitan ir resolviendo el problema (en lugar de decirle a alguien ‘frita un huevo’, le vamos a tener que decir ‘prende el fogón de la estufa, pon una cacerola con mantequilla, espera a que se derrita la mantequilla, …’ )</p>
+<p>Programar requiere también conocer al menos un <strong>lenguaje de programación</strong> para poder escribir las instrucciones para el computador. Posiblemente aprender un lenguaje de programación sea la parte más sencilla de todo el proceso, pero es la que fácilmente se confunde con la parte central de aprender a programar. Esto es análogo a pensar que para pintar al óleo lo más importante es aprender los nombres de los colores y conocer la técnica para usar los pinceles: seguramente alguien que no tenga esos conocimientos básicos encontrará dificultades para pintar, pero con seguridad otras habilidades y actitudes son más importantes para producir verdaderas obras de arte.</p>
+<p>Este libro pretende hacer explícito que <em>aprender a programar no es lo mismo que aprender un lenguaje de programación</em>. Tuvimos que escoger un lenguaje para nuestros ejemplos (Python), pero casi todos los conceptos que veremos podrían aplicarse a otros lenguajes de programación. En lo posible, haremos explícito cuando algo de lo que expliquemos sea exclusivo de Python.</p>
+<p>Finalmente, programar requiere una buena disposición hacia la <strong>tecnología</strong> y hacia el <strong>auto-aprendizaje</strong>. En este libro usaremos un conjunto de herramientas y librerías relativamente sencillo que además será explicado en detalle. Estas deberían ser suficientes para construir desde programas triviales hasta programas muy interesantes y útiles. Pero un buen programador debería ser capaz (¡y debería tener muchas ganas!) de aprender a usar nuevas tecnologías por su propia cuenta.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="interprete" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Más adelante vamos a explicar qué significa el intérprete. Por ahora es suficiente con saber que un intérprete es un programa capaz de ejecutar otros programas. En este caso, el intérprete será capaz de ejecutar programas escritos usando Python.</p>
+</aside>
+<aside class="footnote brackets" id="c" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Si en lugar de Python hubiéramos usado el lenguaje de programación C, el programa que habríamos tenido que escribir sería el siguiente: <code class="docutils literal notranslate"><span class="pre">main(</span> <span class="pre">)</span> <span class="pre">{</span> <span class="pre">printf(&quot;hello,</span> <span class="pre">world\n&quot;);</span> <span class="pre">}</span></code>. Además, el programa no lo ejecutaríamos usando el intérprete de Python.</p>
+</aside>
+</aside>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./introduccion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introducción</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="practicas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Prácticas fundamentales</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

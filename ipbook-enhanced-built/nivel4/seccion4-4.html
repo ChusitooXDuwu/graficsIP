@@ -1,0 +1,949 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Imágenes RGB &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nivel4/seccion4-4';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/nivel4/seccion4-4.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Análisis de datos con Pandas" href="seccion4-5.html" />
+    <link rel="prev" title="Matrices" href="seccion4-3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduccion/index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/programar.html">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel2/intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-2.html">Lógica y valores de verdad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-3.html">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-5.html">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-8.html">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel3/intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-3.html">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-4.html">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-2.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nivel4/seccion4-4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Imágenes RGB</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Imágenes RGB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-basicos-sobre-imagenes">Algoritmos básicos sobre imágenes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-imagenes">Crear imágenes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convertir-a-escala-de-grises">Convertir a escala de grises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binarizar">Binarizar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpening">Sharpening</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-con-matplotlib">Visualización con Matplotlib</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-de-listas-de-listas-vs-listas-de-listas-de-tuplas">Listas de Listas de Listas vs. Listas de Listas de Tuplas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python-formatos-de-imagenes">Más allá de Python: formatos de imágenes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bmp-bitmap">BMP - BitMap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gif-graphics-interchange-format-png-portable-network-graphics">GIF - Graphics Interchange Format / PNG - Portable Network Graphics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jpeg-jpg-joint-photographic-experts-group">JPEG / JPG - Joint Photographic Experts Group</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svg-scalable-vector-graphics">SVG - Scalable Vector Graphics</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="imagenes-rgb">
+<h1>Imágenes RGB<a class="headerlink" href="#imagenes-rgb" title="Link to this heading">#</a></h1>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es explicar los conceptos más básicos sobre el uso de imágenes en un computador, como un caso de estudio para el uso de matrices.</p>
+</div>
+<p>Prácticamente todos los dispositivos electrónicos programables de hoy en día incluyen funcionalidades para capturar, almacenar, transformar y analizar imágenes. Por ejemplo, los celulares inteligentes ofrecen múltiples mecanismos para tomar fotografías, transformarlas (rotar, cambiar el tamaño, recortar), hacerles retoques (ajustar los colores, agregar textos e imágenes), almacenarlas en la memoria y finalmente compartirlas con otros dispositivos. En el fondo, todas estas actividades implican la creación de matrices, su recorrido haciendo cálculos, y su modificación.</p>
+<p>En esta sección estudiaremos cómo una imagen se puede representar como una matriz de pixeles para ser manipulada. Como parte de esto, estudiaremos algunos algoritmos importantes para hacer modificaciones sobre imágenes.</p>
+<section id="id1">
+<h2>Imágenes RGB<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Una imagen digital se representa usualmente con una matriz de pixeles, donde cada pixel es un punto de la imagen y tiene un determinado color <a class="footnote-reference brackets" href="#raster" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Esto es análogo a como funcionan los monitores y pantallas, los cuales están compuestos por componentes electrónicos también llamados pixeles y que son capaces de cambiar de color para representar un punto de algún color. Cuando nosotros vemos una imagen en la pantalla, lo que estamos viendo en realidad es una grilla con puntos de colores y nuestro cerebro se encarga de convertirlo en una imagen suavizada y con algún sentido.</p>
+<IMAGEN>
+<p>Por razones tanto históricas como técnicas, los pixeles en una pantalla o monitor usualmente están formados por 3 componentes que son capaces cada uno de producir un solo color con una intensidad variable: uno de estos componentes es capaz de producir rojos, otro sólo produce verdes y el tercero sólo produce azules. Como son tan pequeños y nuestros ojos no logran distinguirlos, los colores de estos tres componentes se combinan en nuestro cerebro para producir un solo color. Lo interesante de esto es que prácticamente cualquier color visible para un humano puede construirse como combinaciones de los tres colores primarios (aditivos) rojo, verde y azul.</p>
+<p>De regreso al mundo de las imagénes digitales, los pixeles de una imagen se representan usualmente usando combinaciones de los mismos tres colores. A esto se le llama el modelo RGB y se ha llegado a un estándar en el cual la intensidad de cada uno de los tres colores se representa con un número entre 0 y 255 <a class="footnote-reference brackets" href="#rgb" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>: 0 significa que el color es tan oscuro que se ve negro mientras que 255 significa que el color está en su máxima intensidad. De esta manera un pixel negro en una imagen será un pixel en el cual los tres colores tengan intensidad 0, un pixel de color rojo puro será un pixel con intensidad 255 en el rojo e intensidad 0 en verde y azul, y un pixel blanco tendrá intensidad 255 en los tres componentes. La siguiente tabla muestra algunos colores con las intensidades de sus componentes:</p>
+<TABLA DE COLORES>
+<p>Este sistema permite representar más de 16 millones de colores diferentes (2^32) a través de la combinación de 256 niveles de rojo, con 256 niveles de verde y 256 niveles de azul. El rango 0 - 255 podría parecer arbitrario pero tiene muchísimo sentido: usando 8 bits (1 byte) se pueden representar los números entre 0 y 255, así que el sistema RGB requiere de exactamente 3 bytes por cada pixel de una imagen.</p>
+</section>
+<section id="algoritmos-basicos-sobre-imagenes">
+<h2>Algoritmos básicos sobre imágenes<a class="headerlink" href="#algoritmos-basicos-sobre-imagenes" title="Link to this heading">#</a></h2>
+<section id="crear-imagenes">
+<h3>Crear imágenes<a class="headerlink" href="#crear-imagenes" title="Link to this heading">#</a></h3>
+<p>Considerando entonces que una imagen se representará naturalmente en Python como una matriz de tres números (un nivel de rojo, un nivel de verde y un componente azul), lo más natural será representar cada imagen como una matriz de tuplas. El siguiente programa muestra cómo se construiría una nueva imagen cuadrada de <em>ancho</em> x <em>ancho</em> pixeles, donde todos los pixeles serían negros.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generar_imagen_negra</span><span class="p">(</span><span class="n">ancho</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">list</span><span class="p">:</span>
+  <span class="n">imagen</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ancho</span><span class="p">):</span>
+    <span class="n">fila</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ancho</span><span class="p">):</span>
+      <span class="n">rojo</span> <span class="o">=</span> <span class="mf">0.0</span>
+      <span class="n">verde</span> <span class="o">=</span> <span class="mf">0.0</span>
+      <span class="n">azul</span> <span class="o">=</span> <span class="mf">0.0</span>
+      <span class="n">pixel</span> <span class="o">=</span> <span class="p">(</span><span class="n">rojo</span><span class="p">,</span> <span class="n">verde</span><span class="p">,</span> <span class="n">azul</span><span class="p">)</span>
+      <span class="n">fila</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span>
+    <span class="n">imagen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">imagen</span>
+</pre></div>
+</div>
+<p>Ahora vamos a construir una nueva función capaz de generar una imagen también cuadrada pero con pixeles de colores aleatorios.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generar_imagen_tuplas</span><span class="p">(</span><span class="n">ancho</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">list</span><span class="p">:</span>
+  <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">ancho</span>
+  <span class="n">imagen</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ancho</span><span class="p">):</span>
+    <span class="n">fila</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ancho</span><span class="p">):</span>
+      <span class="n">rojo</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span><span class="o">/</span><span class="n">ancho</span>
+      <span class="n">verde</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span><span class="o">/</span><span class="n">ancho</span>
+      <span class="n">azul</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rojo</span> <span class="o">-</span> <span class="n">verde</span><span class="p">)</span>
+      <span class="n">pixel</span> <span class="o">=</span> <span class="p">(</span><span class="n">rojo</span><span class="o">*</span><span class="mi">255</span><span class="p">,</span> <span class="n">verde</span><span class="o">*</span><span class="mi">255</span><span class="p">,</span> <span class="n">azul</span><span class="o">*</span><span class="mi">255</span><span class="p">)</span>
+      <span class="n">fila</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span>
+    <span class="n">imagen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">imagen</span>
+</pre></div>
+</div>
+<p>El resultado de invocar esta función una vez y de visualizar la matriz resultante en la pantalla se muestra en la siguiente imagen. El código es muy similar al de la función anterior y sólo se diferencia en la forma de generar números de forma aleatoria para el componente rojo, verde y azul de cada pixel. Más adelante en esta sección mostraremos cómo visualizar la imagen.</p>
+<p><img alt="Imagen generada" src="../_images/imagen_aleatoria.png" /></p>
+<p>Para el resto de esta sección usaremos la siguiente imagen para ilustrar el efecto de cada algoritmo.</p>
+<p><img alt="Imagen muestra" src="../_images/base.png" /></p>
+</section>
+<section id="convertir-a-escala-de-grises">
+<h3>Convertir a escala de grises<a class="headerlink" href="#convertir-a-escala-de-grises" title="Link to this heading">#</a></h3>
+<p>Como ya vimos, en el modelo RGB el negro se forma con componentes rojos, verde y azul con valor 0, mientras que el blanco se forma con los 3 componentes con su máximo valor. Los colores intermedio (grises) tienen la propiedad de tener los tres componentes con la misma intensidad. Así, un pixel con valores <code class="docutils literal notranslate"><span class="pre">(50,</span> <span class="pre">50,</span> <span class="pre">50)</span></code> será un gris bastante oscuro, mientras que un pixel con valores <code class="docutils literal notranslate"><span class="pre">(200,</span> <span class="pre">200,</span> <span class="pre">200)</span></code> será un gris bastante claro.</p>
+<p>Convertir una imagen a escala de grises requiere entonces recorrer la imagen entera, pixel por pixel, y modificar los componentes rojo, verde y azul para que sean iguales. La siguiente función hace esta tarea: calcula el valor promedio de los tres componentes y le asigna este valor a los tres componentes en cada uno de los pixeles. De esta manera se conserva la intensidad (qué tan iluminado es el pixel) pero se pierde el tono de todos los pixeles.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">convertir_a_grises</span><span class="p">(</span><span class="n">imagen</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span><span class="o">-&gt;</span><span class="kc">None</span><span class="p">:</span>
+  <span class="n">alto</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imagen</span><span class="p">)</span>
+  <span class="n">ancho</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imagen</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">alto</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ancho</span><span class="p">):</span>
+      <span class="n">rojo</span><span class="p">,</span> <span class="n">verde</span><span class="p">,</span> <span class="n">azul</span> <span class="o">=</span> <span class="n">imagen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+      <span class="n">gris</span> <span class="o">=</span> <span class="p">(</span><span class="n">rojo</span> <span class="o">+</span> <span class="n">verde</span> <span class="o">+</span> <span class="n">azul</span><span class="p">)</span> <span class="o">//</span> <span class="mi">3</span>
+      <span class="n">imagen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">gris</span><span class="p">,</span> <span class="n">gris</span><span class="p">,</span> <span class="n">gris</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Al aplicar esta función a la imagen de muestra el resultado es el que se observa en la siguiente imagen.</p>
+<p><img alt="Imagen en escala de grises" src="../_images/grises.png" /></p>
+</section>
+<section id="binarizar">
+<h3>Binarizar<a class="headerlink" href="#binarizar" title="Link to this heading">#</a></h3>
+<p>Otra técnica que se aplica sobre muchas imágenes transforma los pixeles para que sean sólo negros o blancos. Para esto se calcula el nivel de intensidad original de cada pixel y se convierte en negro o blanco según si la intensidad está por debajo o por encima de un umbral definido. Es decir, todos los pixeles cuya intensidad esté por debajo del umbral se convertirán en pixeles negros mientras que el resto de convertirán en pixeles blancos.</p>
+<p>La siguiente función implemente el algoritmo de binarización (o umbralización) aplicado a una imagen usando un umbral que llega por parámetro.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">binarizar</span><span class="p">(</span><span class="n">imagen</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">umbral</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="kc">None</span><span class="p">:</span>
+  <span class="n">alto</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imagen</span><span class="p">)</span>
+  <span class="n">ancho</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imagen</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">alto</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ancho</span><span class="p">):</span>
+      <span class="n">rojo</span><span class="p">,</span> <span class="n">verde</span><span class="p">,</span> <span class="n">azul</span> <span class="o">=</span> <span class="n">imagen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+      <span class="n">gris</span> <span class="o">=</span> <span class="p">(</span><span class="n">rojo</span> <span class="o">+</span> <span class="n">verde</span> <span class="o">+</span> <span class="n">azul</span><span class="p">)</span> <span class="o">//</span> <span class="mi">3</span>
+      <span class="k">if</span> <span class="n">gris</span> <span class="o">&lt;</span> <span class="n">umbral</span><span class="p">:</span>
+      	<span class="n">imagen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">imagen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>  
+</pre></div>
+</div>
+<p>Al aplicar esta función a la imagen de muestra, usando un umbral de 100, el resultado es el que se observa en la siguiente imagen.</p>
+<p><img alt="Imagen en escala de grises" src="../_images/binarizar_100.png" /></p>
+</section>
+<section id="sharpening">
+<h3>Sharpening<a class="headerlink" href="#sharpening" title="Link to this heading">#</a></h3>
+<p>El último algoritmo que vamos a presentar es una versión simplificada de un algoritmo para eliminar zonas borrosas de imágenes. Es decir, se quiere encontrar y resaltar los bordes de los objetos que aparecen en una foto.</p>
+<p>Para lograr este efecto el algoritmo aplica una máscara a cada uno de los pixeles de tal forma que el color de cada pixel termina dependiendo de los colores de los pixeles vecinos. En nuestro caso, la máscara que vamos a utilizar es la siguiente:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>-1</p></th>
+<th class="head"><p>-1</p></th>
+<th class="head"><p>-1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>-1</p></td>
+<td><p>9</p></td>
+<td><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td><p>-1</p></td>
+<td><p>-1</p></td>
+<td><p>-1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Para aplicar la máscara en un determinado pixel lo que se tiene que hacer es centrar la máscara sobre el pixel y multiplicar los colores de los pixeles vecinos por el valor que le corresponde en la máscara. Así, en este caso el pixel que se encuentra arriba y a la izquierda del pixel que nos interesa se multiplicará por -1. Al final, se sumarán los 9 resultados de las 9 multiplicaciones y ese valor es el que se asignará al pixel en el que se centró la máscara.</p>
+<p>Algo muy importante de este algoritmo es que el nuevo color de cada pixel debe calcularse usando los colores de los pixeles vecinos antes de que se haya aplicado el algoritmo. Esto hace necesario que, antes de empezar, se tenga que crear una copia de la imagen sobre la cual se trabajará.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">copiar_imagen</span><span class="p">(</span><span class="n">imagen</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot; Esta función crea una copia de una imagen y la retorna</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">      imagen (list): es una lista de listas de tuplas que representa una imagen.</span>
+<span class="sd">    Retorno:</span>
+<span class="sd">      (list): retorna una copia de la imagen</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">copia</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">alto</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imagen</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">alto</span><span class="p">):</span>
+    <span class="n">fila</span> <span class="o">=</span> <span class="n">imagen</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">nueva_fila</span> <span class="o">=</span> <span class="n">fila</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">copia</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nueva_fila</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">copia</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">sharpening</span><span class="p">(</span><span class="n">imagen</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot; Aplica la máscara sobre la imagen. La imagen que se </span>
+<span class="sd">      recibe como parámetro no se modifica durante el proceso.</span>
+<span class="sd">      Parámetros:</span>
+<span class="sd">        imagen (list): La imagen sobre la que se aplicará el algoritmo</span>
+<span class="sd">      Retorno:</span>
+<span class="sd">        (list): la imagen con el resultado de aplicar el algoritmo</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  
+  <span class="c1"># Acá se crea la máscara que se va a aplicar</span>
+  <span class="n">mascara</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+  
+  <span class="c1"># Crear una copia de la imagen que finalmente será retornada</span>
+  <span class="n">copia</span> <span class="o">=</span> <span class="n">copiar_imagen</span><span class="p">(</span><span class="n">imagen</span><span class="p">)</span>
+  <span class="n">alto</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imagen</span><span class="p">)</span>
+  <span class="n">ancho</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imagen</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+  
+  <span class="c1"># Recorrer las filas (i) y las columnas (j) de la imagen original</span>
+  <span class="c1"># No se recorren las filas y columnas que se encuentran en el borde de </span>
+  <span class="c1"># la imagen porque no tienen vecinos completos para aplicar la máscara</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">alto</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ancho</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    
+      <span class="c1"># A partir de este punto se va a aplicar la máscara al pixel que</span>
+      <span class="c1"># se encuentra en la fila i, columnas j.</span>
+      <span class="c1"># La máscara es de 3x3: se hacen dos ciclos para recorrer todos sus elementos.</span>
+      <span class="n">rojo</span><span class="p">,</span> <span class="n">verde</span><span class="p">,</span> <span class="n">azul</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>           
+      <span class="k">for</span> <span class="n">i_mascara</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j_mascara</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+          <span class="c1"># Se consultan los colores originales del pixel vecino</span>
+          <span class="n">rojo_vecino</span><span class="p">,</span> <span class="n">verde_vecino</span><span class="p">,</span> <span class="n">azul_vecino</span> <span class="o">=</span> <span class="n">imagen</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="n">i_mascara</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="n">j_mascara</span><span class="p">]</span>
+          <span class="n">valor_mascara</span> <span class="o">=</span> <span class="n">mascara</span><span class="p">[</span><span class="n">i_mascara</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j_mascara</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+          
+          <span class="c1"># Los colores originales se multiplican por el valor de la máscara</span>
+          <span class="c1"># y se van sumando para encontrar el nuevo valor del color para</span>
+          <span class="c1"># el pixel [i][j]</span>
+          <span class="n">rojo</span> <span class="o">+=</span> <span class="n">rojo_vecino</span> <span class="o">*</span> <span class="n">valor_mascara</span>
+          <span class="n">verde</span> <span class="o">+=</span> <span class="n">verde_vecino</span> <span class="o">*</span> <span class="n">valor_mascara</span>
+          <span class="n">azul</span> <span class="o">+=</span> <span class="n">azul_vecino</span> <span class="o">*</span> <span class="n">valor_mascara</span>
+          
+      <span class="n">nuevo_pixel</span> <span class="o">=</span> <span class="p">(</span><span class="n">rojo</span><span class="p">,</span> <span class="n">verde</span><span class="p">,</span> <span class="n">azul</span><span class="p">)</span>    
+      <span class="n">copia</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">nuevo_pixel</span>
+  <span class="k">return</span> <span class="n">copia</span>
+</pre></div>
+</div>
+<p>El resultado de aplicar la función anterior a la imagen de muestra se puede apreciar en la siguiente figura. Como dijimos antes, esta es una simplificación del algoritmo para corregir fotos borrosas, así que el resultado no es muy impresionante, pero a partir de esta función usted puede intentar refinar y mejorar los algoritmos para lograr resultados realmente útiles. Por ejemplo, usted puede probar a implementar el mismo algoritmo utilizando una máscara diferente para observar cómo cambia el resultado.</p>
+<p><img alt="Imagen en escala de grises" src="../_images/sharpen_2.png" /></p>
+</section>
+</section>
+<section id="visualizacion-con-matplotlib">
+<h2>Visualización con Matplotlib<a class="headerlink" href="#visualizacion-con-matplotlib" title="Link to this heading">#</a></h2>
+<p>A continuación explicaremos un mecanismo que nos permite visualizar las imágenes con las cuales hemos estado trabajando. El mecanismo está basado en el uso de la librería <strong>Matplotlib</strong>, la cual se encuentra disponible para su descarga gratuita en casi cualquier plataforma. Esta librería se ha convertido en un estándar para el manejo y creación de gráficas usando Python, así que es conveniente familiarizarse con su uso.</p>
+<p><strong>Matplotlib</strong> ofrece como ventaja adicional ser capaz de interpretar diferentes formatos de imágenes. Es decir que <strong>Matplotlib</strong> nos ofrece las funcionalidades necesarias para poder cargar imágenes en formato <strong>jpg</strong> o <strong>png</strong> (entre otros), sin que nosotros tengamos que preocuparnos por estos aspectos.</p>
+<p>El siguiente programa muestra cómo se puede utilizar esta librería para cargar una imagen desde un archivo y para visualizarla dentro de un programa. Si se ejecuta este programa, y hay una imagen llamada “muestra.jpg” en la carpeta donde se está ejecutando, el resultado debería ser que se despliegue la imagen en una nueva ventana.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.image</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpimg</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cargar_imagen_matriz</span><span class="p">(</span><span class="n">ruta_imagen</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Carga la imagen que se encuentra en la ruta dada.</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        ruta_imagen (str) Ruta donde se encuentra la imagen a cargar.</span>
+<span class="sd">    Retorno:</span>
+<span class="sd">        list: Matriz de MxNx3</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">imagen</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">ruta_imagen</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">imagen</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">visualizar_imagen_matriz</span><span class="p">(</span><span class="n">imagen</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Muestra la imagen recibida</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        imagen (list): Matriz de MxNx3 que representa la imagen a visualizar.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">imagen</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+<span class="n">imagen</span> <span class="o">=</span> <span class="n">cargar_imagen_matriz</span><span class="p">(</span><span class="s2">&quot;muestra.jpg&quot;</span><span class="p">)</span>
+<span class="n">visualizar_imagen_matriz</span><span class="p">(</span><span class="n">imagen</span><span class="p">)</span>    
+</pre></div>
+</div>
+<p>Algo muy importante que se tiene que tener en cuenta cuando se trabaje con Matplotlib es que la librería espera que los colores se representen con números entre 0 y 255 si son enteros, o entre 0 y 1 si son flotantes. Esto puede ser un poco confuso al principio, así que lo más conveniente es siempre usar enteros o siempre usar flotantes y no combinarlos nunca.</p>
+<section id="listas-de-listas-de-listas-vs-listas-de-listas-de-tuplas">
+<h3>Listas de Listas de Listas vs. Listas de Listas de Tuplas<a class="headerlink" href="#listas-de-listas-de-listas-vs-listas-de-listas-de-tuplas" title="Link to this heading">#</a></h3>
+<p>Las dos funciones anteriores, aunque son muy sencillas tienen un problema que las hace incompatibles con los algoritmos que hemos trabajado en esta sección: en lugar de representar las imágenes como matrices de tuplas, representan las imágenes con matrices de 3 dimensiones, donde la tercera dimensión es de tamaño 3 y permite representar cada uno de los tres componentes de una imagen. Esto quiere decir que en la posición <code class="docutils literal notranslate"><span class="pre">[i][j]</span></code> de la imagen que retorna la función <code class="docutils literal notranslate"><span class="pre">cargar_imagen_matriz</span> </code> no hay una tupla sino hay una lista con tres valores.</p>
+<p>Las siguientes funciones son versiones modificadas de las funciones anteriores que se encargan de convertir entre la representación con tuplas y la representación de Matplotlib, de forma que se pueda usar la librería para cargar los archivos y para visualizar las imágenes <a class="footnote-reference brackets" href="#razon" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">visualizar_imagen</span><span class="p">(</span><span class="n">imagen</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Muestra la imagen recibida</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        imagen (list): Matriz de MxN con tuplas (R,G,B) que representan la imagen a visualizar.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">alto</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imagen</span><span class="p">)</span>
+    <span class="n">ancho</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">imagen</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="c1"># Construir una matriz para representar la imagen.</span>
+    <span class="c1"># Esta matriz tendrá tres dimensiones</span>
+    <span class="n">matriz</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">alto</span><span class="p">):</span>
+        <span class="n">fila</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ancho</span><span class="p">):</span>
+            <span class="c1"># convertir la tupla a una lista</span>
+            <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">imagen</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">fila</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">])</span>
+        <span class="n">matriz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cargar_imagen</span><span class="p">(</span><span class="n">ruta_imagen</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Carga la imagen que se encuentra en la ruta dada.</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        ruta_imagen (str) Ruta donde se encuentra la imagen a cargar.</span>
+<span class="sd">    Retorno:</span>
+<span class="sd">        list: Matriz de MxN con tuplas (R,G,B).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">matriz</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">ruta_imagen</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">alto</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
+    <span class="n">ancho</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matriz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="c1"># Construir una matriz para representar la imagen.</span>
+    <span class="c1"># Esta matriz tendrá dos dimensiones y tuplas en cada casilla.</span>
+    <span class="n">imagen</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">alto</span><span class="p">):</span>
+        <span class="n">fila</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ancho</span><span class="p">):</span>
+            <span class="c1"># Extraer los componentes. Note que no se puede desempaquetar.</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">matriz</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">g</span> <span class="o">=</span> <span class="n">matriz</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">matriz</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+            
+            <span class="c1"># Construir la tupla equivalente y agregarla a la imagen</span>
+            <span class="n">tupla</span> <span class="o">=</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+            <span class="n">fila</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tupla</span><span class="p">)</span>
+        <span class="n">imagen</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">imagen</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Escriba una función que tome una imagen y calcule su negativo. El negativo se calcula invirtiendo los 3 componentes de cada pixel de tal forma que su nuevo valor sea igual a 255 menor el valor original.</p></li>
+<li><p>Escriba una función que reciba una imagen y una máscara y haga la convolución entre la imagen y la máscara. Una convolución se hace igual que como se aplicó el algoritmo de “Sharpening” con las siguientes diferencias:</p></li>
+</ol>
+<ul class="simple">
+<li><p>La máscara puede tener cualquier tamaño mientras sea cuadrada</p></li>
+<li><p>Los valores de la máscara pueden sumar cualquier valor. En caso de que la suma sea diferente a 1, se debe dividir el valor de cada componente por el valor total de la máscara (si es positivo).</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Escriba una función que reciba una imagen y retorne tres imágenes en escala de grises que representen cada una un canal diferente (rojo, verde y azul). Esto quiere decir que en la imagen del canal rojo la intensidad de los pixeles deberá corresponder a la intensidad del color rojo en los pixeles de la imagen original. Algo similar debe ocurrir con las imágenes de los canales verde y azul.</p></li>
+<li><p>Escriba una función que reciba tres imágenes en escala de grises correspondientes a los tres canales de una imagen y produzca una imagen combinada. Este mecanismo fue utilizado por el fotógrafo <a class="reference external" href="https://en.wikipedia.org/wiki/Sergey_Prokudin-Gorsky">Sergey Prokudin-Gorsky</a> a finales del siglo XIX para producir fotografías en color a partir de fotografías en blanco y negro tomadas con filtros de colores.</p></li>
+<li><p>Escriba una función que reciba una imagen y una lista ordenada de umbrales y produzca una imagen donde los pixeles se hayan clasificado de acuerdo al umbral donde pertenezcan. Por ejemplo, si la lista de umbrales tiene los valores [50, 100, 150], entonces:</p></li>
+</ol>
+<ul class="simple">
+<li><p>todo pixel con intensidad menor a 50 se volverá negro</p></li>
+<li><p>todo pixel con intensidad mayor a 150 se volverá blanco</p></li>
+<li><p>todo pixel con intensidad entre 50 y 100 se volverá un gris con intensidad 75</p></li>
+<li><p>todo pixel con intensidad entre 100 y 150 se volverá un gris con intensidad 125</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>Escriba una función que rote a la derecha una imagen cuadrada. Para probar, utilice una imagen con la que sea fácil distinguir que la rotación es la correcta.</p></li>
+<li><p>Escriba una función que rote a la izquierda una imagen cuadrada. Para probar, utilice una imagen con la que sea fácil distinguir que la rotación es la correcta.</p></li>
+<li><p>Escriba una función que refleje horizontalmente una imagen cuadrada. Para probar, utilice una imagen con la que sea fácil distinguir que la rotación es la correcta.</p></li>
+<li><p>Escriba una función que rote a la derecha una imagen rectangular. Para probar, utilice una imagen con la que sea fácil distinguir que la rotación es la correcta.</p></li>
+<li><p>Escriba una función que rote a la izquierda una imagen rectangular. Para probar, utilice una imagen con la que sea fácil distinguir que la rotación es la correcta.</p></li>
+</ol>
+</section>
+<section id="mas-alla-de-python-formatos-de-imagenes">
+<h2>Más allá de Python: formatos de imágenes<a class="headerlink" href="#mas-alla-de-python-formatos-de-imagenes" title="Link to this heading">#</a></h2>
+<p>Un aspecto importante del manejo de imágenes que no se tocó en esta sección tiene que ver con los formatos utilizados para almacenar las imágenes. Cada formato ofrece diferentes ventajas y desventajas con respecto a aspectos como el nivel de compresión, el tamaño de las imágenes, la cantidad de cálculos necesarios para abrir o guardar un archivo, y la cantidad de información que se pierde debido a la compresión.</p>
+<p>A continuación presentamos algunos de los formatos más populares.</p>
+<section id="bmp-bitmap">
+<h3>BMP - BitMap<a class="headerlink" href="#bmp-bitmap" title="Link to this heading">#</a></h3>
+<p>Este es uno de los formatos más simples puesto que almacena la información sin ningún tipo de compresión y utilizando una estructura muy similar a la que hemos estado discutiendo. Es decir, dentro de un archivo <strong>bmp</strong> se almacena la información del componente rojo, del componente verde y del componente azul de cada uno de los pixeles que forman la imagen. Esto hace que leer y escribir un archivo <strong>bmp</strong> sea muy fácil y rápido, pero lleva a archivos que pueden ser muy grandes. Por ejemplo, una imagen totalmente blanca de 320x240 pixeles ocupa en el disco aproximadamente 225kb debido a que cada uno de los 76800 pixeles requiere 3 bytes para almacenar su color.</p>
+</section>
+<section id="gif-graphics-interchange-format-png-portable-network-graphics">
+<h3>GIF - Graphics Interchange Format / PNG - Portable Network Graphics<a class="headerlink" href="#gif-graphics-interchange-format-png-portable-network-graphics" title="Link to this heading">#</a></h3>
+<p>Los formatos <strong>GIF</strong> y <strong>PNG</strong> son conceptualmente muy similares entre ellos y se basan en la idea de incluir una paleta de colores en el archivo de la imagen, para luego no tener que describir cada color. Usualmente la paleta de colores contiene hasta 256 colores, así que cada pixel se puede representar usando sólo 1 byte en lugar de los tres bytes que utiliza bmp. Adicionalmente, <strong>GIF</strong> y <strong>PNG</strong> utilizan un algoritmo de compresión <em>sin pérdida</em> que logra disminuir el espacio utilizado, garantizando al mismo tiempo que no se pierda información. Gracias a estas características la misma imagen blanca de 320x240 pixeles que ocupaba 225kb como un <strong>bmp</strong>, ocupa 1.5kb como <strong>png</strong> y 426b como <strong>gif</strong>.</p>
+<p>A pesar de todo esto, los dos formatos tienen una importante limitación: debido al uso de la paleta de colores, una imagen almacenada en estos formatos no debería tener una altísima variedad de colores. Esto hace que sea poco eficiente almacenar fotografías utilizando este formato. En el peor de los casos, se podría perder información porque, para reducir el tamaño de la paleta, colores similares podrían agruparse dando origen a defectos y zonas de baja calidad en las imágenes. Por este motivo, <strong>GIF</strong> y <strong>PNG</strong> son buenos formatos para almacenar especialmente imágenes creadas digitalmente y con una limitada gama de colores.</p>
+</section>
+<section id="jpeg-jpg-joint-photographic-experts-group">
+<h3>JPEG / JPG - Joint Photographic Experts Group<a class="headerlink" href="#jpeg-jpg-joint-photographic-experts-group" title="Link to this heading">#</a></h3>
+<p>A diferencia de los anteriores, el formato JPG utiliza un algoritmo de compresión en el que sí se pierde información, pero de forma prácticamente imperceptible para un usuario. Como no tiene una paleta, JPG puede utilizar todos los colores que sean necesarios, por ejemplo en una foto. Donde se pierde información es en la agrupación de pixeles cercanos que tengan colores muy similares, los cuales se combinan para ganar espacio.</p>
+<p>JPG es el formato más utilizado en el mundo para almacenar fotografías puesto que ofrece un buen compromiso entre la calidad de las imágenes y la cantidad de espacio que requiere su almacenamiento. Además, de ser necesario es posible ajustar el nivel de compresión para incrementar la calidad de las imágenes a costa de la cantidad de espacio utilizado.</p>
+<p>Para el caso de nuestra imagen blanca de 320x240 pixeles, el archivo <strong>jpg</strong> ocupa 2kb (aproximadamente lo mismo que la imagen <strong>png</strong>). Por otro lado, en el caso de una fotografía de 5184x3456 pixeles (más de 17 millones de pixeles), el archivo <strong>png</strong> ocupa 21 megas mientras que el archivo <strong>jpg</strong> ocupa apenas 4.9 megas, sin que haya diferencias evidentes en la calidad de la imagen.</p>
+</section>
+<section id="svg-scalable-vector-graphics">
+<h3>SVG - Scalable Vector Graphics<a class="headerlink" href="#svg-scalable-vector-graphics" title="Link to this heading">#</a></h3>
+<p>Cerramos la sección presentando brevemente el formato SVG, el cual es completamente diferente a los anteriores: mientras en BMP, JPG, PNG o GIF se intenta describir el color de cada pixel de una imagen, en SVG se describe la manera en la que debería construirse la imagen.</p>
+<p>Lo que se presenta a continuación es la parte principal del archivo <strong>svg</strong> que describe una imagen de 320x240 pixeles en la que sólo aparece un rectángulo blanco:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<span class="nt">&lt;svg</span>
+<span class="w">   </span><span class="na">xmlns:dc=</span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span>
+<span class="w">   </span><span class="na">xmlns:cc=</span><span class="s">&quot;http://creativecommons.org/ns#&quot;</span>
+<span class="w">   </span><span class="na">xmlns:rdf=</span><span class="s">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span>
+<span class="w">   </span><span class="na">xmlns:svg=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
+<span class="w">   </span><span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
+<span class="w">   </span><span class="na">xmlns:sodipodi=</span><span class="s">&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;</span>
+<span class="w">   </span><span class="na">xmlns:inkscape=</span><span class="s">&quot;http://www.inkscape.org/namespaces/inkscape&quot;</span>
+<span class="w">   </span><span class="na">width=</span><span class="s">&quot;320mm&quot;</span>
+<span class="w">   </span><span class="na">height=</span><span class="s">&quot;240mm&quot;</span>
+<span class="w">   </span><span class="na">viewBox=</span><span class="s">&quot;0 0 320 240&quot;</span>
+<span class="w">   </span><span class="na">version=</span><span class="s">&quot;1.1&quot;</span>
+<span class="w">   </span><span class="na">id=</span><span class="s">&quot;svg8&quot;</span>
+<span class="w">   </span><span class="na">inkscape:version=</span><span class="s">&quot;0.92.4 (5da689c313, 2019-01-14)&quot;</span>
+<span class="w">   </span><span class="na">sodipodi:docname=</span><span class="s">&quot;blanco.svg&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;g</span>
+<span class="w">     </span><span class="na">inkscape:label=</span><span class="s">&quot;Layer 1&quot;</span>
+<span class="w">     </span><span class="na">inkscape:groupmode=</span><span class="s">&quot;layer&quot;</span>
+<span class="w">     </span><span class="na">id=</span><span class="s">&quot;layer1&quot;</span>
+<span class="w">     </span><span class="na">transform=</span><span class="s">&quot;translate(0,0)&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;rect</span>
+<span class="w">       </span><span class="na">style=</span><span class="s">&quot;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.30000001;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1&quot;</span>
+<span class="w">       </span><span class="na">id=</span><span class="s">&quot;rect815&quot;</span>
+<span class="w">       </span><span class="na">width=</span><span class="s">&quot;320&quot;</span>
+<span class="w">       </span><span class="na">height=</span><span class="s">&quot;240&quot;</span>
+<span class="w">       </span><span class="na">x=</span><span class="s">&quot;0&quot;</span>
+<span class="w">       </span><span class="na">y=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/g&gt;</span>
+<span class="nt">&lt;/svg&gt;</span>
+</pre></div>
+</div>
+<p>La parte importante de este código es en realidad el elemento <code class="docutils literal notranslate"><span class="pre">rect</span></code>, en el cual se describe el rectángulo que se va a visualizar. El archivo resultante es de 1.7kb y tiene la ventaja de que tendría exactamente el mismo tamaño si la imagen fuera 10 veces más grande. La desventaja principal de un archivo <strong>SVG</strong> es que sólo puede utilizarse para imágenes que se puedan describir como combinaciones de figuras geométricas. No pueden utilizarse entonces para cosas como fotografía.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="raster" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Esta es una simplificación de la realidad, pero es suficiente para los propósitos de esta sección. Existen también imágenes en las cuales no se representan todos los pixeles sino grupos de ellos (ej. quadtrees), e imágenes que están basadas en la descripción de lo que se debería ver en ellas (ej. archivos svg).</p>
+</aside>
+<aside class="footnote brackets" id="rgb" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>Representar colores usando combinaciones de rojo, verde y azul no es el único mecanismo utilizado en la práctica. Por ejemplo, es usual que también se tenga un componente que indica el nivel de transparencia de un pixel (alpha). La cantidad de niveles de intensidad también puede variar: si bien en muchos casos se utilizan 256 niveles para que cada pixel pueda representarse con sólo 24 bits, también hay modelos de color en los cuales se utilizan muchos más bits para representar cada componente.</p>
+</aside>
+<aside class="footnote brackets" id="razon" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>En esta sección podríamos haber hecho toda la presentación del tema usando la representación preferida por Matplotlib. Sin embargo, nos parece que es conceptualmente más elegante tener una matriz de tuplas en lugar de una matriz de 3 dimensiones. En primer lugar, al usar tuplas (que son inmutables) nos aseguramos que siempre tenemos 3 valores (rojo, verde y azul). En segundo lugar, es más natural pensar en una imagen como una matriz de 2 dimensiones que como una matriz de 3 dimensiones. Finalmente, al usar tuplas podemos desempaquetar los valores, lo cual hace el código un poco más fácil de leer. Sabemos que el uso de tuplas es ligeramente más ineficiente, pero en este caso preferimos sacrificar un poco el desempeño.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./nivel4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="seccion4-3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Matrices</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="seccion4-5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Análisis de datos con Pandas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Imágenes RGB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmos-basicos-sobre-imagenes">Algoritmos básicos sobre imágenes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-imagenes">Crear imágenes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convertir-a-escala-de-grises">Convertir a escala de grises</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binarizar">Binarizar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharpening">Sharpening</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-con-matplotlib">Visualización con Matplotlib</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-de-listas-de-listas-vs-listas-de-listas-de-tuplas">Listas de Listas de Listas vs. Listas de Listas de Tuplas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python-formatos-de-imagenes">Más allá de Python: formatos de imágenes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bmp-bitmap">BMP - BitMap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gif-graphics-interchange-format-png-portable-network-graphics">GIF - Graphics Interchange Format / PNG - Portable Network Graphics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jpeg-jpg-joint-photographic-experts-group">JPEG / JPG - Joint Photographic Experts Group</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#svg-scalable-vector-graphics">SVG - Scalable Vector Graphics</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

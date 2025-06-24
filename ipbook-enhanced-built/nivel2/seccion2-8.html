@@ -1,0 +1,792 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Paso de parámetros &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nivel2/seccion2-8';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/nivel2/seccion2-8.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Errores frecuentes" href="seccion2-9.html" />
+    <link rel="prev" title="Diccionarios" href="seccion2-7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduccion/index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/programar.html">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-2.html">Lógica y valores de verdad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-3.html">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-5.html">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel3/intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-3.html">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-4.html">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel4/intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-2.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-4.html">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nivel2/seccion2-8.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Paso de parámetros</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-de-parametros-por-valor-y-por-referencia">Paso de parámetros por valor y por referencia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-en-una-funcion">Parámetros en una función</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-por-valor-y-por-referencia">Parámetros por valor y por referencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-por-referencia-al-objeto">Paso por “referencia al objeto”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-en-python">Parámetros en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-nombrados">Parámetros nombrados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-por-defecto-opcionales">Parámetros por defecto / opcionales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="paso-de-parametros">
+<h1>Paso de parámetros<a class="headerlink" href="#paso-de-parametros" title="Link to this heading">#</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es estudiar con un poco más de profundidad el mecanismo de paso de parámetros y presentar además algunas características que tiene el lenguaje Python pero no otros.</p>
+</div>
+<p>Hasta el momento hemos utilizado el mecanismo de paso de parámetros cada vez que hemos invocado una función, pero no hemos entrado en mucho detalle sobre lo que está pasando. En esta sección vamos a estudiar este proceso en más profundidad y vamos a diferenciar entre los dos mecanismos disponibles en Python: paso de parámetros <em>por valor</em> y paso de parámetros <em>por referencia</em>.</p>
+<p>Además, estudiaremos un par características adicionales que ofrece Python para manejar los parámetros de una función con mayor flexibilidad.
+Usar estas características es totalmente opcional y, como usualmente no están disponibles en otros lenguajes, no es recomendable acostumbrarse a usarlas siempre.</p>
+<section id="paso-de-parametros-por-valor-y-por-referencia">
+<h2>Paso de parámetros por valor y por referencia<a class="headerlink" href="#paso-de-parametros-por-valor-y-por-referencia" title="Link to this heading">#</a></h2>
+<p>Para empezar, vamos a recoerdar la diferencia entre el operador <code class="docutils literal notranslate"><span class="pre">==</span></code> y el operador <code class="docutils literal notranslate"><span class="pre">is</span></code>: el primero lo podemos usar para comparar los valores de unas variables para ver si son iguales, mientras que el segundo nos sirve para saber sin son <em>el mismo</em>. Esto lo podemos ver en el siguiente ejemplo en el cual estamos construyendo dos diccionarios y luego los comparamos usando los dos operadores:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;k1&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="linenos">2</span><span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;k1&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="linenos">3</span><span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">==</span> <span class="n">d2</span>
+<span class="linenos">4</span><span class="go">True</span>
+<span class="linenos">5</span><span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="ow">is</span> <span class="n">d2</span>
+<span class="linenos">6</span><span class="go">False</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>En el caso del operador <code class="docutils literal notranslate"><span class="pre">==</span></code>, el valor obtenido es <code class="docutils literal notranslate"><span class="pre">True</span></code> porque los dos diccionarios tienen las mismas llaves y los mismos valores asociados. Se dice entonces que <code class="docutils literal notranslate"><span class="pre">==</span></code> compara los <strong>valores</strong>.</p></li>
+<li><p>En el caso del operador <code class="docutils literal notranslate"><span class="pre">is</span></code>, el valor obtenido es <code class="docutils literal notranslate"><span class="pre">False</span></code> porque estamos hablando de dos diccionarios:  en la línea 1 se construye el primero y en la siguiente línea se construye el segundo. Es apenas una casualidad que las llaves y los valores sean los mismos: si revisáramos la memoria del computador, nos daríamos cuenta que cada diccionario ocupa un espacio diferente en la memoria. Se dice entonces que <code class="docutils literal notranslate"><span class="pre">is</span></code> compara las <strong>referencias</strong> (en este contexto, una referencia sería la dirección de memoria donde se encuentre un diccionario).</p></li>
+</ul>
+<div class="warning admonition important">
+<p class="admonition-title">Important</p>
+<p>Valores vs. referencias</p>
+<p>El operador <code class="docutils literal notranslate"><span class="pre">==</span></code> se usa para comparar valores.</p>
+<p>El operador <code class="docutils literal notranslate"><span class="pre">is</span></code> se usa para comparar referencias.</p>
+</div>
+<section id="parametros-en-una-funcion">
+<h3>Parámetros en una función<a class="headerlink" href="#parametros-en-una-funcion" title="Link to this heading">#</a></h3>
+<p>Veamos ahora lo que pasa cuando se tienen parámetros de diferentes tipos en una función. Para esto estudiemos el siguiente programa:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span><span class="w"> </span><span class="nf">funcion</span><span class="p">(</span><span class="n">p1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">p2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">p3</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">p4</span><span class="p">:</span><span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 2</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--&gt; Valores recibidos:&quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">)</span>
+<span class="linenos"> 3</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--&gt; Comparar las cadenas:&quot;</span><span class="p">,</span> <span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
+<span class="linenos"> 4</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--&gt; Comparar los diccionarios:&quot;</span><span class="p">,</span> <span class="n">p3</span> <span class="o">==</span> <span class="n">p4</span><span class="p">,</span> <span class="n">p3</span> <span class="ow">is</span> <span class="n">p4</span><span class="p">)</span>
+<span class="linenos"> 5</span>    
+<span class="linenos"> 6</span>    <span class="n">p1</span> <span class="o">=</span> <span class="s2">&quot;nueva cadena&quot;</span>
+<span class="linenos"> 7</span>    <span class="n">p3</span><span class="p">[</span><span class="s2">&quot;nuevo valor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="linenos"> 8</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--&gt; Valores modificados:&quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">)</span>
+<span class="linenos"> 9</span>    <span class="n">p3</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ultimo&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="linenos">10</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--&gt; Valores modificados de nuevo:&quot;</span><span class="p">,</span> <span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">)</span>    
+<span class="linenos">11</span>   
+<span class="linenos">12</span><span class="n">cadena</span> <span class="o">=</span> <span class="s2">&quot;cadena inicial&quot;</span>
+<span class="linenos">13</span><span class="n">diccionario</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;inicial&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Antes de llamar a la función: &quot;</span><span class="p">,</span> <span class="n">cadena</span><span class="p">,</span> <span class="n">diccionario</span><span class="p">)</span>
+<span class="linenos">16</span><span class="n">funcion</span><span class="p">(</span><span class="n">cadena</span><span class="p">,</span> <span class="n">cadena</span><span class="p">,</span> <span class="n">diccionario</span><span class="p">,</span> <span class="n">diccionario</span><span class="p">)</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Después de llamar a la función: &quot;</span><span class="p">,</span> <span class="n">cadena</span><span class="p">,</span> <span class="n">diccionario</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>El siguiente bloque muestra el resultado completo de ejecutar el programa.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">Antes</span> <span class="n">de</span> <span class="n">llamar</span> <span class="n">a</span> <span class="n">la</span> <span class="n">función</span><span class="p">:</span>  <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="linenos">2</span><span class="o">--&gt;</span> <span class="n">Valores</span> <span class="n">recibidos</span><span class="p">:</span> <span class="n">cadena</span> <span class="n">inicial</span> <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+<span class="linenos">3</span><span class="o">--&gt;</span> <span class="n">Comparar</span> <span class="n">las</span> <span class="n">cadenas</span><span class="p">:</span> <span class="kc">True</span>
+<span class="linenos">4</span><span class="o">--&gt;</span> <span class="n">Comparar</span> <span class="n">los</span> <span class="n">diccionarios</span><span class="p">:</span> <span class="kc">True</span> <span class="kc">True</span>
+<span class="linenos">5</span><span class="o">--&gt;</span> <span class="n">Valores</span> <span class="n">modificados</span><span class="p">:</span> <span class="n">nueva</span> <span class="n">cadena</span> <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span>
+<span class="linenos">6</span><span class="o">--&gt;</span> <span class="n">Valores</span> <span class="n">modificados</span> <span class="n">de</span> <span class="n">nuevo</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ultimo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span>
+<span class="linenos">7</span><span class="n">Después</span> <span class="n">de</span> <span class="n">llamar</span> <span class="n">a</span> <span class="n">la</span> <span class="n">función</span><span class="p">:</span>  <span class="n">cadena</span> <span class="n">inicial</span> <span class="p">{</span><span class="s1">&#39;inicial&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;nuevo valor&#39;</span><span class="p">:</span> <span class="mi">99</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Estudiemos ahora, paso por paso, lo que hace el programa. En las líneas 1 a 10 se define una nueva función que no se ejecutará por ahora. En las líneas 12 y 13 se definen dos variables: la primera es de tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> y tiene como valor <code class="docutils literal notranslate"><span class="pre">&quot;cadena</span> <span class="pre">inicial&quot;</span></code>; la segunda es de tipo <code class="docutils literal notranslate"><span class="pre">dict</span></code> y tiene como valor un diccionario qué únicamente tiene una llave (”<code class="docutils literal notranslate"><span class="pre">inicial&quot;</span></code>) con el valor <code class="docutils literal notranslate"><span class="pre">0</span></code> asociado.</p>
+<p>En la 15 se imprime un mensaje en la consola que muestra el valor de las dos variables: <code class="docutils literal notranslate"><span class="pre">Antes</span> <span class="pre">de</span> <span class="pre">llamar</span> <span class="pre">a</span> <span class="pre">la</span> <span class="pre">función:</span>&#160; <span class="pre">cadena</span> <span class="pre">inicial</span> <span class="pre">{'inicial':</span> <span class="pre">0}</span></code>. En el bloque de código que se encuentra más abajo se puede ver todo lo que imprime el programa.</p>
+<p>Luego, en la línea 16 se invoca a la función: la variable <code class="docutils literal notranslate"><span class="pre">cadena</span></code> se usa para los parámetros <code class="docutils literal notranslate"><span class="pre">p1</span></code> y <code class="docutils literal notranslate"><span class="pre">p2</span></code>; la variable <code class="docutils literal notranslate"><span class="pre">diccionario</span></code> se asigna a los parámetros <code class="docutils literal notranslate"><span class="pre">p3</span></code> y <code class="docutils literal notranslate"><span class="pre">p4</span></code>.</p>
+<p>La función que definimos imprime los parámetros que recibimos (línea 1), imprime el resultado de comparar <code class="docutils literal notranslate"><span class="pre">p1</span></code> y <code class="docutils literal notranslate"><span class="pre">p2</span></code> (línea 3), e imprime el resultado de comparar <code class="docutils literal notranslate"><span class="pre">p3</span></code> y <code class="docutils literal notranslate"><span class="pre">p4</span></code> usando tanto <code class="docutils literal notranslate"><span class="pre">==</span></code> como <code class="docutils literal notranslate"><span class="pre">is</span></code>. Como es de esperarse, en todos los casos el resultado que se muestra en la consola es <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>A partir de la la siguiente línea empiezan a ocurrir cosas más interesantes. En la línea 6, se le asigna un nuevo valor a <code class="docutils literal notranslate"><span class="pre">p1</span></code> que, recordemos, es de tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>. En la línea 7 se le asigna también un nuevo valor a la llave <code class="docutils literal notranslate"><span class="pre">&quot;nuevo_valor&quot;</span></code> dentro del diccionario <code class="docutils literal notranslate"><span class="pre">p3</span></code>.</p>
+<p>En la línea 8 se imprimen los valores modificados y se obtiene la siguiente cadena: <code class="docutils literal notranslate"><span class="pre">--&gt;</span> <span class="pre">Valores</span> <span class="pre">modificados:</span> <span class="pre">nueva</span> <span class="pre">cadena</span> <span class="pre">cadena</span> <span class="pre">inicial</span> <span class="pre">{'inicial':</span> <span class="pre">0,</span> <span class="pre">'nuevo</span> <span class="pre">valor':</span> <span class="pre">99}</span> <span class="pre">{'inicial':</span> <span class="pre">0,</span> <span class="pre">'nuevo</span> <span class="pre">valor':</span> <span class="pre">99}</span></code>:</p>
+<ul class="simple">
+<li><p>En <code class="docutils literal notranslate"><span class="pre">p1</span></code> vemos el nuevo valor que le asignamos en la línea 6.</p></li>
+<li><p>En el parámetro <code class="docutils literal notranslate"><span class="pre">p2</span></code> vemos el valor inicial que tenía el parámetro. Esto se explica porque cuando hicimos la asignación Python creó una variable nueva,  local a la función, llamada <code class="docutils literal notranslate"><span class="pre">p1</span></code> y con valor inicial <code class="docutils literal notranslate"><span class="pre">99</span></code>. Es decir que <code class="docutils literal notranslate"><span class="pre">p1</span></code> y <code class="docutils literal notranslate"><span class="pre">p2</span></code> ahora van a ser dos elementos independientes.</p></li>
+<li><p>En <code class="docutils literal notranslate"><span class="pre">p3</span></code> vemos que tenemos ahora un diccionario que además del valor inicial tiene el nuevo valor que agregamos en la línea 7.</p></li>
+<li><p>En <code class="docutils literal notranslate"><span class="pre">p4</span></code> vemos que también tenemos el nuevo valor: en la línea 7 le agregamos una nueva llave al diccionario al que apuntaba la referencia <code class="docutils literal notranslate"><span class="pre">p3</span></code>, pero ese diccionario era <em>el mismo</em> al que apuntaba <code class="docutils literal notranslate"><span class="pre">p4</span></code>. Por eso cuando modificamos el diccionario <code class="docutils literal notranslate"><span class="pre">p3</span></code> también se modificó el diccionario que conocemos como <code class="docutils literal notranslate"><span class="pre">p4</span></code> (¡es el mismo!)</p></li>
+</ul>
+<p>A continuación, la línea 9 hace una nueva asignación pero sobre <code class="docutils literal notranslate"><span class="pre">p3</span></code>: se construye un nuevo diccionario con la llave <code class="docutils literal notranslate"><span class="pre">&quot;ultimo&quot;</span></code> y se almacena en <code class="docutils literal notranslate"><span class="pre">p3</span></code>. En la siguiente línea volvemos a imprimir los diccionarios: <code class="docutils literal notranslate"><span class="pre">--&gt;</span> <span class="pre">Valores</span> <span class="pre">modificados</span> <span class="pre">de</span> <span class="pre">nuevo:</span> <span class="pre">{'ultimo':</span> <span class="pre">1}</span> <span class="pre">{'inicial':</span> <span class="pre">0,</span> <span class="pre">'nuevo</span> <span class="pre">valor':</span> <span class="pre">99}</span></code></p>
+<ul class="simple">
+<li><p>En <code class="docutils literal notranslate"><span class="pre">p3</span></code> ahora tenemos sólo el nuevo diccionario (el que tiene sólo la llave llamada <code class="docutils literal notranslate"><span class="pre">&quot;ultimo&quot;</span></code>.</p></li>
+<li><p>En <code class="docutils literal notranslate"><span class="pre">p4</span></code> tenemos el diccionario que teníamos en el paso anterior (el que tiene las llaves <code class="docutils literal notranslate"><span class="pre">&quot;inicial&quot;</span></code> y <code class="docutils literal notranslate"><span class="pre">&quot;nuevo</span> <span class="pre">valor&quot;</span></code>.</p></li>
+</ul>
+<p>Esto concluye la ejecución de la invocación a la función así que el programa sigue adelante ejecutando la línea 17, en la cual imprime nuevamente las variables <code class="docutils literal notranslate"><span class="pre">cadena</span></code> y <code class="docutils literal notranslate"><span class="pre">diccionario</span></code>, con lo cual obtenemos el siguiente resultado: <code class="docutils literal notranslate"><span class="pre">Después</span> <span class="pre">de</span> <span class="pre">llamar</span> <span class="pre">a</span> <span class="pre">la</span> <span class="pre">función:</span>&#160; <span class="pre">cadena</span> <span class="pre">inicial</span> <span class="pre">{'inicial':</span> <span class="pre">0,</span> <span class="pre">'nuevo</span> <span class="pre">valor':</span> <span class="pre">99}</span></code>.</p>
+<p>Este último resultado nos muestra lo siguiente:</p>
+<ul class="simple">
+<li><p>La variable <code class="docutils literal notranslate"><span class="pre">cadena</span></code> sigue teniendo el mismo valor asociado. A pesar de que la función modificó a <code class="docutils literal notranslate"><span class="pre">p1</span></code>, el valor de <code class="docutils literal notranslate"><span class="pre">cadena</span></code> no cambió. Esto pasa porque, para efectos prácticos, <code class="docutils literal notranslate"><span class="pre">p1</span></code> y <code class="docutils literal notranslate"><span class="pre">p2</span></code> eran <em>copias</em> de <code class="docutils literal notranslate"><span class="pre">cadena</span></code>.</p></li>
+<li><p>La variable <code class="docutils literal notranslate"><span class="pre">diccionario</span></code> muestra que la primera modificación al diccionario <code class="docutils literal notranslate"><span class="pre">p3</span></code> quedó registrada, pero no la segunda. Esto pasa porque el diccionario inicial se pasó como parámetro a la función y nunca se creó una copia de él. Cuando modificamos a <code class="docutils literal notranslate"><span class="pre">p3</span></code> en la línea 7 estábamos modificando el diccionario inicial. Luego, en la línea 9 se creó un nuevo diccionario y ese se asignó a la variable <code class="docutils literal notranslate"><span class="pre">p3</span></code>, pero eso no tiene por qué tener ningún efecto en el diccionario al que señalaba <code class="docutils literal notranslate"><span class="pre">p4</span></code> y mucho menos al que señalaba la variable <code class="docutils literal notranslate"><span class="pre">diccionario</span></code>.</p></li>
+</ul>
+</section>
+<section id="parametros-por-valor-y-por-referencia">
+<h3>Parámetros por valor y por referencia<a class="headerlink" href="#parametros-por-valor-y-por-referencia" title="Link to this heading">#</a></h3>
+<p>Después de estudiar el ejemplo anterior, podemos explicar mejor el significado de pasar parámetros por valor y por referencia cuando se invoca una función.</p>
+<p>Un parámetro se pasa <strong>por valor</strong>, cuando el valor se copia para que se utilice dentro de la función. Esto es lo que ocurre con algunos tipos básicos como <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> y <code class="docutils literal notranslate"><span class="pre">bool</span></code>, y también con tipos inmutables como <code class="docutils literal notranslate"><span class="pre">str</span></code> y <code class="docutils literal notranslate"><span class="pre">tuple</span></code> (que estudiaremos más adelante).</p>
+<p>Por otro lado, un parámetro se pasa <strong>por referencia</strong>, cuando lo que se hace es entregarle a la función una referencia al elemento, sin copiarlo <a class="footnote-reference brackets" href="#cpp" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> . Esto quiere decir que si la función hace cambios al elemento, esos cambios los podrá ver quien haya invocado a la función. Esto va a ocurrir en Python con tipos de datos como los diccionarios (<code class="docutils literal notranslate"><span class="pre">dict</span></code> que ya estudiamos, y las listas <code class="docutils literal notranslate"><span class="pre">list</span></code> que estudiaremos en el siguiente nivel).</p>
+<p>Veamos un último ejemplo para ilustrar ese punto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span><span class="w"> </span><span class="nf">limpiar_diccionario</span><span class="p">(</span><span class="n">el_diccionario</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">2</span>    <span class="n">el_diccionario</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="linenos">3</span>    
+<span class="linenos">4</span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="linenos">6</span><span class="n">limpiar_diccionario</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En este programa se crea un diccionario con 3 elementos y luego se pasa <strong>por referencia</strong> a la función <code class="docutils literal notranslate"><span class="pre">limpiar_diccionario</span></code>, que llama el método <code class="docutils literal notranslate"><span class="pre">clear</span></code> sobre el diccionario que recibe por parámetro. Cuando imprimamos de nuevo el diccionario <code class="docutils literal notranslate"><span class="pre">d</span></code>, este va a estar vacío porque la función lo limpió. Si los diccionarios se pasaran por valor (es decir que se crearan copias en cada invocación), no veríamos ningún cambio sobre el diccionario después de la invocación.</p>
+</section>
+<section id="paso-por-referencia-al-objeto">
+<h3>Paso por “referencia al objeto”<a class="headerlink" href="#paso-por-referencia-al-objeto" title="Link to this heading">#</a></h3>
+<p>La realidad del paso de parámetros en Python es más complicada de lo presentada en las secciones anteriores. En Python, los parámetros se dice que pasan como <em>referencia a los objetos</em>. Esto quiere decir que, incluso los tipos que parece que se pasan por valor, se pasan como referencia. Esto tiene como consecuencias principales un minúsculo ahorro en el <em>uso de la memoria</em> y una mejora posiblemente imperceptible en el <em>desempeño</em> de los programas.</p>
+<p>No ahondaremos en la explicación porque no vale la pena entrar en una exposición más compleja sobre la mecánica del paso de parámetros por referencia a objetos, ni sobre las estrategias que utiliza Python para representar datos en memoria, ni mucho menos sobre el hecho de que en Python todo es un <em>objeto</em>. La conclusión importante es que para efectos prácticos los valores inmutables se comportan como si se pasaran por valor y los mutables como si se pasaran por referencia.</p>
+<div class="warning admonition important">
+<p class="admonition-title">Important</p>
+<p>Tenga claro cuáles valores son mutables y cuáles inmutables</p>
+<p>Los tipos básicos como <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> y <code class="docutils literal notranslate"><span class="pre">bool</span></code>, y los inmutables como <code class="docutils literal notranslate"><span class="pre">str</span></code> y <code class="docutils literal notranslate"><span class="pre">tuple</span></code> se comportan como si se pasaran <strong>por valor</strong>.</p>
+<p>Los tipos complejos y mutables como <code class="docutils literal notranslate"><span class="pre">dict</span></code> y <code class="docutils literal notranslate"><span class="pre">list</span></code> se comportan como si se pasaran <strong>por referencia</strong>.</p>
+</div>
+</section>
+<section id="ejercicios">
+<h3>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h3>
+<p>Para cada uno de los ejercicios asegúrese de imprimir los valores que use para sus pruebas antes y después de hacer las invocaciones.</p>
+<ol class="arabic simple">
+<li><p>Vamos a representar a un estudiante usando un diccionario con 4 llaves: <code class="docutils literal notranslate"><span class="pre">&quot;nombre&quot;</span></code>, para almacenar su nombre; y <code class="docutils literal notranslate"><span class="pre">&quot;matemáticas&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;lenguaje&quot;</span></code> y <code class="docutils literal notranslate"><span class="pre">&quot;ciencias&quot;</span></code> para almacenar las notas en cada una de las 3 materias. Escriba una función que reciba un estudiante (un diccionario) y retorne su promedio.</p></li>
+<li><p>Ahora escriba una función que reciba un estudiante (un diccionario), el nombre de una de las tres materias, y una nota, y le asigne al estudiante la nueva nota en esa materia.</p></li>
+<li><p>Escriba una función que reciba tres estudiantes (tres diccionarios) y el nombre de una de las tres materias. La función debe aumentar la nota de cada estudiante en la materia en un 10% del promedio de los tres estudiantes en esa materia.</p></li>
+</ol>
+</section>
+</section>
+<section id="parametros-en-python">
+<h2>Parámetros en Python<a class="headerlink" href="#parametros-en-python" title="Link to this heading">#</a></h2>
+<p>A continuación estudiaremos dos características adicionales de Python que permiten manejar con un poco más de flexibilidad los parámetros de las funciones que se definan y se invoquen. Estas características usualmente no están disponibles en otros lenguajes.</p>
+<section id="parametros-nombrados">
+<h3>Parámetros nombrados<a class="headerlink" href="#parametros-nombrados" title="Link to this heading">#</a></h3>
+<p>La primera característica para estudiar tiene que ver con la forma de hacer referencia a los parámetros de una función en el momento de la invocación. Hasta ahora, siempre hemos utilizado el mecanismo basado en la posición: el primer valor en la invocación corresponde al primer parámetro, el segundo valor en la invocación corresponde al segundo parámetro, y así sucesivamente. Sin embargo, en Python es posible hacer explícito el nombre de los parámetros en el momento de la invocación de tal forma que se puedan invocar en un orden diferente al que se tiene en la declaración.</p>
+<p>Veamos un ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">imprimir_nombre</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">apellido</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">apellido</span><span class="p">)</span>
+
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="s2">&quot;Perez&quot;</span><span class="p">)</span>  <span class="c1"># Imprime &quot;Juan Perez&quot;</span>
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="n">apellido</span> <span class="o">=</span> <span class="s2">&quot;Perez&quot;</span><span class="p">)</span>  <span class="c1"># Imprime &quot;Juan Perez&quot;</span>
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="n">apellido</span> <span class="o">=</span> <span class="s2">&quot;Perez&quot;</span><span class="p">,</span> <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Juan&quot;</span><span class="p">)</span>  <span class="c1"># Imprime &quot;Juan Perez&quot;</span>
+</pre></div>
+</div>
+<p>En este ejemplo hacemos tres invocaciones a la función:</p>
+<ol class="arabic simple">
+<li><p>En la primera no se usan los nombres de los parámetros, así que la invocación se hace por posición.</p></li>
+<li><p>En la segunda se usan los nombres de los parámetros, en el mismo orden en el que están definidos.</p></li>
+<li><p>En la tercera también se usan los nombres pero un orden diferente al de la definición. En este caso el resultado es el esperado porque gracias al nombre la función puede reconocer a qué parámetro corresponde cada valor.</p></li>
+</ol>
+<p>Veamos ahora unos ejemplos en los que no se utilicen los nombres de todos los parámetros:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">imprimir_nombre</span><span class="p">(</span><span class="n">apellido</span> <span class="o">=</span> <span class="s2">&quot;Perez&quot;</span><span class="p">,</span> <span class="s2">&quot;Juan&quot;</span><span class="p">)</span>  <span class="c1"># Falla</span>
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="s2">&quot;Perez&quot;</span><span class="p">,</span> <span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Juan&quot;</span><span class="p">)</span>  <span class="c1"># Falla</span>
+<span class="n">imprimir_nombre</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="n">apellido</span> <span class="o">=</span> <span class="s2">&quot;Perez&quot;</span><span class="p">)</span>  <span class="c1"># Imprime &quot;Juan Perez&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>En el primer caso, se presentará el error <code class="docutils literal notranslate"><span class="pre">SyntaxError:</span> <span class="pre">positional</span> <span class="pre">argument</span> <span class="pre">follows</span> <span class="pre">keyword</span> <span class="pre">argument</span></code>. Este error nos indica que los valores <em>sin nombre</em> no deberían ir después de valores con nombre.</p></li>
+<li><p>En el segundo caso, se presentará el error <code class="docutils literal notranslate"><span class="pre">imprimir_nombre()</span> <span class="pre">got</span> <span class="pre">multiple</span> <span class="pre">values</span> <span class="pre">for</span> <span class="pre">argument</span> <span class="pre">'nombre'</span></code>. Este error nos indica que Python intentó asignarle el primer valor al primer parámetro (<code class="docutils literal notranslate"><span class="pre">nombre</span></code>) y luego le intentó asignar el valor nombrado al mismo parámetro. Como resultado, el parámetro <code class="docutils literal notranslate"><span class="pre">nombre</span></code> recibió múltiples valores mientras que <code class="docutils literal notranslate"><span class="pre">apellido</span></code> no recibió ninguno.</p></li>
+<li><p>El tercer caso es exitoso: el primer valor se asigna al primer parámetro y el segundo valor se asigna al parámetro <code class="docutils literal notranslate"><span class="pre">apellido</span></code>. El resultado es que todos los parámetros de la función reciben un valor y por ende se puede hacer la invocación.</p></li>
+</ol>
+<p>El uso de parámetros nombrados no es obligatorio, pero puede ayudar a hacer más legible el código, especialmente cuando no hay un orden en los parámetros que sea fácil de predecir. Por ejemplo, si tuviéramos una función para evaluar un polinomio de la forma <span class="math notranslate nohighlight">\(a \cdot x^{2} + b \cdot x + c\)</span>, la función se invocaría como <code class="docutils literal notranslate"><span class="pre">evaluar_polinomio(3,</span> <span class="pre">5,</span> <span class="pre">7)</span></code> o como evaluar_polinomio(7, 5, 3)? Para evitar la confusión se podría hacer uso de los nombres de los parámetros: <code class="docutils literal notranslate"><span class="pre">evaluar_polinomio(a=3,</span> <span class="pre">b=5,</span> <span class="pre">c=7)</span></code>.</p>
+</section>
+<section id="parametros-por-defecto-opcionales">
+<h3>Parámetros por defecto / opcionales<a class="headerlink" href="#parametros-por-defecto-opcionales" title="Link to this heading">#</a></h3>
+<p>La segunda característica que queremos que usted conozca es la posibilidad de definir valores por defecto para los parámetros. Esto hace posible hacer llamados a funciones utilizando sólo algunos de los parámetros y, en conjunto con los parámetros nombrados, puede hacer que el código de un programa sea mucho más sencillo.</p>
+<p>Por ejemplo, veamos la definición de la función <code class="docutils literal notranslate"><span class="pre">count</span></code> de <code class="docutils literal notranslate"><span class="pre">str</span></code> que nos permite contar cuántas veces aparece una subcadena en otra:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="go">S.count(sub[, start[, end]]) -&gt; int</span>
+</pre></div>
+</div>
+<p>Lo que esta definición nos dice es que el parámetro <code class="docutils literal notranslate"><span class="pre">sub</span></code> es obligatorio, y puede estar seguido de un segundo parámetro (<code class="docutils literal notranslate"><span class="pre">start</span></code>), el cual podría estar seguido de un tercer parámetro (<code class="docutils literal notranslate"><span class="pre">end</span></code>). Aunque no lo podemos ver, en esta función <code class="docutils literal notranslate"><span class="pre">start</span></code> y  <code class="docutils literal notranslate"><span class="pre">end</span></code> tienen valores por defecto: <code class="docutils literal notranslate"><span class="pre">start</span></code> tiene el valor 0 mientras que <code class="docutils literal notranslate"><span class="pre">end</span></code> tiene un valor igual a la longitud de la cadena. De esta forma, si no se especifica un inicio se empezará desde el primer caracter, y si se especifica un inicio pero no un fin, se irá hasta el final de la cadena.</p>
+<p>Veamos ahora un pequeño ejemplo para ilustrar la sintaxis:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">replicar</span> <span class="p">(</span><span class="n">cadena</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">cantidad</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+  <span class="k">return</span> <span class="n">cadena</span> <span class="o">*</span> <span class="n">cantidad</span>
+</pre></div>
+</div>
+<p>En este caso, estamos definiendo una función con dos parámetros: el primero es obligatorio, pero el segundo puede hacerse explícito o no. Si no se incluye al hacer una invocación, su valor por defecto será 2. Note que para parámetro <code class="docutils literal notranslate"><span class="pre">cantidad</span></code> se ha indicado primero el tipo (<code class="docutils literal notranslate"><span class="pre">int</span></code>) y luego el valor por defecto.</p>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>Parámetros por defecto</p>
+<p>Use valores por defecto para los parámetros únicamente cuando
+sea evidente cuál debería ser el valor por defecto del parámetro.
+Si el que invoque la función tiene que pensar mucho sobre el valor
+por defecto del parámetro, posiblemente haya sido un error ponerle
+un valor por defecto.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Simplificar con parámetros por defecto</p>
+<p>Use parámetros por defecto para simplificar el llamado a funciones que tengan una gran flexibilidad a través de un gran número de parámetros. Por ejemplo, hay librerías con funciones que esperan más de 10 parámetros pero el hecho de que todos tengan valores por defecto hace que cualquier invocación pueda concentrarse en los parámetros que realmente valgan la pena.</p>
+</div>
+</section>
+<section id="id2">
+<h3>Ejercicios<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Construya una función que reciba dos números enteros como parámetros: si el primer número es par, la función debe retornar la suma de los dos números; de lo contrario, debe retornar la multiplicación de los dos números.</p></li>
+<li><p>Invoque su función con varias parejas de números igual que como lo ha estado haciendo hasta el momento.</p></li>
+<li><p>Invoque la función nuevamente, pero esta vez utilice los nombres de los parámetros: pruebe usando los parámetros en el orden en el que están definidos en la función y también en el orden opuesto. Compruebe que el resultado en cada caso es el que usted esperaría.</p></li>
+<li><p>Invoque la función usando sólo un parámetro. Si no funciona, asegúrese de entender el error que reciba.</p></li>
+<li><p>Modifique la función para que tenga valor por defecto <strong>sólo para el segundo parámetro</strong>.</p></li>
+<li><p>Repita las invocaciones con uno y con dos parámetros, tanto con los nombres como sin ellos. ¿En qué casos se produjeron errores?</p></li>
+<li><p>Modifique ahora la función para que tenga valor por defecto <strong>sólo para el primer parámetro</strong>. Vuelva a hacer las pruebas y revise en qué casos se producen errores.</p></li>
+</ol>
+</section>
+</section>
+<section id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Link to this heading">#</a></h2>
+<p>A lo largo de los años, diferentes lenguajes han experimentado con diversas mecanismos para el paso de parámetros. Aunque puede parecer un asunto sencillo, escoger un método particular puede tener un impacto muy importante en el desempeño de una aplicación. Por ejemplo, en el caso de Java en todos los llamados los parámetros se pasan por valor: esto quiere decir que siempre se hacen copias, aunque cuando se trata de objetos (tipos no simples) se hacen copias de las refencias a los objetos. Esto le permite a Java tener un mecanismo homogéneo de invocación y paso de parámetros, simplificar el manejo de la pila de ejecución y aumentar la seguridad del lenguaje a través de la protección de los apuntadores.</p>
+<p>Tradicionalmente, los valores con los que se invoca una función (o método) se asignan a los parámetros con base en la posición. Esto es algo que viene del cálculo: si tenemos definida la función <span class="math notranslate nohighlight">\(f(x, y)\)</span>, cuando evaluemos la función (por ejemplo <span class="math notranslate nohighlight">\(f(2,3)\)</span>), estamos acostumbrados a que el valor 2 se use para <span class="math notranslate nohighlight">\(x\)</span> y el valor 3 se use para <span class="math notranslate nohighlight">\(y\)</span>. Sin embargo, el uso de parámetros nombrados ha empezado a hacerse más popular y es una característica de varios lenguajes <em>modernos</em> como Scala o Kotlin.</p>
+<div class="highlight-scala notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">imprimirNombre</span><span class="p">(</span><span class="n">nombre</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="p">,</span><span class="w"> </span><span class="n">apellido</span><span class="p">:</span><span class="w"> </span><span class="nc">String</span><span class="p">):</span><span class="w"> </span><span class="nc">Unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">println</span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">apellido</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">imprimirNombre</span><span class="p">(</span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Perez&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">// Imprime &quot;Juan Perez&quot;</span>
+<span class="n">imprimirNombre</span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">apellido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Perez&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">// Imprime &quot;Juan Perez&quot;</span>
+<span class="n">imprimirNombre</span><span class="p">(</span><span class="n">apellido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Perez&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Juan&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">// Imprime &quot;Juan Perez&quot;</span>
+</pre></div>
+</div>
+<p>Finalmente, tenemos a continuación un pequeño ejemplo de <strong>Smalltalk</strong>, un lenguaje diseñado hace cerca de 40 años. En Smalltalk todos los parámetros son nombrados porque hacen parte del nombre mismo de los métodos. En el siguiente bloque mostramos la definición del método <code class="docutils literal notranslate"><span class="pre">imprimirNombre:apellido:</span></code>, que recibe dos parámetros y luego los imprime como en el ejemplo anterior en Scala.</p>
+<div class="highlight-Smalltalk notranslate"><div class="highlight"><pre><span></span><span class="nf">imprimirNombre:</span> <span class="nv">elNombre</span> <span class="nf">apellido:</span> <span class="nv">elApellido</span>
+
+<span class="nc">Transcript</span> <span class="nf">show:</span> <span class="nv">elNombre</span><span class="nf">,</span> <span class="s">&#39; &#39;</span><span class="nf">,</span> <span class="nv">elApellido</span>
+</pre></div>
+</div>
+<p>Con respecto a los valores por defecto para los parámetros, encontramos que es posible asignar valores por defecto en lenguajes como C++ o JavaScript, pero no en Java. Al igual que en Python, se debe tener cuidado de asignarle valores por defecto a los últimos parámetros de una función para que esos parámetros sean realmente opcionales.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="cpp" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>En un lenguaje como C o C++, que tienen acceso de bajo nivel a la memoria, el paso por referencia se basa en el paso de apuntadores. Esto hace posible modificar los apuntadores desde adentro de la función (método), lo cual no es posible en Python. Para no complicar más la explicación, hemos ajustado la definición de paso por referencia a lo que tendría sentido para Python.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./nivel2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="seccion2-7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Diccionarios</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="seccion2-9.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Errores frecuentes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-de-parametros-por-valor-y-por-referencia">Paso de parámetros por valor y por referencia</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-en-una-funcion">Parámetros en una función</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-por-valor-y-por-referencia">Parámetros por valor y por referencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-por-referencia-al-objeto">Paso por “referencia al objeto”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-en-python">Parámetros en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-nombrados">Parámetros nombrados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros-por-defecto-opcionales">Parámetros por defecto / opcionales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,984 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Valores de verdad en Python &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nivel2/seccion2-3';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/nivel2/seccion2-3.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Instrucciones condicionales" href="seccion2-4.html" />
+    <link rel="prev" title="Lógica y valores de verdad" href="seccion2-2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduccion/index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/programar.html">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-2.html">Lógica y valores de verdad</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-5.html">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-8.html">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel3/intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-3.html">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-4.html">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel4/intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-2.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-4.html">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nivel2/seccion2-3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Valores de verdad en Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-bool-en-python">El tipo bool en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversiones">Conversiones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-que-retornan-valores-de-verdad">Funciones que retornan valores de verdad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-booleanos">Operadores Booleanos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuncion-and">Conjunción (and)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disyuncion-or">Disyunción (or)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negacion-not">Negación (not)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-relacionales">Operadores relacionales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-orden">Operadores de orden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-igualdad">Operadores de igualdad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-identidad">Operadores de identidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Ejercicios </a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="valores-de-verdad-en-python">
+<h1>Valores de verdad en Python<a class="headerlink" href="#valores-de-verdad-en-python" title="Link to this heading">#</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es mostrar cómo se representan y operan valores de verdad dentro de un lenguaje de programación. Los conceptos que se estudian en esta sección son aplicables directamente a la mayoría de lenguajes de programación.</p>
+</div>
+<p>En la sección pasada trabajamos con valores de verdad y con proposiciones. En esta sección veremos que Python tiene un tipo de datos específico para este tipo de valores (bool) y que permite también la construcción de expresiones lógicas usando conjunciones, disyunciones y negaciones. También aprenderemos a escribir expresiones lógicas usando operadores relacionales sobre valores de todos los tipos que conocemos hasta el momento (números, cadenas y valores de verdad). En la próxima sección usaremos todos estos conceptos para construir expresiones condicionales.</p>
+<section id="el-tipo-bool-en-python">
+<h2>El tipo bool en Python<a class="headerlink" href="#el-tipo-bool-en-python" title="Link to this heading">#</a></h2>
+<p>En el nivel 1 nos encontramos ya con los tipos que Python utiliza para manejar valores numéricos (<code class="docutils literal notranslate"><span class="pre">int</span></code> y <code class="docutils literal notranslate"><span class="pre">float</span></code>) y cadenas de caracteres (<code class="docutils literal notranslate"><span class="pre">str</span></code>). Ahora vamos a introducir el tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code>, que se utiliza para representar valores de verdad y puede utilizarse en variables, parámetros, llamados de funciones y otras expresiones.</p>
+<p>En comparación con los tipos que ya conocíamos, <code class="docutils literal notranslate"><span class="pre">bool</span></code> es mucho más sencillo puesto que sólo hay dos literales: <code class="docutils literal notranslate"><span class="pre">True</span></code>, que se utiliza para expresar un valor verdadero, y <code class="docutils literal notranslate"><span class="pre">False</span></code>, que se usa para expresar un valor falso. Ponga atención al uso de minúsculas y mayúsculas, puesto que los dos literales se deben escribir exactamente así.</p>
+<p>También note que no es lo mismo <code class="docutils literal notranslate"><span class="pre">'True'</span></code> que <code class="docutils literal notranslate"><span class="pre">True</span></code>. El primer valor es una cadena de caracteres, mientras que el segundo es un valor de verdad:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bool&#39;&gt;</span>
+</pre></div>
+</div>
+<section id="conversiones">
+<h3>Conversiones<a class="headerlink" href="#conversiones" title="Link to this heading">#</a></h3>
+<p>Al igual que con los otros tipos, existe la función <code class="docutils literal notranslate"><span class="pre">bool</span></code> que permite convertir de otros tipos a booleano. Sin embargo, no es muy recomendable utilizar esta función puesto que su uso muchas veces lleva a resultados inesperados.</p>
+<p>Por ejemplo, las siguientes expresiones tienen valor equivalente a <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bool('True')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool('true')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool('cadena')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool(5)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool(-5)</span></code></p></li>
+</ul>
+<p>También tienen valor equivalente a <code class="docutils literal notranslate"><span class="pre">True</span></code> las siguientes expresiones, aunque naturalmente se podría esperar lo contario:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bool('False')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool('false')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool('</span> <span class="pre">')</span></code></p></li>
+</ul>
+<p>Por otro lado, las siguientes expresiones tienen todas valor equivalente a <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bool(0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool(-0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bool('')</span></code></p></li>
+</ul>
+<p>Como dijimos antes, es mejor limitarse a usar los literales <code class="docutils literal notranslate"><span class="pre">True</span></code> y <code class="docutils literal notranslate"><span class="pre">False</span></code> que aprenderse todas las reglas que explican estas conversiones. Todo lo que puede hacerse usando esas conversiones puede hacerse también sin tener que recurrir a ellas <a class="footnote-reference brackets" href="#conv" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+</section>
+<section id="funciones-que-retornan-valores-de-verdad">
+<h3>Funciones que retornan valores de verdad<a class="headerlink" href="#funciones-que-retornan-valores-de-verdad" title="Link to this heading">#</a></h3>
+<p>El tipo <code class="docutils literal notranslate"><span class="pre">bool</span></code> también puede usarse para expresar el tipo de retorno de una función. Por ejemplo, las siguientes son dos funciones que retornan un valor de tipo bool: siempre que la primera función sea invocada, el resultado será un valor verdadero, mientras que para la segunda función el valor siempre será falso.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Estas dos funciones no parecen muy interesantes porque siempre retornan el mismo valor, pero más adelante en este capítulo las utilizaremos para una importante demostración.</p>
+</section>
+</section>
+<section id="operadores-booleanos">
+<h2>Operadores Booleanos<a class="headerlink" href="#operadores-booleanos" title="Link to this heading">#</a></h2>
+<p>A continuación, estudiaremos los operadores que Python ofrece para realizar las operaciones Booleanas de conjunción, disyunción y negación.</p>
+<p>Algo importante que se debe tener en cuenta es que, aunque las operaciones son conmutativas, el orden en que se escriban los operandos tiene un efecto sobre la forma en la que se evalúan las expresiones. Para cada operador explicaremos esto más en detalle.</p>
+<section id="conjuncion-and">
+<h3>Conjunción (and)<a class="headerlink" href="#conjuncion-and" title="Link to this heading">#</a></h3>
+<p>La operación lógica de conjunción se expresa en Python usando la palabra reservada <code class="docutils literal notranslate"><span class="pre">and</span></code>. Cuando se tiene en un programa Python una expresión de la forma <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">and</span> <span class="pre">q</span></code> se sabe entonces que tendrá un valor verdadero sólo si la expresión <code class="docutils literal notranslate"><span class="pre">p</span></code> y la expresión <code class="docutils literal notranslate"><span class="pre">q</span></code> tienen simultáneamente un valor verdadero. Además, el operador <code class="docutils literal notranslate"><span class="pre">and</span></code> es asociativo, así que se pueden escribir expresiones como <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span> <span class="pre">and</span> <span class="pre">z</span></code> sin tener que usar paréntesis y sin riesgos de que cambie el resultado.</p>
+<p>Ahora bien, hay una pequeña pero muy significativa diferencia entre el operador <code class="docutils literal notranslate"><span class="pre">and</span></code> y la operación lógica de conjunción. Para estudiarla, tomemos como ejemplo la expresión  <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span> <span class="pre">and</span> <span class="pre">z</span></code>. Si se tratara de una expresión lógica, la podríamos haber escrito en cualquier orden y el resultado sería siempre el mismo debido a la conmutatividad de la conjunción. Es decir que para nosotros sería exactamente lo mismo escribir <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">and</span> <span class="pre">w</span> <span class="pre">and</span> <span class="pre">y</span></code>.</p>
+<p>En el caso de la expresión Python entran a jugar también consideraciones prácticas. Por ejemplo, suponga que <code class="docutils literal notranslate"><span class="pre">x</span></code> es un valor de verdad extremadamente difícil de calcular <a class="footnote-reference brackets" href="#lento" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> y suponga también que sabemos que <code class="docutils literal notranslate"><span class="pre">w</span></code> es una expresión falsa. No tendría sentido buscar el valor de <code class="docutils literal notranslate"><span class="pre">x</span></code> puesto que sabríamos de antemano que la expresión completa sería falsa.</p>
+<p>La diferencia entonces entre el operador <code class="docutils literal notranslate"><span class="pre">and</span></code> de Python y la operación de conjunción es que Python se aprovecha de las propiedades de identidad y dominancia de la conjunción ( <em>p<span class="math notranslate nohighlight">\(\land\)</span>Verdadero=p</em> y *p<span class="math notranslate nohighlight">\(\lor\)</span>Falso=Falso) para evitar calcular más términos de los necesarios.</p>
+<p>Esto quiere decir que cuando se tiene una operación de conjunción primero se evalúa sólo el primer término: si su valor es falso, se sabe que toda la expresión será falsa y no tiene sentido seguir avanzando. Pero si el valor del término es verdadero, entonces se puede concluir que el valor de la expresión será igual al valor de la parte restante de la expresión.</p>
+<p>Apliquemos esto a nuestro ejemplo <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">and</span> <span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span> <span class="pre">and</span> <span class="pre">z</span></code>:</p>
+<ul class="simple">
+<li><p>Python primero revisará el valor de <code class="docutils literal notranslate"><span class="pre">w</span></code>. Si es falso, Python inmediatamente dirá que la expresión completa es falsa. De lo contrario, el valor de la expresión completa será el valor de la expresión <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">and</span> <span class="pre">y</span> <span class="pre">and</span> <span class="pre">z</span></code>.</p></li>
+<li><p>Si no hemos terminado, Python revisará el valor de <code class="docutils literal notranslate"><span class="pre">x</span></code>. Si es falso, Python inmediatamente dirá que la expresión completa es falsa. De lo contrario, el valor de la expresión completa será el valor de la expresión <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">and</span> <span class="pre">z</span></code>.</p></li>
+<li><p>Si no hemos terminado, Python revisará el valor de <code class="docutils literal notranslate"><span class="pre">y</span></code>. Si es falso, Python inmediatamente dirá que la expresión completa es falsa. De lo contrario, el valor de la expresión completa será el valor de la expresión <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></li>
+<li><p>Si no hemos terminado, Python revisará el valor de <code class="docutils literal notranslate"><span class="pre">z</span></code> y como no hay más operaciones le asignará a la expresión el valor de <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></li>
+</ul>
+<p>Veamos ahora esto mismo con un ejemplo un poco más elaborado en el que vamos a tener nuestras dos funciones que siempre retornan el mismo valor: la función <code class="docutils literal notranslate"><span class="pre">f</span></code> siempre retornará el valor <code class="docutils literal notranslate"><span class="pre">True</span></code> mientras que la función <code class="docutils literal notranslate"><span class="pre">g</span></code> siempre retornará el valor <code class="docutils literal notranslate"><span class="pre">False</span></code>. Además, cada función dejará una traza en la consola para que podamos ver en qué orden fueron llamadas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;g:&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 1 - f and f and f :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 2 - f and f and g :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 3 - f and g and g :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 4 - g and g and g :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Las instrucciones que se encuentran al final del programa se encargarán de evaluar una expresión basada en invocaciones a <code class="docutils literal notranslate"><span class="pre">f</span></code> y <code class="docutils literal notranslate"><span class="pre">g</span></code> e imprimirán el resultado. Veamos ahora el resultado de ejecutar el programa:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Caso</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">f</span> <span class="p">:</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">3</span>
+<span class="kc">True</span>
+<span class="n">Caso</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">g</span> <span class="p">:</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">g</span><span class="p">:</span> <span class="mi">3</span>
+<span class="kc">False</span>
+<span class="n">Caso</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">g</span> <span class="ow">and</span> <span class="n">g</span> <span class="p">:</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">g</span><span class="p">:</span> <span class="mi">2</span>
+<span class="kc">False</span>
+<span class="n">Caso</span> <span class="mi">4</span> <span class="o">-</span> <span class="n">g</span> <span class="ow">and</span> <span class="n">g</span> <span class="ow">and</span> <span class="n">g</span> <span class="p">:</span>
+<span class="n">g</span><span class="p">:</span> <span class="mi">1</span>
+<span class="kc">False</span>
+</pre></div>
+</div>
+<p>Lo que vemos en el caso 1 es que la función <code class="docutils literal notranslate"><span class="pre">f</span></code> se invoca tres veces y deja traza de las tres invocaciones (podemos ver que se llamó a la función <code class="docutils literal notranslate"><span class="pre">f</span></code> y el valor que se le asignó al parámetro <code class="docutils literal notranslate"><span class="pre">x</span></code>). También vemos que el resultado que se imprime es <code class="docutils literal notranslate"><span class="pre">True</span></code> y corresponde al valor de la operación de conjunción.</p>
+<p>En el caso 2 lo que vemos es que se invocó dos veces la función <code class="docutils literal notranslate"><span class="pre">f</span></code> y luego se invocó la función <code class="docutils literal notranslate"><span class="pre">g</span></code>. El resultado de esta expresión es <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>El tercer caso es mucho más interesante: podemos ver que la función <code class="docutils literal notranslate"><span class="pre">f</span></code> se invocó una vez, pero la función <code class="docutils literal notranslate"><span class="pre">g</span></code> sólo se invocó una vez en lugar de dos veces. Esto se debe a que, una vez se encontró el valor <code class="docutils literal notranslate"><span class="pre">False</span></code> que retornó la función <code class="docutils literal notranslate"><span class="pre">g</span></code>, ya se conocía el valor de la expresión completa y no tenía sentido continuar evaluando los otros términos.</p>
+<p>En el cuarto caso nos encontramos el mismo comportamiento: sólo se evaluó el primer término y, como tenía valor falso, hizo que toda la expresión fuera falsa sin tener que evaluar el resto de los términos.</p>
+</section>
+<section id="disyuncion-or">
+<h3>Disyunción (or)<a class="headerlink" href="#disyuncion-or" title="Link to this heading">#</a></h3>
+<p>La operación lógica de disyunción se expresa en Python usando la palabra reservada <code class="docutils literal notranslate"><span class="pre">or</span></code>. Cuando se tiene en un programa Python una expresión de la forma <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">or</span> <span class="pre">q</span></code> se sabe entonces que tendrá un valor falso sólo si la expresión <code class="docutils literal notranslate"><span class="pre">p</span></code> y la expresión <code class="docutils literal notranslate"><span class="pre">q</span></code> tienen simultáneamente un valor falso. Además, el operador <code class="docutils literal notranslate"><span class="pre">or</span></code> es asociativo, así que se pueden escribir expresiones como <code class="docutils literal notranslate"><span class="pre">w</span> <span class="pre">or</span> <span class="pre">x</span> <span class="pre">or</span> <span class="pre">y</span> <span class="pre">or</span> <span class="pre">z</span></code> sin tener que usar paréntesis y sin riesgos de que cambie el resultado.</p>
+<p>Al igual que con la operación <code class="docutils literal notranslate"><span class="pre">and</span></code>, Python también busca eficiencias en la evaluación de expresiones que usen en este operador. Esto se logra identificando inmediatamente que el resultado de una operación <code class="docutils literal notranslate"><span class="pre">or</span></code> entre el valor verdadero y cualquier valor, siempre será verdadero. Es decir que, si el primer operando de una operación que use el operador <code class="docutils literal notranslate"><span class="pre">or</span></code> es verdadero, entonces el valor de la operación será verdadero y no será necesario evaluar los otros términos.</p>
+<p>Veamos esto agregándole unas instrucciones adicionales a nuestro programa anterior:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 1 - f or f or f :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 2 - f or f or g :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 3 - g or f or g :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 4 - g or g or g :&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">g</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Ahora se evaluarán expresiones basadas en disyunciones y tendremos un comportamiento muy diferente al del caso anterior:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Caso</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">f</span> <span class="ow">or</span> <span class="n">f</span> <span class="ow">or</span> <span class="n">f</span> <span class="p">:</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">1</span>
+<span class="kc">True</span>
+<span class="n">Caso</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">f</span> <span class="ow">or</span> <span class="n">f</span> <span class="ow">or</span> <span class="n">g</span> <span class="p">:</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">1</span>
+<span class="kc">True</span>
+<span class="n">Caso</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">g</span> <span class="ow">or</span> <span class="n">f</span> <span class="ow">or</span> <span class="n">g</span> <span class="p">:</span>
+<span class="n">g</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">2</span>
+<span class="kc">True</span>
+<span class="n">Caso</span> <span class="mi">4</span> <span class="o">-</span> <span class="n">g</span> <span class="ow">or</span> <span class="n">g</span> <span class="ow">or</span> <span class="n">g</span> <span class="p">:</span>
+<span class="n">g</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">g</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">g</span><span class="p">:</span> <span class="mi">3</span>
+<span class="kc">False</span>
+</pre></div>
+</div>
+<p>En el primer caso, vemos que Python inmediatamente identifica que el primer término tiene valor verdadero. Esto implica que la expresión completa tendrá valor verdadero y la evaluación termina sin tener que evaluar los otros términos.</p>
+<p>En el segundo caso pasa algo exactamente igual: a pesar de que los otros términos tienen valores diferentes, es suficiente con evaluar el primer término para saber cuál será el valor de toda la expresión.</p>
+<p>En el tercer caso lo que vemos es que se evalúa el primer término que, como sabemos por la definición de la función, es falso. Python tiene entonces que recurrir al segundo término, que en este caso es verdadero. Esto hace que la expresión completa sea verdadera y no sea necesario seguir con el resto de la evaluación.</p>
+<p>Sólo en el cuarto caso se evalúan los tres términos: el primero es falso, obligando a la evaluación del segundo, que también es falso. Finalmente se evalúa el tercer término y, como también es falso se concluye que la expresión completa era falsa.</p>
+</section>
+<section id="negacion-not">
+<h3>Negación (not)<a class="headerlink" href="#negacion-not" title="Link to this heading">#</a></h3>
+<p>El tercer operador lógico en Python es la negación, la cual se expresa con la palabra reservada <code class="docutils literal notranslate"><span class="pre">not</span></code>. Como se trata de un operador unario se debe anteponer al operando. Es decir que se usa igual que como se usa el signo <code class="docutils literal notranslate"><span class="pre">-</span></code> para convertir a un número en su negativo (por ejemplo, <code class="docutils literal notranslate"><span class="pre">5</span></code>, <code class="docutils literal notranslate"><span class="pre">-5</span></code> y <code class="docutils literal notranslate"><span class="pre">-(-5))</span></code>).</p>
+<p>El operador <code class="docutils literal notranslate"><span class="pre">not</span></code> no tiene ninguna diferencia con la operación lógica de negación y tiene una precedencia que es mayor a la de la conjunción y a la de la disyunción. Es decir que <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">a</span> <span class="pre">and</span> <span class="pre">b</span></code> siempre será equivalente a <code class="docutils literal notranslate"><span class="pre">(not</span> <span class="pre">a)</span> <span class="pre">and</span> <span class="pre">b</span></code> y que <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">and</span> <span class="pre">not</span> <span class="pre">b</span></code> siempre será equivalente a <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">and</span> <span class="pre">(not</span> <span class="pre">b)</span></code>.</p>
+<p>Veamos esto en un ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 1:&quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Caso 2:&quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>El resultado de la ejecución de este programa se muestra a continuación:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Caso</span> <span class="mi">1</span><span class="p">:</span> <span class="ow">not</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">1</span>
+<span class="kc">False</span>
+<span class="n">Caso</span> <span class="mi">2</span><span class="p">:</span> <span class="ow">not</span> <span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">g</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">f</span><span class="p">:</span> <span class="mi">2</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+<p>En el primer caso vemos que se evaluó la función <code class="docutils literal notranslate"><span class="pre">f</span></code> y se obtuvo necesariamente el valor <code class="docutils literal notranslate"><span class="pre">True</span></code>. A continuación, se aplicó el operador de negación y se obtuvo el valor <code class="docutils literal notranslate"><span class="pre">False</span></code>. En ese punto Python pudo descubrir que la expresión completa iba a tener valor <code class="docutils literal notranslate"><span class="pre">False</span></code> y la evaluación terminó con ese resultado.</p>
+<p>En el segundo caso vemos que, por el contrario, el primer término de la conjunción tiene valor <code class="docutils literal notranslate"><span class="pre">True</span></code> porque primero se evaluó <code class="docutils literal notranslate"><span class="pre">g</span></code> y luego se aplicó la negación. Después de esto se hizo la evaluación del segundo término y se llegó al valor final: <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Note que en ambos casos la evaluación de la operación de negación se hizo <strong>antes</strong> de la evaluación de la operación de conjunción.</p>
+<p>[^ sobre]: En realidad, en Python se pueden usar otros literales para expresar valores verdaderos y falsos, pero en general es mucho más claro cuando se usan los literales True y False. Por ejemplo, las siguientes dos expresiones tienen valores que podríamos llamar <em>desconcertantes</em>: 1. <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">-66</span> <span class="pre">and</span> <span class="pre">'a'</span></code> 2. <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">-66</span> <span class="pre">and</span> <span class="pre">'a'</span></code>. La primera expresión tiene valor <code class="docutils literal notranslate"><span class="pre">False</span></code>, mientras que la segunda tiene valor <code class="docutils literal notranslate"><span class="pre">'a'</span></code>. Aunque esos resultados no son un error y están perfectamente justificados en la especificación de Python, debería ser mucho más fácil deducir el valor de una expresión sin tener que conocer detalles de implementación relativamente oscuros.</p>
+<section id="ejercicios">
+<h4>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>¿Cuál es el valor de las siguientes expresiones Python basadas en conjunciones? ¿Cuáles de las reglas y propiedades que se estudiaron en la sección anterior se aplican en cada caso?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">and</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">and</span> <span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">and</span> <span class="pre">q</span> <span class="pre">and</span> <span class="pre">r</span></code></p></li>
+</ul>
+</li>
+<li><p>¿Cuál es el valor de las siguientes expresiones Python basadas en disyunciones? ¿Cuáles de las reglas y propiedades que se estudiaron en la sección anterior se aplican en cada caso?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">or</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">or</span> <span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">or</span> <span class="pre">q</span> <span class="pre">or</span> <span class="pre">r</span></code></p></li>
+</ul>
+</li>
+<li><p>¿Cuál es el valor de las siguientes expresiones Python basadas en negaciones?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">not</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">not</span> <span class="pre">not</span> <span class="pre">False</span></code></p></li>
+</ul>
+</li>
+<li><p>¿Cuáles de las reglas y propiedades que se estudiaron en la sección anterior se podrían aplicar en cada una de las siguientes expresiones?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">p</span> <span class="pre">and</span> <span class="pre">not</span> <span class="pre">q</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(p</span> <span class="pre">and</span> <span class="pre">q)</span> <span class="pre">or</span> <span class="pre">(q</span> <span class="pre">and</span> <span class="pre">r)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">and</span> <span class="pre">(q</span> <span class="pre">or</span> <span class="pre">r)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">or</span> <span class="pre">(q</span> <span class="pre">and</span> <span class="pre">r)</span></code></p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="operadores-relacionales">
+<h2>Operadores relacionales<a class="headerlink" href="#operadores-relacionales" title="Link to this heading">#</a></h2>
+<p>Hasta este momento todas las operaciones que hemos visto cuyo resultado es un valor de verdad han utilizado otros valores de verdad como operandos. Los operadores relacionales que veremos a continuación nos permitirán hacer comparaciones entre diferentes valores con el fin de obtener un valor de verdad.</p>
+<p>La siguiente tabla resume los operadores disponibles en Python para hacer comparaciones entre valores. Estos operadores pueden aplicarse a  cualquier tipo de valor, aunque no necesariamente el resultado tendrá un sentido muy evidente. Por ejemplo, la expresión <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">&lt;</span> <span class="pre">False</span></code> es falsa, pero no es fácil imaginarse una razón para comparar dos valores booleanos usando ese operador.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Operador</p></th>
+<th class="head text-left"><p>Significado</p></th>
+<th class="head text-center"><p>Ejemplo</p></th>
+<th class="head text-left"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>&lt;</p></td>
+<td class="text-left"><p>Es menor que …</p></td>
+<td class="text-center"><p>4 &lt; 7</p></td>
+<td class="text-left"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>&lt;=</p></td>
+<td class="text-left"><p>Es menor o igual que …</p></td>
+<td class="text-center"><p>“Ab” &lt;= “ab”</p></td>
+<td class="text-left"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>&gt;</p></td>
+<td class="text-left"><p>Es mayor que …</p></td>
+<td class="text-center"><p>4.5 &gt; 7.1</p></td>
+<td class="text-left"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>&gt;=</p></td>
+<td class="text-left"><p>Es mayor o igual que …</p></td>
+<td class="text-center"><p>‘1A’ &gt;= ‘A1’</p></td>
+<td class="text-left"><p>False</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>==</p></td>
+<td class="text-left"><p>Es igual a …</p></td>
+<td class="text-center"><p>“abc” == “ab” + “c”</p></td>
+<td class="text-left"><p>True</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>!=</p></td>
+<td class="text-left"><p>Es diferente de …</p></td>
+<td class="text-center"><p>4 != 7</p></td>
+<td class="text-left"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>is</p></td>
+<td class="text-left"><p>Dos <em>objetos</em> son el mismo</p></td>
+<td class="text-center"><p>4 is 7</p></td>
+<td class="text-left"><p>False</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>is not</p></td>
+<td class="text-left"><p>Dos <em>objetos</em> no son el mismo</p></td>
+<td class="text-center"><p>4 is not 7</p></td>
+<td class="text-left"><p>True</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="operadores-de-orden">
+<h3>Operadores de orden<a class="headerlink" href="#operadores-de-orden" title="Link to this heading">#</a></h3>
+<p>Los primeros cuatro operadores tienen un comportamiento intuitivo cuando se aplican sobre valores numéricos (<code class="docutils literal notranslate"><span class="pre">int</span></code> y <code class="docutils literal notranslate"><span class="pre">float</span></code>). Cuando se aplican sobre cadenas de caracteres, la comparación se hace de forma lexicográfica (como se organizarían las palabras en un diccionario). De esta manera, la cadena <code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code> debería ser <em>menor</em> que la cadena <code class="docutils literal notranslate"><span class="pre">mundo</span></code>. Sin embargo, en este sistema las mayúsculas siempre son <em>menores</em> que las minúsculas, así que la expresión <code class="docutils literal notranslate"><span class="pre">'Z'</span> <span class="pre">&lt;</span> <span class="pre">'a'</span></code> siempre será verdadera. Por su parte, los números son <em>menores</em> que las mayúsculas, y algunos símbolos son menores que los números <a class="footnote-reference brackets" href="#lexi" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. Si se quiere hacer una comparación más sencilla se pueden convertir las cadenas a letras minúsculas o mayúsculas usando uno de los mecanismos que veremos en una de las siguientes secciones.</p>
+<p>Si se intentan usar estos 4 operadores entre valores de tipos diferentes se presentará un error similar al siguiente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;&lt;&#39;</span> <span class="ow">not</span> <span class="n">supported</span> <span class="n">between</span> <span class="n">instances</span> <span class="n">of</span> <span class="s1">&#39;int&#39;</span> <span class="ow">and</span> <span class="s1">&#39;str&#39;</span>
+</pre></div>
+</div>
+<p>Las siguientes funciones nos servirán para ilustrar algunas de las ideas que acabamos de presentar.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">es_positivo</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="n">positivo</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">positivo</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">es_negativo</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="n">negativo</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">negativo</span>
+    
+<span class="k">def</span><span class="w"> </span><span class="nf">es_cero</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="n">positivo</span> <span class="o">=</span> <span class="n">es_positivo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">negativo</span> <span class="o">=</span> <span class="n">es_negativo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">positivo</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">negativo</span>
+    
+<span class="k">def</span><span class="w"> </span><span class="nf">ordenadas</span><span class="p">(</span><span class="n">antes</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">despues</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Revisa si dos cadenas en un diccionario están ordenadas lexicográficamente</span>
+<span class="sd">    Parámetros:</span>
+<span class="sd">        antes (str): una cadena que está antes que la otra en un diccionario</span>
+<span class="sd">        despues (str): una cadena que está después que la otra en un diccionario</span>
+<span class="sd">    Retorno:</span>
+<span class="sd">        (bool): Indica si las cadenas estaban ordenadas.</span>
+<span class="sd">                El resultado será verdadero si la cadena &#39;antes&#39; tiene que ir </span>
+<span class="sd">                antes que la cadena &#39;despues&#39; en orden lexicográfico.</span>
+<span class="sd">                El resultado será falso de lo contrario.   </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">estan_ordenadas</span> <span class="o">=</span> <span class="n">antes</span> <span class="o">&lt;</span> <span class="n">despues</span>
+    <span class="k">return</span> <span class="n">estan_ordenadas</span>
+</pre></div>
+</div>
+<p>La primera función revisa si el valor que se pasa en el parámetro <code class="docutils literal notranslate"><span class="pre">x</span></code> es mayor que 0. En caso de que esto sea cierto, en la variable <code class="docutils literal notranslate"><span class="pre">positivo</span></code> debería quedar el valor <code class="docutils literal notranslate"><span class="pre">True</span></code> y este valor sería retornado por la función. En caso contrario (es decir, si <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">0</span></code>), la función retorna <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>La segunda función hace algo análogo, pero para ver si el valor que se pasa como parámetro es negativo.</p>
+<p>La tercera función combina las dos funciones anteriores para ver si el valor <code class="docutils literal notranslate"><span class="pre">x</span></code> es cero: si el número <em>no</em> es positivo y <em>no</em> es negativo, entonces tiene que ser el valor <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>La cuarta función utiliza las comparaciones lexicográficas para ver si dos palabras extraídas de un diccionario estaban correctamente ordenadas. En la variable <code class="docutils literal notranslate"><span class="pre">estan_ordenadas</span></code> queda el resultado de comparar las palabras lexicográficamente, y este valor posteriormente se retorna.</p>
+</section>
+<section id="operadores-de-igualdad">
+<h3>Operadores de igualdad<a class="headerlink" href="#operadores-de-igualdad" title="Link to this heading">#</a></h3>
+<p>Los siguientes operadores (<code class="docutils literal notranslate"><span class="pre">==</span></code> y <code class="docutils literal notranslate"><span class="pre">!=</span></code>) sirven para establecer si dos valores son iguales o no.</p>
+<p><strong>Atención</strong>: no confunda el operador <code class="docutils literal notranslate"><span class="pre">==</span></code> con la instrucción de asignación <code class="docutils literal notranslate"><span class="pre">=</span></code>. En el primer caso el resultado será un valor de verdad mientras que en el segundo caso se modificará el valor de una variable.</p>
+<p>En el ejemplo de la tabla se puede apreciar un caso muy interesante: a la derecha del operador <code class="docutils literal notranslate"><span class="pre">==</span></code> tenemos la cadena <code class="docutils literal notranslate"><span class="pre">&quot;abc&quot;</span></code>, mientras que a la derecha tenemos la expresión <code class="docutils literal notranslate"><span class="pre">&quot;ab&quot;</span> <span class="pre">+</span> <span class="pre">&quot;c&quot;</span></code>. Por lo que aprendimos en el capítulo anterior, sabemos que  el valor de la parte de la derecha será la concatenación de las dos cadenas, así que será <code class="docutils literal notranslate"><span class="pre">abc</span></code>. Como las dos cadenas son iguales (tienen los mismos caracteres, en el mismo orden), el valor de la expresión será verdadero.</p>
+<p>Por otro lado, el operador <code class="docutils literal notranslate"><span class="pre">!=</span></code> sirve para comparar dos valores y saber si son diferentes. Esto es equivalente a utilizar el operador de igualdad y luego negar el resultado.</p>
+<p>A continuación, presentamos la definición de 3 funciones que nos servirán para ilustrar el uso de los operadores que acabamos de introducir.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">es_par</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># En la siguiente línea sobran los paréntesis, </span>
+    <span class="c1"># pero si incluyeron para hacer más claro el código</span>
+    <span class="n">residuo_cero</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">residuo_cero</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">no_es_7_v1</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="c1"># En la siguiente línea sobran los paréntesis, </span>
+    <span class="c1"># pero si incluyeron para hacer más claro el código</span>
+    <span class="n">x_es_7</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">7</span><span class="p">)</span>   
+    <span class="k">return</span> <span class="ow">not</span> <span class="n">x_es_7</span>
+    
+<span class="k">def</span><span class="w"> </span><span class="nf">no_es_7_v2</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">7</span>    
+</pre></div>
+</div>
+<p>La primera función verifica si un número es par. Para eso, calcula el residuo del número módulo 2 y lo compara con 0: si son iguales, significa que el número era par y la función retorna el valor <code class="docutils literal notranslate"><span class="pre">True</span></code>; si son diferentes, la función retorna el valor <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>La siguiente función es muy parecida, aunque en este caso lo que se retorna es la negación de la variable <code class="docutils literal notranslate"><span class="pre">x_es_7</span></code>. En este caso queríamos mostrar que es posible negar un valor justo antes de retornarlo.</p>
+<p>La tercera función hace lo mismo que la segunda (dice si un número NO es 7), pero lo hace en la misma línea en la cual hace el retorno. Si analizamos con detenimiento esta función, veremos que lo primero que se hace es comparar el valor del parámetro <code class="docutils literal notranslate"><span class="pre">x</span></code> con el número <code class="docutils literal notranslate"><span class="pre">7</span></code> para ver si son diferentes (verdadero si son diferentes, falso si son iguales). El resultado de esta comparación es inmediatamente retornado y la función termina su ejecución.</p>
+<p><strong>Atención</strong>: Tenga mucho cuidado cuando haga comparaciones con números decimales. Mientras que las comparaciones de enteros usualmente no tienen problemas, las comparaciones entre decimales pueden tener inconvenientes por culpa de errores en la precisión de los cálculos en Python <a class="footnote-reference brackets" href="#float" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>. Por ejemplo, el valor de evaluar la expresión <code class="docutils literal notranslate"><span class="pre">0.2</span> <span class="pre">==</span> <span class="pre">1.2</span> <span class="pre">-</span> <span class="pre">1.0</span></code> es, sorprendentemente, <code class="docutils literal notranslate"><span class="pre">False</span></code>. Para entender por qué, se puede evaluar la parte derecha en el intérprete de Python, obteniendo el valor <code class="docutils literal notranslate"><span class="pre">0.19999999999999996</span></code> que, aunque es muy cercano a <code class="docutils literal notranslate"><span class="pre">0.2</span></code>, no es idéntico.</p>
+<p>Para evitar este problema, la recomendación general es que, cuando se vayan a comparar valores numéricos con decimales se defina una precisión y se revisen los intervalos, como en el siguiente ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.005</span>
+<span class="n">iguales</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.2</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mf">1.2</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">-</span> <span class="n">epsilon</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mf">0.2</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mf">1.2</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En este caso, en lugar de comparar <code class="docutils literal notranslate"><span class="pre">0.2</span></code> con el resultado de la resta <code class="docutils literal notranslate"><span class="pre">1.2</span> <span class="pre">-</span> <span class="pre">1.0</span></code> estamos mirando que esté dentro del intervalo que va desde 1.2 - 1.0 - epsilon hasta 1.2 - 1.0 + epsilon. El valor de epsilon se puede definir tan grande o tan pequeño como sea conveniente para el problema que se esté resolviendo.</p>
+</section>
+<section id="operadores-de-identidad">
+<h3>Operadores de identidad<a class="headerlink" href="#operadores-de-identidad" title="Link to this heading">#</a></h3>
+<p>Finalmente, los operadores <code class="docutils literal notranslate"><span class="pre">is</span></code> y <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> sirven para revisar que dos valores no sólo sean iguales, sino que también sean el mismo. Como en este libro no vamos a ocuparnos mucho de objetos, no ahondaremos en la distinción entre <code class="docutils literal notranslate"><span class="pre">==</span></code> e <code class="docutils literal notranslate"><span class="pre">is</span></code>.</p>
+<p>Más adelante explicaremos en qué casos tiene sentido utilizar el operador <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code> en el contexto de la expresión <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span> <span class="pre">None</span></code>.</p>
+</section>
+</section>
+<section id="id6">
+<h2>Ejercicios <a class="footnote-reference brackets" href="#cond" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a><a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Escriba una función que dada la edad de una persona indique si puede manejar (tiene que tener al menos 16 años)</p></li>
+<li><p>Escriba una función que dada la altura en metros y el peso en kilogramos de un adulto diga si está dentro de los rangos típicamente considerados saludables. Para esto debe usar el Índice de Masa Corporal (BMI), que se calcula como <em>peso/altura<sup>2</sup></em>. Un adulto se considera que tiene sobrepeso cuando su BMI es mayor o igual a 25. Un adulto se considera que está bajo de peso cuando su BMI es menor a 18.5.</p></li>
+<li><p>Escriba una función que dados dos números diga si el primero es divisible por el segundo.</p></li>
+<li><p>Queremos saber si una persona tiene el dinero suficiente para pagar la cuenta en un restaurante dados los siguientes parámetros: la cantidad de dinero que tiene la persona, el valor de la cuenta, si la persona va a dejar propina o no. La propina corresponde al 10% del valor de la cuenta.</p></li>
+</ol>
+</section>
+<section id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Link to this heading">#</a></h2>
+<p>Al igual que Python, muchos lenguajes utilizan tipos especiales para representar valores de verdad, pero incluyen también convenciones tales como usar 0 para falso y cualquier otro número para verdadero. Por ejemplo, en PHP existen los literales ‘true’ y ‘false’ (escritos sin importar el uso de mayúsculas o minúsculas), pero también tienen un valor falso los números 0, 0.0, -0 y -0.0, las cadenas vacías, la cadena “0”, un arreglo sin elementos, y el tipo NULL. Algo similar sucede en C y C++. Por el contrario, en Java los únicos literales para valores booleanos son ‘true’ y ‘false’. Como se dijo en la nota sobre el caso de Python, en general es mucho mejor que el código sea claro y se usen los valores booleanos de forma explícita en lugar de depender de conversiones.</p>
+<p>La explicación que se presentó sobre el orden en el que se evalúan los términos de una conjunción o una disyunción en general aplica para todos los lenguajes de programación. C, C++, Java, PHP y JavaScript, entre muchos otros, implementan ideas similares.</p>
+<p>La distinción entre <em>son iguales</em> y <em>son el mismo</em> es sutil y se presta para confusiones en diferentes lenguajes. Por ejemplo, en JavaScript existen los operadores <code class="docutils literal notranslate"><span class="pre">==</span></code> y <code class="docutils literal notranslate"><span class="pre">===</span></code> para diferenciar entre los todos tipos de comparación, mientras que en Java el operador <code class="docutils literal notranslate"><span class="pre">==</span></code> representa uno o el otro dependiendo de qué se esté comparando. Más aún, en Java los objetos de tipo String se manejan de forma diferente dependiendo de en qué momento se les asigne su valor, haciendo que a veces dos cadenas iguales sean también la misma y a veces no lo sean. Entender con absoluta claridad este punto para el lenguaje de programación que esté usando le evitará muchísimos dolores de cabeza.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="conv" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Acá hemos incluido sólo algunos ejemplos de las conversiones que se pueden hacer. Hizo falta incluir ejemplos basados en números complejos, valores nulos (None), listas, diccionarios, conjuntos y en general todos los tipos de secuencias y colecciones.</p>
+</aside>
+<aside class="footnote brackets" id="lento" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Más adelante en este libro veremos muchos ejemplos de funciones y valores que toman tiempos largos para ser calculados.</p>
+</aside>
+<aside class="footnote brackets" id="lexi" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Para entender bien el orden lexicográfico se debe revisar la tabla ASCII que se discutió en el nivel 1 y entender que lo que el resultado de la comparación es el resultado de comparar los números de cada caracter en la tabla ASCII. De esta forma, el caracter ‘k’ (#107) va después del ‘R’ (#82), que va después del ‘;’ (#59), que va después del ‘4’ (#52), que va después del ‘&amp;’ (#38).</p>
+</aside>
+<aside class="footnote brackets" id="float" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Este problema no es exclusivo de Python. Casi todos los lenguajes sacrifican precisión en los cálculos para ganar un poco de eficiencia y mejorar el uso de la memoria.</p>
+</aside>
+<aside class="footnote brackets" id="cond" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>Si usted ha programado antes o si ya leyó las siguientes secciones podría pensar que es necesario usar condicionales para resolverlos. La realidad es que todos estos ejercicios pueden resolverse usando sólo lo que se estudió en este capítulo.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./nivel2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="seccion2-2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lógica y valores de verdad</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="seccion2-4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Instrucciones condicionales</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-bool-en-python">El tipo bool en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversiones">Conversiones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-que-retornan-valores-de-verdad">Funciones que retornan valores de verdad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-booleanos">Operadores Booleanos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuncion-and">Conjunción (and)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disyuncion-or">Disyunción (or)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#negacion-not">Negación (not)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-relacionales">Operadores relacionales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-orden">Operadores de orden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-igualdad">Operadores de igualdad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-identidad">Operadores de identidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Ejercicios </a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>📚 IPBook - Versión Mejorada con Visualizaciones Interactivas &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/README.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="introduccion/index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduccion/programar.html">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduccion/practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduccion/acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduccion/lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduccion/estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduccion/imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nivel2/intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-2.html">Lógica y valores de verdad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-3.html">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-5.html">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-8.html">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="nivel2/seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nivel3/intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-3.html">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-4.html">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="nivel3/seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="nivel4/intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="nivel4/seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel4/seccion4-2.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel4/seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel4/seccion4-4.html">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel4/seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel4/seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel4/seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nivel4/seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="nivel4/seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>📚 IPBook - Versión Mejorada con Visualizaciones Interactivas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-nuevas">🌟 Características Nuevas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizaciones-interactivas">✨ Visualizaciones Interactivas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubicacion-de-las-visualizaciones">📍 Ubicación de las Visualizaciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-construir-el-libro">🚀 Cómo Construir el Libro</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerrequisitos">Prerrequisitos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion">Construcción</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publicacion-en-github-pages">Publicación en GitHub Pages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enlaces-importantes">🔗 Enlaces Importantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-del-libro">📖 Contenido del Libro</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-0-antes-de-empezar">Nivel 0 - Antes de empezar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-1-empezando-a-programar">Nivel 1 - Empezando a programar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-2-tomando-decisiones-con-visualizaciones">Nivel 2 - Tomando decisiones ⭐ <strong>¡CON VISUALIZACIONES!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-3-repitiendo-acciones">Nivel 3 - Repitiendo acciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-4-matrices-y-librerias">Nivel 4 - Matrices y librerías</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mejoras-incluidas">🎯 Mejoras Incluidas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-la-seccion-2-6-modulos-de-la-libreria-estandar">En la Sección 2.6 (Módulos de la librería estándar):</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-math">Módulo Math</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-random">Módulo Random</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-tecnicas">Características Técnicas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo">🛠️ Desarrollo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-proyecto">Estructura del Proyecto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tecnologias-utilizadas">Tecnologías Utilizadas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-con-el-original">📊 Comparación con el Original</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contribuir">🤝 Contribuir</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licencia">📄 Licencia</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ipbook-version-mejorada-con-visualizaciones-interactivas">
+<h1>📚 IPBook - Versión Mejorada con Visualizaciones Interactivas<a class="headerlink" href="#ipbook-version-mejorada-con-visualizaciones-interactivas" title="Link to this heading">#</a></h1>
+<p>Una versión mejorada del libro “Introducción a la Programación” con visualizaciones interactivas integradas.</p>
+<section id="caracteristicas-nuevas">
+<h2>🌟 Características Nuevas<a class="headerlink" href="#caracteristicas-nuevas" title="Link to this heading">#</a></h2>
+<section id="visualizaciones-interactivas">
+<h3>✨ Visualizaciones Interactivas<a class="headerlink" href="#visualizaciones-interactivas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>🧮 Explorador del Módulo Math</strong>: Calculadora interactiva para funciones matemáticas</p></li>
+<li><p><strong>🎲 Explorador del Módulo Random</strong>: Simuladores de números aleatorios y distribuciones</p></li>
+<li><p><strong>📊 Histogramas en tiempo real</strong>: Visualización de distribuciones normales</p></li>
+<li><p><strong>🎯 Ejercicios interactivos</strong>: Complementos prácticos para el aprendizaje</p></li>
+</ul>
+</section>
+<section id="ubicacion-de-las-visualizaciones">
+<h3>📍 Ubicación de las Visualizaciones<a class="headerlink" href="#ubicacion-de-las-visualizaciones" title="Link to this heading">#</a></h3>
+<p>Las visualizaciones están integradas en:</p>
+<ul class="simple">
+<li><p><strong>Nivel 2, Sección 2.6</strong>: Módulos de la librería estándar</p>
+<ul>
+<li><p>Módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> con calculadora interactiva</p></li>
+<li><p>Módulo <code class="docutils literal notranslate"><span class="pre">random</span></code> con simulaciones</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="como-construir-el-libro">
+<h2>🚀 Cómo Construir el Libro<a class="headerlink" href="#como-construir-el-libro" title="Link to this heading">#</a></h2>
+<section id="prerrequisitos">
+<h3>Prerrequisitos<a class="headerlink" href="#prerrequisitos" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-book
+</pre></div>
+</div>
+</section>
+<section id="construccion">
+<h3>Construcción<a class="headerlink" href="#construccion" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Navegar al directorio del libro mejorado</span>
+<span class="nb">cd</span><span class="w"> </span>ipbook-enhanced
+
+<span class="c1"># Construir el libro</span>
+jupyter-book<span class="w"> </span>build<span class="w"> </span>.
+
+<span class="c1"># Ver el resultado</span>
+<span class="c1"># El libro estará en _build/html/index.html</span>
+</pre></div>
+</div>
+</section>
+<section id="publicacion-en-github-pages">
+<h3>Publicación en GitHub Pages<a class="headerlink" href="#publicacion-en-github-pages" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Desde el directorio raíz del repositorio</span>
+ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>ipbook-enhanced/_build/html
+</pre></div>
+</div>
+</section>
+</section>
+<section id="enlaces-importantes">
+<h2>🔗 Enlaces Importantes<a class="headerlink" href="#enlaces-importantes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Portal de Visualizaciones</strong>: <a class="reference external" href="https://chusitooxduwu.github.io/graficsIP/">https://chusitooxduwu.github.io/graficsIP/</a></p></li>
+<li><p><strong>Repositorio Original</strong>: <a class="github reference external" href="https://github.com/cupi2-ip/IPBook">cupi2-ip/IPBook</a></p></li>
+<li><p><strong>Libro Original Publicado</strong>: <a class="reference external" href="https://cupi2-ip.github.io/IPBook/">https://cupi2-ip.github.io/IPBook/</a></p></li>
+</ul>
+</section>
+<section id="contenido-del-libro">
+<h2>📖 Contenido del Libro<a class="headerlink" href="#contenido-del-libro" title="Link to this heading">#</a></h2>
+<section id="nivel-0-antes-de-empezar">
+<h3>Nivel 0 - Antes de empezar<a class="headerlink" href="#nivel-0-antes-de-empezar" title="Link to this heading">#</a></h3>
+<p>Configuración del entorno y conceptos fundamentales.</p>
+</section>
+<section id="nivel-1-empezando-a-programar">
+<h3>Nivel 1 - Empezando a programar<a class="headerlink" href="#nivel-1-empezando-a-programar" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Variables y expresiones</p></li>
+<li><p>Tipos de datos básicos</p></li>
+<li><p>Funciones simples</p></li>
+</ul>
+</section>
+<section id="nivel-2-tomando-decisiones-con-visualizaciones">
+<h3>Nivel 2 - Tomando decisiones ⭐ <strong>¡CON VISUALIZACIONES!</strong><a class="headerlink" href="#nivel-2-tomando-decisiones-con-visualizaciones" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Instrucciones condicionales</p></li>
+<li><p>Expresiones booleanas</p></li>
+<li><p><strong>Módulos de la librería estándar</strong> ← <strong>Nuevas visualizaciones aquí</strong></p></li>
+<li><p>Diccionarios</p></li>
+</ul>
+</section>
+<section id="nivel-3-repitiendo-acciones">
+<h3>Nivel 3 - Repitiendo acciones<a class="headerlink" href="#nivel-3-repitiendo-acciones" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Instrucciones iterativas</p></li>
+<li><p>Listas y operaciones</p></li>
+</ul>
+</section>
+<section id="nivel-4-matrices-y-librerias">
+<h3>Nivel 4 - Matrices y librerías<a class="headerlink" href="#nivel-4-matrices-y-librerias" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Estructuras de datos complejas</p></li>
+<li><p>Librerías especializadas</p></li>
+</ul>
+</section>
+</section>
+<section id="mejoras-incluidas">
+<h2>🎯 Mejoras Incluidas<a class="headerlink" href="#mejoras-incluidas" title="Link to this heading">#</a></h2>
+<section id="en-la-seccion-2-6-modulos-de-la-libreria-estandar">
+<h3>En la Sección 2.6 (Módulos de la librería estándar):<a class="headerlink" href="#en-la-seccion-2-6-modulos-de-la-libreria-estandar" title="Link to this heading">#</a></h3>
+<section id="modulo-math">
+<h4>Módulo Math<a class="headerlink" href="#modulo-math" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>✅ Calculadora interactiva para probar funciones</p></li>
+<li><p>✅ Conversor de ángulos (grados ↔ radianes)</p></li>
+<li><p>✅ Showcase de constantes matemáticas (π, e, inf, nan)</p></li>
+<li><p>✅ Ejercicios prácticos integrados</p></li>
+</ul>
+</section>
+<section id="modulo-random">
+<h4>Módulo Random<a class="headerlink" href="#modulo-random" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>✅ Simulador de dados con estadísticas</p></li>
+<li><p>✅ Generador de números aleatorios personalizable</p></li>
+<li><p>✅ Visualización de distribución normal</p></li>
+<li><p>✅ Histogramas interactivos en tiempo real</p></li>
+</ul>
+</section>
+</section>
+<section id="caracteristicas-tecnicas">
+<h3>Características Técnicas<a class="headerlink" href="#caracteristicas-tecnicas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>✅ <strong>Responsive</strong>: Funciona en móvil y desktop</p></li>
+<li><p>✅ <strong>Autocontenidas</strong>: No requieren instalación adicional</p></li>
+<li><p>✅ <strong>Integradas</strong>: Embebidas directamente en el libro</p></li>
+<li><p>✅ <strong>Educativas</strong>: Diseñadas específicamente para enseñanza</p></li>
+</ul>
+</section>
+</section>
+<section id="desarrollo">
+<h2>🛠️ Desarrollo<a class="headerlink" href="#desarrollo" title="Link to this heading">#</a></h2>
+<section id="estructura-del-proyecto">
+<h3>Estructura del Proyecto<a class="headerlink" href="#estructura-del-proyecto" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ipbook-enhanced/
+├── _config.yml              # Configuración del libro mejorado
+├── _toc.yml                 # Tabla de contenidos
+├── nivel2/
+│   └── seccion2-6.md        # ← Sección mejorada con visualizaciones
+├── visualizations/          # (Referenciadas desde el repo principal)
+└── _build/                  # Libro compilado
+</pre></div>
+</div>
+</section>
+<section id="tecnologias-utilizadas">
+<h3>Tecnologías Utilizadas<a class="headerlink" href="#tecnologias-utilizadas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Jupyter Book</strong>: Sistema de publicación del libro</p></li>
+<li><p><strong>MyST Markdown</strong>: Formato de texto con extensiones</p></li>
+<li><p><strong>HTML/CSS/JavaScript</strong>: Visualizaciones interactivas</p></li>
+<li><p><strong>GitHub Pages</strong>: Hosting de las visualizaciones</p></li>
+</ul>
+</section>
+</section>
+<section id="comparacion-con-el-original">
+<h2>📊 Comparación con el Original<a class="headerlink" href="#comparacion-con-el-original" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Característica</p></th>
+<th class="head"><p>Original</p></th>
+<th class="head"><p>Versión Mejorada</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Contenido teórico</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ejercicios estáticos</p></td>
+<td><p>✅</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>Visualizaciones interactivas</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>Calculadoras integradas</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-even"><td><p>Simuladores en tiempo real</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ejercicios prácticos interactivos</p></td>
+<td><p>❌</p></td>
+<td><p>✅</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="contribuir">
+<h2>🤝 Contribuir<a class="headerlink" href="#contribuir" title="Link to this heading">#</a></h2>
+<p>Para contribuir a las visualizaciones:</p>
+<ol class="arabic simple">
+<li><p>Fork del repositorio principal</p></li>
+<li><p>Crear nuevas visualizaciones en <code class="docutils literal notranslate"><span class="pre">/visualizations/</span></code></p></li>
+<li><p>Integrar en las secciones correspondientes</p></li>
+<li><p>Pull request con las mejoras</p></li>
+</ol>
+</section>
+<section id="licencia">
+<h2>📄 Licencia<a class="headerlink" href="#licencia" title="Link to this heading">#</a></h2>
+<p>Este proyecto mantiene la licencia del IPBook original y añade contenido educativo complementario.</p>
+<hr class="docutils" />
+<p><strong>🎯 Objetivo</strong>: Mejorar la experiencia de aprendizaje de programación mediante visualizaciones interactivas que complementen la teoría con práctica inmediata.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-nuevas">🌟 Características Nuevas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizaciones-interactivas">✨ Visualizaciones Interactivas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubicacion-de-las-visualizaciones">📍 Ubicación de las Visualizaciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-construir-el-libro">🚀 Cómo Construir el Libro</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerrequisitos">Prerrequisitos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construccion">Construcción</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publicacion-en-github-pages">Publicación en GitHub Pages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enlaces-importantes">🔗 Enlaces Importantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contenido-del-libro">📖 Contenido del Libro</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-0-antes-de-empezar">Nivel 0 - Antes de empezar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-1-empezando-a-programar">Nivel 1 - Empezando a programar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-2-tomando-decisiones-con-visualizaciones">Nivel 2 - Tomando decisiones ⭐ <strong>¡CON VISUALIZACIONES!</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-3-repitiendo-acciones">Nivel 3 - Repitiendo acciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nivel-4-matrices-y-librerias">Nivel 4 - Matrices y librerías</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mejoras-incluidas">🎯 Mejoras Incluidas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-la-seccion-2-6-modulos-de-la-libreria-estandar">En la Sección 2.6 (Módulos de la librería estándar):</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-math">Módulo Math</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modulo-random">Módulo Random</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-tecnicas">Características Técnicas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo">🛠️ Desarrollo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-proyecto">Estructura del Proyecto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tecnologias-utilizadas">Tecnologías Utilizadas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-con-el-original">📊 Comparación con el Original</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contribuir">🤝 Contribuir</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licencia">📄 Licencia</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

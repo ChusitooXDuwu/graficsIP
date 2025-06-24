@@ -1,0 +1,986 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Más sobre cadenas de caracteres &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nivel2/seccion2-5';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/nivel2/seccion2-5.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Módulos de la librería estándar" href="seccion2-6.html" />
+    <link rel="prev" title="Instrucciones condicionales" href="seccion2-4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduccion/index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/programar.html">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-2.html">Lógica y valores de verdad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-3.html">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-8.html">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel3/intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-3.html">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-4.html">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel4/intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-2.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-4.html">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nivel2/seccion2-5.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Más sobre cadenas de caracteres</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aspectos-de-codificacion-encoding">Aspectos de codificación (encoding)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteres-de-control">Caracteres de control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-y-operadores-sobre-cadenas-de-caracteres">Funciones y operadores sobre cadenas de caracteres</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-sobre-cadenas-de-caracteres">Métodos sobre cadenas de caracteres</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-versus-funciones">Métodos versus funciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inmutabilidad">Inmutabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-str">Métodos de str</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mayusculas-y-minusculas">Mayúsculas y minúsculas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-cadenas">Análisis de cadenas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacion-de-cadenas">Manipulación de cadenas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#el-resto-de-metodos">El resto de métodos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mas-sobre-cadenas-de-caracteres">
+<h1>Más sobre cadenas de caracteres<a class="headerlink" href="#mas-sobre-cadenas-de-caracteres" title="Link to this heading">#</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es explorar un poco más el tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> y descubrir otras funcionalidades que ofrece Python para manipular cadenas de caracteres. Sin embargo, esta no pretende ser una guía exhaustiva sino un abrebocas para que el lector estudie la documentación Python y descubra muchas otras funcionalidades que están disponibles.</p>
+</div>
+<p>Hace años, cuando se empezaron a construir los primeros computadores programables, el objetivo principal que tenían era permitir hacer cálculos numéricos (trayectorias de misiles, órbitas de naves espaciales, análisis de estructuras, cálculos financieros). Por este motivo, cuando se diseñaron los primeros lenguajes de programación, su diseño estuvo fuertemente influenciado por la necesidad de soportar con facilidad la expresión de cálculos numéricos cada vez más complicados. En esos lenguajes era prácticamente imposible representar una cadena de caracteres.</p>
+<p>Hoy en día la situación ha cambiado y la representación y manipulación de información textual es igual o más importante que los cálculos numéricos. Esto ha llevado a que cualquier lenguaje de programación moderno ofrezca sólidos tipos de datos para representar cadenas de caracteres, los cuales vienen acompañados de mecanismos que permiten manipular con facilidad estas cadenas de acuerdo con los requerimientos de cada aplicación. Por ejemplo, hoy en día es muy común que las aplicaciones tengan que incluir mecanismos de internacionalización (para traducir los mensajes a otros idiomas), varios alfabetos diferentes (cirílico, griego, kanjis japoneses y hasta <em>emojis</em>), sistemas de cifrado (para garantizar confidencialidad), y sistemas de búsqueda que encuentren términos rápidamente dentro de textos cada vez más grandes.</p>
+<p>En esta sección vamos a continuar con el estudio del tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> de Python y vamos a ver algunos de los mecanismos que ofrece para manipular cadenas de caracteres de forma rápida y sencilla. Sin embargo, en esta sección no termina toda la presentación de <code class="docutils literal notranslate"><span class="pre">str</span></code>: en el siguiente capítulo presentaremos los mecanismos adicionales disponibles que requieren del estudio previo de secuencias e instrucciones repetitivas.</p>
+<section id="aspectos-de-codificacion-encoding">
+<h2>Aspectos de codificación (encoding)<a class="headerlink" href="#aspectos-de-codificacion-encoding" title="Link to this heading">#</a></h2>
+<p>Si usted está leyendo este libro es muy posible que su lengua materna sea el español, que esté acostumbrado a escribir usando el alfabeto latino y que el teclado de su computador sea un teclado ‘QWERTY’<a class="footnote-reference brackets" href="#querty" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Por esto, además de necesitar los 127 caracteres básicos de ASCII, usted también necesita algunos caracteres adicionales, como <code class="docutils literal notranslate"><span class="pre">'ñ'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Ñ'</span></code> y todas las vocales con tilde en mayúsculas y minúsculas.</p>
+<p>Si todo esto es cierto, muy posiblemente usted ha estado utilizando un conjunto de caracteres (encoding) que extiende al conjunto ASCII y que se conoce con el nombre ISO-8859-1: además de tener los 127 caracteres de ASCII, este conjunto incluye caracteres de uso frecuente en lenguajes originados principalmente en Europa occidental. Por ejemplo: á, Á, ñ, Ñ, ç, ü, ò <a class="footnote-reference brackets" href="#error" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<p>Ahora bien, si usted intercambia información con personas que viven en países donde ISO-8859-1 no es de utilidad (por ejemplo, Rusia, Japón, o todo el Sudeste Asiático) tendrá que utilizar un conjunto de caracteres mucho más grande, como el ofrecido por el estándar UNICODE que describe muchos más caracteres incluyendo los cada vez más populares <em>emojis</em> 😀. Sin embargo, si usted quiere usar caracteres definidos en UNICODE, los archivos o mensajes que usted escriba tendrán que utilizar bien sea el encoding <strong>UTF-8</strong> o el encoding <strong>UTF-16</strong> <a class="footnote-reference brackets" href="#utf" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.</p>
+<p>Si usted puede ver los siguientes tres caracteres (un kanji, un emoji y un caracter griego) significa que su navegador o el programa que está utilizando para leer este texto es compatible con UNICODE y con UTF-8:</p>
+<ul class="simple">
+<li><p>Kanji: 字</p></li>
+<li><p>Emoji: 😜</p></li>
+<li><p>Caracter griego: <span class="math notranslate nohighlight">\(\Delta\)</span></p></li>
+</ul>
+<p>Con esta brevísima explicación no esperamos que usted sea ya un experto en sistemas de codificación de caracteres, pero sí que se dé cuenta que es un asunto más complicado de lo que parece a simple vista. Mientras que sus programas se limiten a usar caracteres que son normales en su idioma, probablemente no tendrá ningún problema. Pero si quiere que sus programas sean capaces de manejar caracteres de otros alfabetos, tendrá que ponerles atención a los asuntos de codificación si no quiere perder información o ver caracteres remplazados por marcas desconocidas.</p>
+<p>La buena noticia es que, por defecto, Python soporta cadenas UNICODE. Así que, si está teniendo problemas con caracteres extraños dentro de sus cadenas, probablemente el problema no sea de Python sino de algo más de lo que usted está haciendo.</p>
+<p>Otra cosa con la que usted tiene que tener cuidado es la codificación que utilice para los archivos .py en los que escriba sus programas. La recomendación que le hacemos es que se asegure de que los archivos se guarden con la codificación UTF-8. En Spyder esto se logra poniendo el siguiente comentario al principio de cada archivo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+</pre></div>
+</div>
+<p>Si lo hizo correctamente, en la esquina inferior derecha del ambiente debería ver una etiqueta que diga <em>Encoding: UTF-8</em>. Si en lugar de esto dice <em>Encoding: ASCII</em>, entonces cualquier caracter que usted escriba en su programa y que no sea parte de ASCII (por ejemplo ‘á’) se convertirá en basura cuando usted cierre el archivo y lo vuelva a abrir.</p>
+<p>Finalmente le hacemos una recomendación con respecto al uso de caracteres <em>no ASCII</em> dentro de sus programas: está bien usar estos caracteres dentro de la documentación y comentarios, pero evite usarlos en los identificadores de variables, parámetros y nombres de funciones. Por ejemplo, en lugar de llamar a una función <code class="docutils literal notranslate"><span class="pre">calcular_año</span></code> use <code class="docutils literal notranslate"><span class="pre">calcular_anho</span></code>, y en lugar de usar la variable <code class="docutils literal notranslate"><span class="pre">máximo</span></code> use la variable <code class="docutils literal notranslate"><span class="pre">maximo</span></code>. Esta no es una regla escrita en piedra que usted tenga que seguir. Es sólo un consejo para evitar que se tope con problemas sencillos, pero a veces difíciles de diagnosticar.</p>
+</section>
+<section id="caracteres-de-control">
+<h2>Caracteres de control<a class="headerlink" href="#caracteres-de-control" title="Link to this heading">#</a></h2>
+<p>Además de los caracteres como los que se describieron en la sección anterior, una cadena de caracteres (<code class="docutils literal notranslate"><span class="pre">str</span></code>) también puede tener caracteres que son llamados caracteres de control. Estos caracteres se pueden usar como cualquier otro dentro de una cadena.</p>
+<p>A continuación, describimos los más importantes y que usted podría necesitar.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Caracter</p></th>
+<th class="head text-left"><p>Significado</p></th>
+<th class="head text-left"><p>Ejemplo de uso</p></th>
+<th class="head text-left"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>\n</p></td>
+<td class="text-left"><p>Cambio de línea</p></td>
+<td class="text-left"><p>“Hola\nMundo!”</p></td>
+<td class="text-left"><p>Hola <br/> Mundo!</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>\t</p></td>
+<td class="text-left"><p>Tabulación</p></td>
+<td class="text-left"><p>“Hola\tMundo”</p></td>
+<td class="text-left"><p>Hola        Mundo</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>\</p></td>
+<td class="text-left"><p>Barra invertida</p></td>
+<td class="text-left"><p>“C:\usuarios\invitado”</p></td>
+<td class="text-left"><p>C:\usuarios\invitado</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>‘</p></td>
+<td class="text-left"><p>Comilla sencilla (2)</p></td>
+<td class="text-left"><p>“It’s me!”</p></td>
+<td class="text-left"><p>It’s me!</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>“</p></td>
+<td class="text-left"><p>Comilla doble</p></td>
+<td class="text-left"><p>“A so called “expert””</p></td>
+<td class="text-left"><p>A so called “expert”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Como es posible que con un ejemplo tan breve no se aprecie la importancia de la tabulación, a continuación presentamos un ejemplo un poco más complejo.
+El uso del caracter de tabulación indica que se quiere dejar espacio hasta la siguiente tabulación, con el objetivo de armar columnas más o menos definidas.  Una tabulación típicamente equivale al espacio de 8 caracteres.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a</span><span class="se">\t</span><span class="s2">b</span><span class="se">\t</span><span class="s2">c&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;100</span><span class="se">\t</span><span class="s2">200</span><span class="se">\t</span><span class="s2">300&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>El resultado de ejecutar el programa anterior es el siguiente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>	<span class="n">b</span>	<span class="n">c</span>
+<span class="mi">100</span>	<span class="mi">200</span>	<span class="mi">300</span>
+</pre></div>
+</div>
+</section>
+<section id="funciones-y-operadores-sobre-cadenas-de-caracteres">
+<h2>Funciones y operadores sobre cadenas de caracteres<a class="headerlink" href="#funciones-y-operadores-sobre-cadenas-de-caracteres" title="Link to this heading">#</a></h2>
+<p>En la sección anterior estudiamos los operadores relacionales y vimos que pueden aplicarse a diferentes tipos de datos. En particular, vimos que los operadores &lt;, &gt;, &lt;=, &gt;= hacen comparaciones lexicográficas. De esta manera sabemos que las siguientes expresiones son todas verdaderas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;AB&quot;</span> <span class="pre">&lt;</span> <span class="pre">&quot;BC</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;AB&quot;</span> <span class="pre">&lt;</span> <span class="pre">&quot;ab&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;234&quot;</span> <span class="pre">&lt;</span> <span class="pre">&quot;345&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;!450&quot;</span> <span class="pre">&lt;</span> <span class="pre">&quot;345&quot;</span></code></p></li>
+</ul>
+<p>Los otros operadores relacionales que podemos aplicar a las cadenas de caracteres son “==” y “!=”, los cuales comparan las cadenas caracter por caracter. De esta manera, las siguientes expresiones son todas falsas:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ABC&quot;</span> <span class="pre">==</span> <span class="pre">&quot;abc&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ABC&quot;</span> <span class="pre">==</span> <span class="pre">&quot;ABC!&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span> <span class="pre">==</span> <span class="pre">&quot;1+2&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Hola,</span> <span class="pre">Mundo!&quot;</span> <span class="pre">!=</span> <span class="pre">&quot;Hola,</span> <span class="pre">Mundo!&quot;</span></code></p></li>
+</ul>
+<p>Dos nuevos operadores que también se pueden aplicar sobre cadenas de caracteres son <code class="docutils literal notranslate"><span class="pre">in</span></code> y <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>. El primero permite revisar si una cadena está incluida en otra, mientras que el segundo hace exactamente lo contrario. Veamos un ejemplo de expresiones <strong>verdaderas</strong> basadas en estos operadores:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Mundo&quot;</span> <span class="pre">in</span> <span class="pre">&quot;Hola,</span> <span class="pre">Mundo!&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;mundo&quot;</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">&quot;Hola,</span> <span class="pre">Mundo!&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;!&quot;</span> <span class="pre">in</span> <span class="pre">&quot;Hola,</span> <span class="pre">Mundo!&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'?'</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">&quot;Hola,</span> <span class="pre">Mundo!&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Hola,</span> <span class="pre">Mundo!&quot;</span> <span class="pre">in</span> <span class="pre">&quot;Hola,</span> <span class="pre">Mundo!&quot;</span></code></p></li>
+</ul>
+<p>Como vemos, estos operadores hacen comparaciones que distinguen entre mayúsculas y minúsculas. Esto debe tenerse en cuenta para evitar tener falsos negativos y falsos positivos.</p>
+<p>Finalmente, Python nos ofrece la función <code class="docutils literal notranslate"><span class="pre">len</span></code> que podemos utilizar para conocer el tamaño de una cadena.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">len(&quot;Hola,</span> <span class="pre">Mundo!&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(&quot;Hola,\nMundo!&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(&quot;&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(&quot;</span> <span class="pre">&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(&quot;\t&quot;)</span></code></p></li>
+</ul>
+<p>El resultado de las primeras dos invocaciones es el mismo (12). Esto porque el caracter de control <code class="docutils literal notranslate"><span class="pre">\n</span></code> es un solo caracter aunque se represente con dos.</p>
+<p>El resultado de la tercera invocación es 0, porque es una cadena vacía (no tiene ningún caracter).</p>
+<p>El resultado de las últimas invocaciones es 1 porque se trata de cadenas con sólo un caracter: la cuarta tiene sólo un espacio mientras que la quinta sólo tiene una tabulación.</p>
+</section>
+<section id="metodos-sobre-cadenas-de-caracteres">
+<h2>Métodos sobre cadenas de caracteres<a class="headerlink" href="#metodos-sobre-cadenas-de-caracteres" title="Link to this heading">#</a></h2>
+<section id="metodos-versus-funciones">
+<h3>Métodos versus funciones<a class="headerlink" href="#metodos-versus-funciones" title="Link to this heading">#</a></h3>
+<p>Además de todo lo que ya hemos estudiado, el tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> también ofrece una serie de funciones que pueden utilizarse para transformar cadenas de caracteres. Debido a la forma particular en la que estas funciones están declaradas dentro del módulo <code class="docutils literal notranslate"><span class="pre">str</span></code>, estas funciones se conocen usualmente como métodos y se pueden invocar de una forma diferente a como lo haríamos con funciones como las que ya conocíamos <a class="footnote-reference brackets" href="#oo" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
+<p>Para ilustrar este punto, estudiemos la función <code class="docutils literal notranslate"><span class="pre">lower</span></code> que está definida dentro del contexto del módulo <code class="docutils literal notranslate"><span class="pre">str</span></code>. En este módulo es donde se define el tipo que hemos estado usando para las cadenas de caracteres. Usando la función <code class="docutils literal notranslate"><span class="pre">help</span></code> podemos consultar la documentación de esta función:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="go">Help on method_descriptor:</span>
+
+<span class="go">lower(self, /)</span>
+<span class="go">    Return a copy of the string converted to lowercase.</span>
+</pre></div>
+</div>
+<p>Lo que esto nos dice es que si invocamos esta función usando como parámetro una cadena de caracteres vamos a recibir como respuesta <em>una copia</em> de la cadena en la cual las letras se habrán pasado todas a minúsculas. Veamos una prueba que nos ayuda a comprobar que esta interpretación es correcta:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="s1">&#39;ABcdEg&#39;</span><span class="p">)</span>
+<span class="go">&#39;abcdeg&#39;</span>
+</pre></div>
+</div>
+<p>Sin embargo, la documentación de la función también nos dice que esta función es un método, así que podemos invocarla de una forma un poco diferente que en la mayoría de los casos resulta más conveniente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;ABcdEg&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="go">&#39;abcdeg&#39;</span>
+</pre></div>
+</div>
+<p>Observe como el parámetro de la función pasó a ocupar el lugar frente al caracter <code class="docutils literal notranslate"><span class="pre">.</span></code>, dejando a la función sin parámetro.</p>
+<p>La pregunta que cabe hacer en este punto es ¿cómo sabe Python que la función está definida dentro del módulo <code class="docutils literal notranslate"><span class="pre">str</span></code>? La respuesta está en que Python primero va a verificar el tipo del valor <code class="docutils literal notranslate"><span class="pre">'ABcdEg'</span></code> y como el tipo es <code class="docutils literal notranslate"><span class="pre">str</span></code> significa que las funciones que se llamen sobre este valor tienen que estar implementadas en el módulo <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<p>Hagamos ahora el mismo ejercicio con la función llamada <code class="docutils literal notranslate"><span class="pre">str.zfill</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">)</span>
+<span class="go">Help on method_descriptor:</span>
+
+<span class="go">zfill(self, width, /)</span>
+<span class="go">    Pad a numeric string with zeros on the left, to fill a field of the given width.</span>
+
+<span class="go">    The string is never truncated.</span>
+</pre></div>
+</div>
+<p>La documentación nos dice que esta función le va a agregar ceros a la izquierda a una cadena, hasta lograr una cadena de la longitud indicada. La documentación también nos dice que esta función requiere dos parámetros (<em>self</em> y <em>width</em>). Como es un método, esta función podría llamarse sobre una cadena de la siguiente manera:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;abc&quot;</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">&#39;0000000abc&#39;</span>
+</pre></div>
+</div>
+<p>Si quisiéramos invocarla de la manera <em>normal</em>, tendríamos que convertir la cadena en el primer parámetro e indicar en qué módulo está definida la función. El resultado sería el siguiente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">&#39;0000000abc&#39;</span>
+</pre></div>
+</div>
+<p>En resumen: el módulo <code class="docutils literal notranslate"><span class="pre">str</span></code> ofrece unas funciones llamadas métodos que implementan una gran cantidad de funcionalidades interesantes para trabajar con cadenas de caracteres. Estas funciones se pueden invocar de dos formas: <strong>como funciones</strong>, usando un llamado de la forma <code class="docutils literal notranslate"><span class="pre">str.funcion(cadena,</span> <span class="pre">...otros</span> <span class="pre">parámetros</span> <span class="pre">...)</span></code>, o <strong>como métodos</strong>, usando un llamado de la forma <code class="docutils literal notranslate"><span class="pre">cadena.metodo(...</span> <span class="pre">otros</span> <span class="pre">parámetros</span> <span class="pre">...)</span></code>. De acá en adelante nosotros vamos a usar estas funciones de la segunda forma (como métodos).</p>
+</section>
+<section id="inmutabilidad">
+<h3>Inmutabilidad<a class="headerlink" href="#inmutabilidad" title="Link to this heading">#</a></h3>
+<p>Antes de presentar los métodos más utilizados de <code class="docutils literal notranslate"><span class="pre">str</span></code> es muy importante hablar de la <em>inmutabilidad</em> de las cadenas de caracteres en Python. Esto significa que cuando Python construye una cadena no puede modificarla para cambiar su contenido. Si queremos hacerle algún cambio a la cadena, lo único que Python puede hacer es construir una nueva cadena con los cambios requeridos.</p>
+<p>Observemos un ejemplo utilizando el método <code class="docutils literal notranslate"><span class="pre">lower</span></code> que ya estudiamos y los operadores <code class="docutils literal notranslate"><span class="pre">is</span></code> (comparación de identidad) y <code class="docutils literal notranslate"><span class="pre">==</span></code> (comparación de igualdad).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">original</span> <span class="o">=</span> <span class="s2">&quot;texto original&quot;</span>
+<span class="n">minusculas</span> <span class="o">=</span> <span class="n">original</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Son iguales:&quot;</span><span class="p">,</span> <span class="n">original</span> <span class="o">==</span> <span class="n">minusculas</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Son el mismo:&quot;</span><span class="p">,</span> <span class="n">original</span> <span class="ow">is</span> <span class="n">minusculas</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>El resultado de ejecutar este pequeño programa es el siguiente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Son</span> <span class="n">iguales</span><span class="p">:</span> <span class="kc">True</span>
+<span class="n">Son</span> <span class="n">el</span> <span class="n">mismo</span><span class="p">:</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Lo que esto nos muestra es que, como dice la documentación del método, <code class="docutils literal notranslate"><span class="pre">lower()</span></code> retorna una <em>copia</em> de la cadena en la cual se hayan hecho las modificaciones para que todas las letras sean minúsculas. En el caso de nuestro ejemplo no hubo ninguna modificación (la comparación de igualdad es exitosa) y de todas maneras el método creó una copia de la cadena original.</p>
+<p><strong>Recuerde:</strong> Las cadenas de caracteres en Python son <em>inmutables</em>. Todas las operaciones que se realicen sobre una cadena siempre van a producir una <strong>cadena nueva</strong>.</p>
+</section>
+<section id="metodos-de-str">
+<h3>Métodos de str<a class="headerlink" href="#metodos-de-str" title="Link to this heading">#</a></h3>
+<p>Los siguientes son algunos de los métodos de <code class="docutils literal notranslate"><span class="pre">str</span></code> que podría necesitar con más frecuencia cuando trabaje con cadenas de caracteres.</p>
+<section id="mayusculas-y-minusculas">
+<h4>Mayúsculas y minúsculas<a class="headerlink" href="#mayusculas-y-minusculas" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nombre</p></th>
+<th class="head text-left"><p>Descripción</p></th>
+<th class="head text-left"><p>Ejemplo</p></th>
+<th class="head text-left"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>lower</p></td>
+<td class="text-left"><p>Remplaza todas las mayúsculas por minúsculas</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.lower()</p></td>
+<td class="text-left"><p>‘hola, mundo!’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>upper</p></td>
+<td class="text-left"><p>Remplaza todas las minúsculas por mayúsculas</p></td>
+<td class="text-left"><p>“Hola, Mundo!”. upper()</p></td>
+<td class="text-left"><p>‘HOLA, MUNDO!’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>title</p></td>
+<td class="text-left"><p>Le pone mayúscula inicial a todas las palabras de la cadena</p></td>
+<td class="text-left"><p>“Hola, Mundo!”. title()</p></td>
+<td class="text-left"><p>‘Hola, Mundo!’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>swapcase</p></td>
+<td class="text-left"><p>Intercambia mayúsculas por minúsculas y viceversa</p></td>
+<td class="text-left"><p>“Hola, Mundo!”. swapcase()</p></td>
+<td class="text-left"><p>‘hOLA, mUNDO!’</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="analisis-de-cadenas">
+<h4>Análisis de cadenas<a class="headerlink" href="#analisis-de-cadenas" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nombre</p></th>
+<th class="head text-left"><p>Descripción</p></th>
+<th class="head text-left"><p>Ejemplo</p></th>
+<th class="head text-left"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>find</p></td>
+<td class="text-left"><p>Busca la primera posición en la que aparezca la cadena buscada. Si no la encuentra retorna -1.</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.find(‘o’)</p></td>
+<td class="text-left"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>rfind</p></td>
+<td class="text-left"><p>Busca la primera posición en la que aparezca la cadena buscada, empezando por la derecha. Si no la encuentra retorna -1.</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.rfind(‘o’)</p></td>
+<td class="text-left"><p>10</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>count</p></td>
+<td class="text-left"><p>Cuenta cuántas veces está la cadena indicada en otra cadena. Si no la encuentra se produce un error.</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.count(‘o’)</p></td>
+<td class="text-left"><p>2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>isnumeric</p></td>
+<td class="text-left"><p>Revisa si todos los caracteres de una cadena son números</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.isnumeric()</p></td>
+<td class="text-left"><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="manipulacion-de-cadenas">
+<h4>Manipulación de cadenas<a class="headerlink" href="#manipulacion-de-cadenas" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nombre</p></th>
+<th class="head text-left"><p>Descripción</p></th>
+<th class="head text-left"><p>Ejemplo</p></th>
+<th class="head text-left"><p>Resultado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>replace</p></td>
+<td class="text-left"><p>Remplaza algunos elementos de una cadena con otros elementos que llegan como parámetro. El reemplazo puede ser la cadena vacía para eliminar los elementos buscados.</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.replace(‘o’, ‘67’)</p></td>
+<td class="text-left"><p>‘H67la, Mund67!’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>strip</p></td>
+<td class="text-left"><p>Elimina espacios y cambios de línea al final de una cadena de caracteres. No elimina ningún elemento que no se encuentre al final de la cadena.</p></td>
+<td class="text-left"><p>“Hola, Mundo!   \n”.strip()</p></td>
+<td class="text-left"><p>‘Hola, Mundo!’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>ljust</p></td>
+<td class="text-left"><p>Amplía la cadena hasta el ancho indicado, alinea el contenido a la izquierda y llena el espacio vacío con espacios.</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.ljust(15)</p></td>
+<td class="text-left"><p>‘Hola, Mundo!    ’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>rjust</p></td>
+<td class="text-left"><p>Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con espacios</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.rjust(15)</p></td>
+<td class="text-left"><p>’   Hola, Mundo!’</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>center</p></td>
+<td class="text-left"><p>Amplía la cadena hasta el ancho indicado y centra el contenido.</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.center(15)</p></td>
+<td class="text-left"><p>’  Hola, Mundo! ’</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>zfill</p></td>
+<td class="text-left"><p>Amplía la cadena hasta el ancho indicado, alinea el contenido a la derecha y llena el espacio vacío con caracteres <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></td>
+<td class="text-left"><p>“Hola, Mundo!”.zfill(15)</p></td>
+<td class="text-left"><p>‘000Hola, Mundo!’</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="el-resto-de-metodos">
+<h4>El resto de métodos<a class="headerlink" href="#el-resto-de-metodos" title="Link to this heading">#</a></h4>
+<p>El módulo <code class="docutils literal notranslate"><span class="pre">str</span></code> ofrece una gran cantidad de métodos adicionales que no vamos a cubrir acá pero que sí están bien descritos en la documentación de Python: <a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#string-methods">https://docs.python.org/3.6/library/stdtypes.html#string-methods</a></p>
+<p>Le recomendamos estudiar esa documentación y practicar con todos estos métodos para aprender a utilizarlos y agregarlos a su caja de herramientas de programación.</p>
+</section>
+</section>
+</section>
+<section id="format">
+<h2>Format<a class="headerlink" href="#format" title="Link to this heading">#</a></h2>
+<p>Las últimas funcionalidades de las cadenas de caracteres que vamos a estudiar tienen que ver con el método <code class="docutils literal notranslate"><span class="pre">format</span></code>. Este método es muy poderoso y permite utilizar repetidamente una cadena como plantilla para luego remplazar algunos fragmentos por valor particulares.</p>
+<p>Supongamos que tenemos que hacer un programa que sea capaz de generar las siguientes cadenas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Un</span> <span class="n">Lamborghini</span> <span class="n">Aventador</span> <span class="k">del</span> <span class="mi">2016</span> <span class="n">con</span> <span class="n">motor</span> <span class="n">de</span> <span class="mf">6.5</span> <span class="n">litros</span> <span class="n">es</span> <span class="n">capaz</span> <span class="n">de</span> <span class="n">pasar</span> <span class="n">de</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">kph</span> <span class="n">en</span> <span class="mf">2.80</span> <span class="n">segundos</span>
+<span class="n">Un</span> <span class="n">Ferrari</span> <span class="n">Enzo</span> <span class="k">del</span> <span class="mi">2002</span> <span class="n">con</span> <span class="n">motor</span> <span class="n">de</span> <span class="mf">6.0</span> <span class="n">litros</span> <span class="n">es</span> <span class="n">capaz</span> <span class="n">de</span> <span class="n">pasar</span> <span class="n">de</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">kph</span> <span class="n">en</span> <span class="mf">3.60</span> <span class="n">segundos</span>
+<span class="n">Un</span> <span class="n">Bugatti</span> <span class="n">Veyron</span> <span class="mf">16.4</span> <span class="k">del</span> <span class="mi">2010</span> <span class="n">con</span> <span class="n">motor</span> <span class="n">de</span> <span class="mf">8.0</span> <span class="n">litros</span> <span class="n">es</span> <span class="n">capaz</span> <span class="n">de</span> <span class="n">pasar</span> <span class="n">de</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">kph</span> <span class="n">en</span> <span class="mf">2.50</span> <span class="n">segundos</span>
+<span class="n">Un</span> <span class="n">Porsche</span> <span class="mi">911</span> <span class="n">GT3</span> <span class="k">del</span> <span class="mi">2011</span> <span class="n">con</span> <span class="n">motor</span> <span class="n">de</span> <span class="mf">4.0</span> <span class="n">litros</span> <span class="n">es</span> <span class="n">capaz</span> <span class="n">de</span> <span class="n">pasar</span> <span class="n">de</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">kph</span> <span class="n">en</span> <span class="mf">3.80</span> <span class="n">segundos</span>
+<span class="n">Un</span> <span class="n">McLaren</span> <span class="n">P1</span> <span class="k">del</span> <span class="mi">2013</span> <span class="n">con</span> <span class="n">motor</span> <span class="n">de</span> <span class="mf">3.8</span> <span class="n">litros</span> <span class="n">es</span> <span class="n">capaz</span> <span class="n">de</span> <span class="n">pasar</span> <span class="n">de</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">kph</span> <span class="n">en</span> <span class="mf">2.80</span> <span class="n">segundos</span>
+<span class="n">Un</span> <span class="n">Pagani</span> <span class="n">Huayra</span> <span class="n">BC</span> <span class="k">del</span> <span class="mi">2017</span> <span class="n">con</span> <span class="n">motor</span> <span class="n">de</span> <span class="mf">6.0</span> <span class="n">litros</span> <span class="n">es</span> <span class="n">capaz</span> <span class="n">de</span> <span class="n">pasar</span> <span class="n">de</span> <span class="mi">0</span> <span class="n">a</span> <span class="mi">100</span> <span class="n">kph</span> <span class="n">en</span> <span class="mf">3.30</span> <span class="n">segundos</span>
+</pre></div>
+</div>
+<p>Todas estas cadenas tienen la misma estructura que incluye la marca del carro, el nombre del modelo, el año de lanzamiento, el tamaño del motor en litros usando una cifra decimal y el tiempo que necesita para pasar de 0 a 100 kilómetros por hora expresado en segundos con dos cifras decimales.</p>
+<p>Estas cadenas se podrían haber armado usando concatenaciones. Sin embargo, el método <code class="docutils literal notranslate"><span class="pre">format</span></code> ofrece características para estructurar las cadenas que son muy difíciles de replicar usando sólo concatenaciones.</p>
+<p>Tomemos como ejemplo la plantilla utilizada para generar los mensajes anteriores:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plantilla</span> <span class="o">=</span> <span class="s2">&quot;Un </span><span class="si">{0}</span><span class="s2"> </span><span class="si">{1}</span><span class="s2"> del </span><span class="si">{2:d}</span><span class="s2"> con motor de </span><span class="si">{3:.1f}</span><span class="s2"> litros es capaz de pasar de 0 a 100 kph en </span><span class="si">{4:.2f}</span><span class="s2"> segundos&quot;</span>
+</pre></div>
+</div>
+<p>En primer lugar, la plantilla es una cadena de caracteres que tiene marcas rodeadas por los caracteres <code class="docutils literal notranslate"><span class="pre">{</span></code> y <code class="docutils literal notranslate"><span class="pre">}</span></code> en los campos donde se tendrán que insertar valores. Aunque no es obligatorio, es recomendable numerar esos campos empezando desde el 0 y llegando, en este caso, hasta el 4.</p>
+<p>Además del número, cada campo también puede tener una especificación de su formato, la cual viene a continuación del caracter <code class="docutils literal notranslate"><span class="pre">:</span></code>. En nuestro caso, los campos 0 y 1 no tienen ningún formato, así que lo que metamos en esas posiciones se remplazará sin ningún cambio. Para el campo 2 sólo usamos el caracter <code class="docutils literal notranslate"><span class="pre">d</span></code> para indicar que se trataba de un número entero. Para los campos 3 y 4 especificamos que se trataban de números decimales y además dijimos que nos interesaba tener 1 dígito decimal en el primer caso y 2 dígitos decimales en el segundo. Esto quedó especificado usando los formatos <code class="docutils literal notranslate"><span class="pre">.1f</span></code> y <code class="docutils literal notranslate"><span class="pre">.2f</span></code> respectivamente.</p>
+<p>Para usar una plantilla se tiene que invocar el método <code class="docutils literal notranslate"><span class="pre">format</span></code> utilizando como parámetros los valores que queremos insertar en los campos. En nuestro caso, invocamos la función <code class="docutils literal notranslate"><span class="pre">format</span></code> con 5 parámetros:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mensaje</span> <span class="o">=</span> <span class="n">plantilla</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">,</span> <span class="n">anho</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">sec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Acá puede verse la importancia de numerar los campos: el valor marca quedará en el campo marcado con el 0, el valor modelo en el campo marcado con el 1 y así sucesivamente. Esto significa que el orden en el que aparecen los campos en la plantilla no necesariamente es el mismo orden en que se deben pasar los argumentos. También significa que, si hubiéramos marcado dos campos con el mismo número, el valor correspondiente habría aparecido dos veces en el mensaje.</p>
+<p>Estudiemos ahora otros mensajes que tienen un poco más de complicaciones que no son fáciles de solucionar sólo usando concatenación de cadenas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span> <span class="n">metros</span>     <span class="mf">5.3</span> <span class="n">s</span> <span class="o">@</span> <span class="mi">126</span> <span class="n">kph</span>
+<span class="mi">500</span> <span class="n">metros</span>    <span class="mf">13.6</span> <span class="n">s</span> <span class="o">@</span> <span class="mi">211</span> <span class="n">kph</span>
+<span class="mi">1000</span> <span class="n">metros</span>   <span class="mf">22.0</span> <span class="n">s</span> <span class="o">@</span> <span class="mi">249</span> <span class="n">kph</span>
+</pre></div>
+</div>
+<p>Estos nuevos mensajes tienen una característica que no tenían los mensajes anteriores: los campos no están completamente llenos y están alineados a la derecha (columnas 2 y 3) o a la izquierda (columna 1). Analicemos entonces la plantilla que se utilizó en este caso</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plantilla2</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{0:&lt;14}{1:&gt;4.1f}</span><span class="s2"> s @ </span><span class="si">{2:&gt;3d}</span><span class="s2"> kph&quot;</span>
+</pre></div>
+</div>
+<p>El formato para el primer campo dice <code class="docutils literal notranslate"><span class="pre">&lt;14</span></code>, lo cual se interpreta como que se debe alinear el contenido a la izquierda y que debe tener 14 caracteres de ancho en total. Si el contenido del campo es más corto que esto, se agregarán tantos espacios como haga falta <em>a la derecha del contenido</em>.</p>
+<p>El formato para el segundo campo dice <code class="docutils literal notranslate"><span class="pre">&gt;4.1f</span></code>. Como ya sabemos, <code class="docutils literal notranslate"><span class="pre">.1f</span></code> significa que se tratará de un número con exactamente un decimal. La otra parte, <code class="docutils literal notranslate"><span class="pre">&gt;4</span></code> indica que el número debe alinearse a la derecha y que debe ocupar, en total, el espacio de 4 caracteres. En este caso como el número está alineado a la derecha los caracteres faltantes se agregan a la <em>izquierda del contenido</em>.</p>
+<p>El formato para el tercer campo es muy similar: se espera un número entero que terminará alineado a la derecha en una columna de 3 caracteres de ancho.</p>
+<p>Finalmente, veamos cómo se generaron las 3 cadenas invocando el método <code class="docutils literal notranslate"><span class="pre">format</span></code> sobre la plantilla:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plantilla2</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;100 metros&#39;</span><span class="p">,</span> <span class="mf">5.3</span><span class="p">,</span> <span class="mi">126</span><span class="p">)</span>
+<span class="n">plantilla2</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;500 metros&#39;</span><span class="p">,</span> <span class="mf">13.6</span><span class="p">,</span> <span class="mi">211</span><span class="p">)</span>
+<span class="n">plantilla2</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;1000 metros&#39;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">249</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En resumen, cuando se construye una plantilla para usar con el método <code class="docutils literal notranslate"><span class="pre">format</span></code> se debe:</p>
+<ol class="arabic simple">
+<li><p>Marcar los campos que se van a remplazar, numerándolos de cero en adelante.</p></li>
+<li><p>Para cada campo que se quiera alinear, indicar si la alineación debe ser a la izquierda (&lt;), derecha (&gt;) o el centro (^) y el ancho que debe tener el campo. También se puede especificar el caracter que se debe utilizar para los espacios vacíos (ver documentación).</p></li>
+<li><p>Especificar el formato, especialmente si se trata de números decimales.</p></li>
+</ol>
+<p>Se puede conseguir mucha más información sobre la especificación de plantillas usando el comando <code class="docutils literal notranslate"><span class="pre">help('FORMATTING')</span></code>. La documentación completa también está disponible en
+<a class="reference external" href="https://docs.python.org/3.7/library/string.html#format-string-syntax">https://docs.python.org/3.7/library/string.html#format-string-syntax</a></p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Escriba una función que reciba una cadena de caracteres y una letra. Su función debe retornar la misma cadena que recibió, pero cambiando todas las vocales por la letra que también llegó por parámetro. Por ejemplo, si la cadena original era “Hola, Mundo!” y la letra entregada fue ‘I’, el resultado debería ser “HIlI, MIndI!”.</p></li>
+<li><p>Escriba una función que reciba dos cadenas de caracteres. La función debe retornar 1 si las cadenas son idénticas, 2 si las cadenas sólo se diferencian por las mayúsculas y minúsculas, o 0 de lo contrario.</p></li>
+<li><p>Escriba una función que reciba dos cadenas de caracteres que sólo van a contener letras mayúsculas y minúsculas. La función debe retornar -1 si en un diccionario la primera cadena debería ir antes que la segunda, debe retornar 1 si la segunda cadena debe ir antes que la primera, o 0 si las dos cadenas son la misma (ignorando mayúsculas y minúsculas).</p></li>
+<li><p>Escriba una función que reciba una cadena de caracteres y cuente las palabras que aparecen en la cadena. Usted puede suponer que la cadena tendrá letras (mayúsculas y minúsculas) y espacios, pero no tendrá ningún signo de puntuación ni espacios seguidos.</p></li>
+<li><p>Tres equipos de futbol participaron en un pequeño torneo en que jugaron entre ellos 3 partidos. Escriba una función que reciba el nombre de los tres equipos y los marcadores de los tres partidos, y que retorne una tabla con las posiciones de los equipos al finalizar el torneo. La función recibirá entonces 9 parámetros: primero los nombres de los tres equipos y luego 6 enteros con los marcadores de los 3 partidos. Cada partido ganado entregaba 3 puntos y cada partido empatado entregaba 1 punto. La tabla con el resultado del torneo tiene que ser una cadena de caracteres con la información organizada en columnas bien alineadas. Las columnas deben estar organizadas de la siguiente forma:</p></li>
+</ol>
+<ul class="simple">
+<li><p>posición,</p></li>
+<li><p>nombre del equipo,</p></li>
+<li><p>puntos obtenidos,</p></li>
+<li><p>partidos jugados,</p></li>
+<li><p>partidos ganados,</p></li>
+<li><p>partidos empatados,</p></li>
+<li><p>partidos perdidos,</p></li>
+<li><p>goles a favor,</p></li>
+<li><p>goles en contra,</p></li>
+<li><p>diferencia de goles</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>Escriba una función que, dada la altura de un edificio, retorne una cadena como en el siguiente ejemplo: <em>“Un objeto que cae de un edificio de 30 metros tarda 2.47 segundos en llegar al piso y alcanza una velocidad de 24.25 metros por segundo.”</em> Su programa debe usar las funciones de formato de cadenas.</p></li>
+</ol>
+<p><strong>Ayuda:</strong> El tiempo que tarda la caída es igual a la raíz cuadrada de dos veces la altura sobre la aceleración de la gravedad (9.8 m/s<sup>2</sup>). La velocidad que alcanza el objeto es igual al tiempo de la caída multiplicado por la aceleración de la gravedad.</p>
+<ol class="arabic simple" start="7">
+<li><p>Escriba una función que dados el nombre de un país, la cantidad de habitantes en millones y el Producto Interno Bruto en millones de USD,  retorne una cadena como en el siguiente ejemplo: “Colombia…=<em><strong><strong><strong>45 millones</strong></strong></strong></em>=    336599 USD Million”. La primera columna debe estar alineada a la izquierda, debe tener 25 caracteres y ocupar los espacios vacíos con <code class="docutils literal notranslate"><span class="pre">.</span></code>; la segunda columna debe estar centrada, tener 25 caracteres y ocupar los espacios vacíos con <code class="docutils literal notranslate"><span class="pre">*</span></code>; la tercera columna debe estar alineada a la derecha, tener 10 caracteres más el espacio ocupado por <code class="docutils literal notranslate"> <span class="pre">USD</span> <span class="pre">Million</span></code> y debe ocupar los espacios vacíos con espacios.</p></li>
+</ol>
+</section>
+<section id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Link to this heading">#</a></h2>
+<p>Las cadenas de caracteres son de muchísima importancia en prácticamente todos los lenguajes de programación, pero hay mucha variedad en los mecanismos para representarlos y manipularlos. Por ejemplo, en lenguajes como C y C++ el uso de cadenas de caracteres no es tan sencillo como en lenguajes más modernos puesto que se construyen sobre tipos más sencillos y requieren de particular cuidado para evitar problemas en la manipulación de la memoria. En lenguajes como Java y Python, estas limitaciones ya no existen y las cadenas se pueden usar con mucha más facilidad, aunque sigue siendo necesario poner mucha atención a ciertos detalles. Por ejemplo, en Java las cadenas de caracteres son objetos que aparentemente son como cualquier objeto otro, pero reciben un tratamiento <em>preferencial</em>: hay expresiones en el lenguaje específicas para trabajar con cadenas y el compilador procesa de forma diferente los objetos de tipo String que se construyan explícitamente dentro de un programa.</p>
+<p>Otro aspecto común en varios lenguajes es el que tiene que ver con la inmutabilidad de las cadenas de caracteres. Así como en Python, en Java y en otros lenguajes las cadenas de caracteres son inmutables: una vez se construyen no pueden cambiar su contenido. Esto se hace por motivos de eficiencia tanto en los cálculos como en el uso de memoria, pero podría llevar a errores si no se tiene en cuenta esta condición.</p>
+<p>En Python las cadenas de caracteres tienen otra propiedad muy interesante y es que son <em>secuencias</em>. Es decir que pueden manipularse igual que como se manipularían listas, diccionarios y otras estructuras de datos básicas del lenguaje. Este aspecto de las cadenas de caracteres se estudiará en el siguiente capítulo.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="querty" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>QUERTY hace referencia a las primeras 5 letras de la fila de letras superior del teclado.</p>
+</aside>
+<aside class="footnote brackets" id="error" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Si usted no puede ver alguno de estos caracteres, significa que el encoding ISO-8859-1 no está soportado o no está activo en su navegador, en el visor que esté utilizando para leer el texto, o en su computador.</p>
+</aside>
+<aside class="footnote brackets" id="utf" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Esta última parte puede ser un poco complicada de entender. pero no es crítico que entienda todos los detalles: UNICODE define cuáles son los caracteres, cómo deberían verse y qué número le corresponde a cada uno. UTF-8 define cómo se deben representar los caracteres UNICODE usando números binarios de 8, 16, 24 o 32 bits. UTF-16 define cómo representar esos caracteres usando 16 o 32 bits.</p>
+</aside>
+<aside class="footnote brackets" id="oo" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Siendo más precisos, <code class="docutils literal notranslate"><span class="pre">str</span></code> es en Python una <em>clase</em> y las clases definen un espacio de nombres dentro de los que están definidas un conjunto de funciones que son llamados métodos. Como se anunció en la introducción, en este libro no se tratará el tema de la programación orientada a objetos, así que no ahondaremos en el tema de la definición de clases y métodos. Sin embargo, para construir efectivamente programas Python, es necesario saber que existen librerías básicas basadas en clases, como el caso de <code class="docutils literal notranslate"><span class="pre">str</span></code>, y es necesario ser capaz de utilizar los métodos implementados en esas librerías.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./nivel2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="seccion2-4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Instrucciones condicionales</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="seccion2-6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Módulos de la librería estándar</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aspectos-de-codificacion-encoding">Aspectos de codificación (encoding)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteres-de-control">Caracteres de control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-y-operadores-sobre-cadenas-de-caracteres">Funciones y operadores sobre cadenas de caracteres</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-sobre-cadenas-de-caracteres">Métodos sobre cadenas de caracteres</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-versus-funciones">Métodos versus funciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inmutabilidad">Inmutabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-de-str">Métodos de str</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mayusculas-y-minusculas">Mayúsculas y minúsculas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-de-cadenas">Análisis de cadenas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacion-de-cadenas">Manipulación de cadenas</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#el-resto-de-metodos">El resto de métodos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format">Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

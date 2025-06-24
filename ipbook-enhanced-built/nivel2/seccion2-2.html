@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lógica y valores de verdad &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nivel2/seccion2-2';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/nivel2/seccion2-2.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Valores de verdad en Python" href="seccion2-3.html" />
+    <link rel="prev" title="Un programa para leer" href="seccion2-1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduccion/index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/programar.html">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Lógica y valores de verdad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-3.html">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-5.html">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-8.html">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel3/intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-3.html">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-4.html">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel4/intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-2.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-4.html">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nivel2/seccion2-2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lógica y valores de verdad</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-de-verdad-y-proposiciones">Valores de verdad y proposiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-booleana">Álgebra Booleana</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-logicas-y-tablas-de-verdad">Operaciones lógicas y tablas de verdad</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tablas-de-verdad">Tablas de verdad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leyes-fundamentales">Leyes fundamentales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leyes-de-de-morgan">Leyes de De Morgan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Ejercicios</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="logica-y-valores-de-verdad">
+<h1>Lógica y valores de verdad<a class="headerlink" href="#logica-y-valores-de-verdad" title="Link to this heading">#</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es repasar conceptos fundamentales de lógica tales como el concepto de proposición, valor de verdad, conjunción, disyunción y negación. La sección presentará los conceptos desde el punto de vista de lógica matemática antes de que sean aplicados a Python en la siguiente sección.</p>
+</div>
+<p>Hasta el momento hemos trabajado en nuestros programas usando valores de tipo numéricos y con cadenas de caracteres. A partir de ahora vamos a usar también <em>valores de verdad</em>, es decir valores que sólo pueden ser verdaderos o falsos. Estos valores son también llamados valores lógicos o Booleanos (por el matemático George Boole) y se pueden operar utilizando las reglas del <em>álgebra Booleana</em>, en lugar de las reglas del álgebra elemental que usamos para valores numéricos.</p>
+<p>En esta sección veremos cómo representar, manipular y operar con valores de verdad, haciendo un repaso rápido de lógica matemática, incluyendo las operaciones fundamentales y las leyes y propiedades que deben tenerse en cuenta para su manipulación.</p>
+<section id="valores-de-verdad-y-proposiciones">
+<h2>Valores de verdad y proposiciones<a class="headerlink" href="#valores-de-verdad-y-proposiciones" title="Link to this heading">#</a></h2>
+<p>Una proposición es una expresión completa que tiene un valor de verdad, es decir que es verdadera o falsa. Por ejemplo, la frase ‘Hoy está haciendo calor’ es una proposición porque expresa una idea que puede ser verdadera o falsa. Evidentemente nosotros no podemos saber si, en el momento en que el lector vea esto, estará haciendo calor o no, pero el hecho de que no lo sepamos no hace que la frase deje de ser una proposición. Por el contrario, expresiones como ‘azul’, ‘mañana’ o ‘cantando’ no son frases completas, no se puede decir que sean verdaderas o falsas y por ende no pueden ser proposiciones. En español se suelen usar también los términos <em>sentencia</em>, <em>afirmación</em> o <em>juicio</em> para referirse a una proposición.</p>
+<p>Cuando se usan proposiciones dentro del contexto de lógica matemática, se espera que tengan un valor de verdad que, como dijimos, puede ser <strong>verdadero</strong> o <strong>falso</strong>. Dependiendo del momento en que se evalúe, una proposición podría cambiar de valor (piense en la frase ‘Hoy está haciendo calor’), pero no es posible que una proposición tenga dos valores diferentes al mismo tiempo.</p>
+<p>Finalmente, debemos recalcar que los únicos dos valores de verdad son <em>verdadero</em> y <em>falso</em>, independientemente de cómo se representen. Por ejemplo, es usual que estos valores se representen con expresiones como <em>V</em> y <em>F</em>, <em>true</em> y <em>false</em>, <em>T</em> y <em>F</em> o incluso números como <em>1</em> y <em>0</em>. Sin embargo, en todos estos casos estamos hablando de los valores de verdad y no de expresiones de tipo numérico o de cadenas de caracteres.</p>
+</section>
+<section id="algebra-booleana">
+<h2>Álgebra Booleana<a class="headerlink" href="#algebra-booleana" title="Link to this heading">#</a></h2>
+<p>El álgebra Booleana es la rama del álgebra que trabaja con proposiciones y no  con valores numéricos como el álgebra elemental: en lugar de tener los números <strong>0</strong> y <strong>1</strong> y las operaciones de <strong>adición</strong> y <strong>multiplicación</strong> como elementos fundamentales, el álgebra Booleana se basa en los valores <strong>verdadero</strong> y <strong>falso</strong> y las operaciones <span class="math notranslate nohighlight">\(\land\)</span> (<strong>conjunción</strong>), <span class="math notranslate nohighlight">\(\lor\)</span> (<strong>disyunción</strong>) y <span class="math notranslate nohighlight">\(\lnot\)</span> (<strong>negación</strong>). Debido a limitaciones en el formato de este libro, en lugar de usar siempre los símbolos usuales para estas operaciones, usaremos también las expresiones <strong>and</strong>, <strong>or</strong> y <strong>not</strong> para referirnos respectivamente a la <strong>conjunción</strong>, la <strong>disyunción</strong> y la <strong>negación</strong>.</p>
+<section id="operaciones-logicas-y-tablas-de-verdad">
+<h3>Operaciones lógicas y tablas de verdad<a class="headerlink" href="#operaciones-logicas-y-tablas-de-verdad" title="Link to this heading">#</a></h3>
+<p>Como dijimos, son tres las operaciones básicas del álgebra Booleana. El resto de operaciones, como la implicación o la equivalencia, son operaciones secundarias que se pueden construir a partir de la conjunción, disyunción y negación.</p>
+<ol class="arabic simple">
+<li><p><strong>Negación</strong>. La negación (<span class="math notranslate nohighlight">\(\lnot\)</span>, <strong>not</strong>, <em><strong>no</strong></em>) es la operación Booleana que toma un valor de verdad y lo convierte en el otro valor. Es decir que la negación de un valor verdadero es un valor falso, y la negación de un valor falso es un valor verdadero. La negación es una operación <em>unaria</em>, que se aplica sobre un solo operando.</p></li>
+<li><p><strong>Conjunción</strong>. La conjunción (<span class="math notranslate nohighlight">\(\land\)</span>, <strong>and</strong>, <em><strong>y</strong></em>) es una operación Booleana binaria que tiene valor verdadero sólo cuando ambos operandos tienen valor verdadero. Esto implica que cuando un operando es verdadero y el otro es falso, o cuando ambos operandos son falsos, el resultado de una conjunción es un valor falso.</p></li>
+<li><p><strong>Disyunción</strong>. La disyunción (<span class="math notranslate nohighlight">\(\lor\)</span>, <strong>or</strong>, <em><strong>o</strong></em>) es una operación Booleana binaria que tiene valor verdadero cuando por lo menos uno de los operandos tiene valor verdadero. Esto implica que una disyunción tiene valor falso sólo cuando ambos operandos tienen valor falso.</p></li>
+</ol>
+<p>Veamos ahora algunos ejemplos de estas operaciones aplicadas a proposiciones sencillas en Español. Para esto lo primero que vamos a definir son tres proposiciones que identificaremos con las letras <em>P</em>, <em>Q</em> y <em>R</em>.</p>
+<ul class="simple">
+<li><p>P: Hoy está haciendo calor</p></li>
+<li><p>Q: Hoy es martes</p></li>
+<li><p>R: Hoy es un día de fiesta</p></li>
+</ul>
+<p>Las siguientes son 6 expresiones lógicas basadas en las 3 proposiciones y en los operadores lógicos. Para cada expresión se presenta también una “traducción” lo más directa posible a una frase en Español.</p>
+<ol class="arabic simple">
+<li><p><strong>Q</strong>: Hoy es martes.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\lnot\)</span> P</strong>: Hoy no está haciendo calor</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\lnot\)</span> Q</strong>: Hoy no es martes</p></li>
+<li><p><strong>P <span class="math notranslate nohighlight">\(\land\)</span> Q</strong>: Hoy está haciendo calor y es martes</p></li>
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> R</strong>: Hoy es martes y no es un día de fiesta</p></li>
+<li><p><strong>P <span class="math notranslate nohighlight">\(\lor\)</span> R</strong>: Hoy está haciendo calor o es un día de fiesta</p></li>
+</ol>
+<p>A continuación, analizamos estas expresiones una por una.</p>
+<ol class="arabic simple">
+<li><p>La primera expresión será verdadera sólo cuando sea evaluada un día que sea martes; de lo contrario, será falsa.</p></li>
+<li><p>La segunda expresión será verdadera sólo cuando sea evaluada un día en que no haga calor. Esto quiere decir que la expresión <strong><span class="math notranslate nohighlight">\(\lnot\)</span> P</strong> será verdadera sólo cuando la expresión <strong>P</strong> sea falsa. De igual forma, <strong><span class="math notranslate nohighlight">\(\lnot\)</span> P</strong> será falsa sólo cuando la expresión <strong>P</strong> sea verdadera.</p></li>
+<li><p>La tercera expresión es similar y será verdadera sólo cuando sea evaluada un día que no sea martes.</p></li>
+<li><p>La cuarta expresión usa una conjunción y será verdadera sólo cuando <strong>P</strong> y <strong>Q</strong> sean verdaderas simultáneamente. Es decir, cuando sea evaluada un día en que esté haciendo calor y también sea martes. Si cualquiera de las dos partes es falsa, o si las dos son falsas, entonces la conjunción será falsa.</p></li>
+<li><p>La quinta expresión usa también una conjunción, pero en este caso será verdadera sólo cuando <strong>Q</strong> sea verdadera y cuando <strong><span class="math notranslate nohighlight">\(\lnot\)</span> R</strong> sea verdadero, es decir cuando <strong>R</strong> sea falso. En otras palabras, será verdadera sólo cuando se evalúe un martes que no sea día de fiesta. Si se evalúa cualquier otro día de la semana, o si se evalúa un martes que además sea día de fiesta, entonces la expresión será falsa.</p></li>
+<li><p>La sexta expresión es la que tiene una interpretación lógica que podría estar más alejada de lo que dice la intuición. En este caso se está usando una disyunción, así que tendrá un valor verdadero cuando al menos uno de los operandos sea verdadero. Esto quiere decir que la expresión será verdadera cuando esté haciendo calor (<strong>P</strong>) o cuando sea un día de fiesta (<strong>R</strong>). Si las dos partes son verdaderas (está haciendo calor y es un día de fiesta), la expresión también será verdadera. La expresión sólo será falsa cuando las dos partes sean falsas simultáneamente, es decir cuando <strong>P</strong> sea falsa y <strong>R</strong> sea falsa, o cuando <strong><span class="math notranslate nohighlight">\(\lnot\)</span> P</strong> sea verdadera y <strong><span class="math notranslate nohighlight">\(\lnot\)</span> R</strong> también sea verdadera.</p></li>
+</ol>
+<p>Expresiones similares a este último ejemplo a veces se interpretan equivocadamente como si hubiera un <em>“o exclusivo”</em> que sólo sería verdadero cuando una de las expresiones fuera verdadera y la otra fuera falsa. Existe un operador para expresar esta relación usualmente llamado <em>xor</em>, el cual se puede construir a partir de operaciones de conjunción, disyunción y negación.</p>
+<section id="ejercicios">
+<h4>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Escriba la “traducción” más clara posible a español de las siguientes expresiones y analice en qué casos sería verdadera y en qué casos sería falsa:</p>
+<ul class="simple">
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\lor\)</span> R</strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\lnot\)</span> P <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> R</strong></p></li>
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\land\)</span> Q</strong></p></li>
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> Q</strong></p></li>
+<li><p><strong>P <span class="math notranslate nohighlight">\(\land\)</span> (Q <span class="math notranslate nohighlight">\(\lor\)</span> R)</strong></p></li>
+<li><p><strong>(P <span class="math notranslate nohighlight">\(\land\)</span> Q) <span class="math notranslate nohighlight">\(\lor\)</span> R</strong></p></li>
+<li><p><strong>(P <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> R) <span class="math notranslate nohighlight">\(\lor\)</span> (<span class="math notranslate nohighlight">\(\lnot\)</span> P <span class="math notranslate nohighlight">\(\land\)</span> R)</strong></p></li>
+</ul>
+</li>
+<li><p>Escriba las expresiones equivalentes a las siguientes proposiciones en español, usando los 3 identificadores P, Q y R.</p>
+<ul class="simple">
+<li><p>Hoy no es martes</p></li>
+<li><p>Hoy no es martes o hoy es martes</p></li>
+<li><p>Hoy está haciendo calor o es martes o es un día de fiesta</p></li>
+<li><p>Hoy ni es martes ni es un día de fiesta</p></li>
+</ul>
+</li>
+<li><p>Simplifique las siguientes expresiones (escríbalas de una forma más breve) si es posible:</p>
+<ul class="simple">
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\land\)</span> Q</strong></p></li>
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> Q</strong></p></li>
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\land\)</span> Verdadero</strong></p></li>
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\land\)</span> Falso</strong></p></li>
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\lor\)</span> Verdadero</strong></p></li>
+<li><p><strong>Q <span class="math notranslate nohighlight">\(\lor\)</span> Falso</strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\lnot\)</span> Q <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> Q</strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\lnot\)</span> Q <span class="math notranslate nohighlight">\(\lor\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> Q</strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\lnot\)</span>(Q <span class="math notranslate nohighlight">\(\lor\)</span> P)</strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\lnot\)</span>(Q <span class="math notranslate nohighlight">\(\land\)</span> P)</strong></p></li>
+<li><p><strong>(P <span class="math notranslate nohighlight">\(\land\)</span> Q) <span class="math notranslate nohighlight">\(\lor\)</span> (P <span class="math notranslate nohighlight">\(\land\)</span> R)</strong></p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="tablas-de-verdad">
+<h3>Tablas de verdad<a class="headerlink" href="#tablas-de-verdad" title="Link to this heading">#</a></h3>
+<p>Para estudiar el comportamiento de una expresión es usual que se utilice algo llamado una tabla de verdad. Esta no es más que una representación sencilla que nos permite analizar todos los valores posibles de una expresión, en función de los valores de las proposiciones simples involucradas.</p>
+<p>Consideremos la tabla más sencilla posible, en la cual sólo tenemos la proposición P <a class="footnote-reference brackets" href="#tf" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>P</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\lnot\)</span> P</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>T</p></td>
+<td class="text-center"><p>F</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>F</p></td>
+<td class="text-center"><p>T</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Aunque sencilla, esta tabla es interesante porque nos muestra todos los posibles valores de la expresión <strong>P</strong> y los valores correspondientes que tendría la expresión <strong><span class="math notranslate nohighlight">\(\lnot\)</span> P</strong>. También nos muestra que las dos expresiones no pueden ser verdaderas simultáneamente, sino que tienen valores opuestos. Si extendemos la tabla con un par de expresiones encontraremos dos principios muy importantes:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>P</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\lnot\)</span> P</p></th>
+<th class="head text-center"><p>P <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> P</p></th>
+<th class="head text-center"><p>P <span class="math notranslate nohighlight">\(\lor\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> P</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>T</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>T</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>F</p></td>
+<td class="text-center"><p>T</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>T</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En primer lugar, vemos que la expresión <strong>P <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> P</strong> siempre es falsa. Esto quiere decir que no es posible que una proposición sea simultáneamente verdadera y falsa, lo cual usualmente se conoce como el principio de no contradicción.</p>
+<p>En segundo lugar, vemos que la expresión <strong>P <span class="math notranslate nohighlight">\(\lor\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> P</strong> siempre es verdadero. Esto quiere decir que siempre bien sea una proposición o su negación tienen que ser verdaderas. Como no hay una tercera opción, eso se conoce como el principio del tercero excluido.</p>
+<p>La siguiente tabla de verdad es un poco más compleja porque involucra dos proposiciones.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>P</p></th>
+<th class="head text-center"><p>Q</p></th>
+<th class="head text-center"><p>P <span class="math notranslate nohighlight">\(\land\)</span> Q</p></th>
+<th class="head text-center"><p>P <span class="math notranslate nohighlight">\(\lor\)</span> Q</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>T</p></td>
+<td class="text-center"><p>T</p></td>
+<td class="text-center"><p>T</p></td>
+<td class="text-center"><p>T</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>T</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>T</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>F</p></td>
+<td class="text-center"><p>T</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>T</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>F</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>F</p></td>
+<td class="text-center"><p>F</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Acá podemos ver, de otra manera, lo que ya sabíamos sobre la conjunción y la disyunción: una conjunción es verdadera sólo cuando los dos operandos son verdaderos y una disyunción es falsa sólo cuando los dos operandos son falsos.</p>
+</section>
+<section id="leyes-fundamentales">
+<h3>Leyes fundamentales<a class="headerlink" href="#leyes-fundamentales" title="Link to this heading">#</a></h3>
+<p>Así como en el álgebra elemental hay algunas leyes muy importantes y conocidas (conmutatividad, asociatividad, distribución, precedencia de operadores, etc.), en el álgebra Booleana también hay algunas leyes importantes que se deben tener en cuenta y pueden servir para replantear expresiones de formas que sean más sencillas.</p>
+<ol class="arabic simple">
+<li><p><strong>Conmutatividad</strong>: Tanto la conjunción como la disyunción son conmutativas, así que <strong>A <span class="math notranslate nohighlight">\(\lor\)</span> B</strong> es equivalente a <strong>B <span class="math notranslate nohighlight">\(\lor\)</span> A</strong>. También es cierto que <strong>A <span class="math notranslate nohighlight">\(\land\)</span> B</strong> es equivalente a <strong>B <span class="math notranslate nohighlight">\(\land\)</span> A</strong> <a class="footnote-reference brackets" href="#conm" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p></li>
+<li><p><strong>Asociatividad</strong>: Tanto la conjunción como la disyunción son asociativas, así que <strong>A <span class="math notranslate nohighlight">\(\lor\)</span> (B <span class="math notranslate nohighlight">\(\lor\)</span> C)</strong> es equivalente a <strong>(A <span class="math notranslate nohighlight">\(\lor\)</span> B) <span class="math notranslate nohighlight">\(\lor\)</span> C</strong>. Además, <strong>A <span class="math notranslate nohighlight">\(\land\)</span> (B <span class="math notranslate nohighlight">\(\land\)</span> C)</strong> es equivalente a <strong>(A <span class="math notranslate nohighlight">\(\land\)</span> B) <span class="math notranslate nohighlight">\(\land\)</span> C</strong> <a class="footnote-reference brackets" href="#assoc" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.</p></li>
+<li><p><strong>Distribución</strong>: en el álgebra Booleana, la conjunción distribuye sobre la disyunción y viceversa <a class="footnote-reference brackets" href="#dist" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>. Esto quiere decir que:</p>
+<ul class="simple">
+<li><p><strong>A <span class="math notranslate nohighlight">\(\land\)</span> (B <span class="math notranslate nohighlight">\(\lor\)</span> C) <span class="math notranslate nohighlight">\(\equiv\)</span> (A <span class="math notranslate nohighlight">\(\land\)</span> B) <span class="math notranslate nohighlight">\(\lor\)</span> (A <span class="math notranslate nohighlight">\(\land\)</span> C)</strong></p></li>
+<li><p><strong>A <span class="math notranslate nohighlight">\(\lor\)</span> (B <span class="math notranslate nohighlight">\(\land\)</span> C) <span class="math notranslate nohighlight">\(\equiv\)</span> (A <span class="math notranslate nohighlight">\(\lor\)</span> B) <span class="math notranslate nohighlight">\(\land\)</span> (A <span class="math notranslate nohighlight">\(\lor\)</span> C)</strong></p></li>
+</ul>
+</li>
+<li><p><strong>Identidad de la conjunción</strong>: si se hace una conjunción con el valor verdadero, el resultado es el mismo. Es decir que <strong>A <span class="math notranslate nohighlight">\(\land\)</span> Verdadero <span class="math notranslate nohighlight">\(\equiv\)</span> A</strong> <a class="footnote-reference brackets" href="#ident" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p></li>
+<li><p><strong>Identidad de la disyunción</strong>: si se hace una disyunción con el valor falso, el resultado es el mismo. Es decir que <strong>A <span class="math notranslate nohighlight">\(\lor\)</span> Falso <span class="math notranslate nohighlight">\(\equiv\)</span> A</strong>.</p></li>
+<li><p><strong>Dominación de la conjunción</strong>: si se hace una conjunción con el valor falso, el resultado es falso. Es decir que <strong>A <span class="math notranslate nohighlight">\(\land\)</span> Falso <span class="math notranslate nohighlight">\(\equiv\)</span> Falso</strong> <a class="footnote-reference brackets" href="#dom" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.</p></li>
+<li><p><strong>Dominación de la disyunción</strong>: si se hace una disyunción con el valor verdadero, el resultado es verdadero. Es decir que <strong>A <span class="math notranslate nohighlight">\(\lor\)</span> Verdadero <span class="math notranslate nohighlight">\(\equiv\)</span> Verdadero</strong>.</p></li>
+</ol>
+<p>Finalmente, proponemos la siguiente equivalencia que, aunque no tiene un nombre común, es de uso extremadamente frecuente y de mucha utilidad cuando se está empezando a programar:</p>
+<ul class="simple">
+<li><p><strong>Negación y equivalencia a falso</strong>: es lo mismo decir que una proposición tiene un valor falso que decir que su negación tiene un valor positivo. Es decir que <strong>A <span class="math notranslate nohighlight">\(\equiv\)</span> Falso</strong> es lo mismo que decir <strong><span class="math notranslate nohighlight">\(\lnot\)</span> A <span class="math notranslate nohighlight">\(\equiv\)</span> Verdadero</strong>. Más aún, <strong>B <span class="math notranslate nohighlight">\(\equiv\)</span> Verdadero</strong> es lo mismo que decir <strong>B</strong>, así que <strong>A <span class="math notranslate nohighlight">\(\equiv\)</span> Falso</strong> se puede reescribir como <strong><span class="math notranslate nohighlight">\(\lnot\)</span> A</strong>.</p></li>
+</ul>
+</section>
+<section id="leyes-de-de-morgan">
+<h3>Leyes de De Morgan<a class="headerlink" href="#leyes-de-de-morgan" title="Link to this heading">#</a></h3>
+<p>Finalizamos este repaso de lógica con dos teoremas muy importantes que se deben tener muy en cuenta cuando se estén reescribiendo operaciones lógicas.</p>
+<p>Las leyes o teoremas de De Morgan dicen que:</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\lnot\)</span> (P <span class="math notranslate nohighlight">\(\land\)</span> Q) <span class="math notranslate nohighlight">\(\equiv\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> P <span class="math notranslate nohighlight">\(\lor\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> Q</strong></p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\lnot\)</span> (P <span class="math notranslate nohighlight">\(\lor\)</span> Q) <span class="math notranslate nohighlight">\(\equiv\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> P <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> Q</strong></p></li>
+</ul>
+<p>Volviendo a las proposiciones de ejemplo que usamos anteriormente, la expresión <strong><span class="math notranslate nohighlight">\(\lnot\)</span> (P <span class="math notranslate nohighlight">\(\land\)</span> Q)</strong> podría “traducirse” como “no es cierto que (hoy está haciendo calor y hoy es martes)”. Hemos agregado los paréntesis para hacer notar que las palabras “no es cierto que” hacen referencia a las dos cláusulas subordinadas.</p>
+<p>Sabemos que la expresión completa será verdadera sólo cuando la parte que está entre paréntesis sea falsa para que la negación invierta su valor. Es decir que la expresión completa será verdadera cuando sea falso que “hoy está haciendo calor y hoy es martes”. En este caso tenemos una conjunción, así que la operación será verdadera sólo cuando ambas sean falsas. Como en este caso nos interesa que sea falsa, decimos que la operación de conjunción será falsa cuando cualquiera de las dos partes sea falsa, es decir cuando la primera parte sea falsa <strong>o</strong> la segunda parte sea falsa. Volviendo a la expresión completa, encontramos que la expresión será verdadera cuando la proposición <strong>P</strong> sea falsa o cuando la proposición <strong>Q</strong> sea falsa.</p>
+<p>Esto quiere decir que la expresión original también podría haberse traducido de forma equivalente como “no es cierto que hoy esté haciendo calor o no es cierto que hoy sea martes”.</p>
+<p>La segunda propiedad es análoga a la primera.</p>
+</section>
+</section>
+<section id="id7">
+<h2>Ejercicios<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Construya una tabla de verdad para verificar cada una de las leyes de De Morgan. Para la primera, necesitará una columna para <strong>P</strong>, una para <strong>Q</strong>, una para <strong><span class="math notranslate nohighlight">\(\lnot\)</span> (P <span class="math notranslate nohighlight">\(\land\)</span> Q)</strong> y una para <strong><span class="math notranslate nohighlight">\(\lnot\)</span> P <span class="math notranslate nohighlight">\(\lor\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> Q</strong>. Debería encontrar exactamente los mismos valores en las últimas dos columnas. Para facilitar el trabajo, también le recomendamos agregar una columna con los valores de las expresiones <strong><span class="math notranslate nohighlight">\(\lnot\)</span> P</strong>, <strong><span class="math notranslate nohighlight">\(\lnot\)</span> Q</strong>, <strong>P <span class="math notranslate nohighlight">\(\land\)</span> Q</strong> y <strong>P <span class="math notranslate nohighlight">\(\lor\)</span> Q</strong>.</p></li>
+<li><p>En un ejercicio anterior se le pidió simplificar unas expresiones. Vuelva a hacer el ejercicio construyendo una tabla de verdad para cada caso y aplicando las leyes que se vieron al final de esta sección.</p></li>
+<li><p>Como vimos, el álgebra booleana se define en términos de dos valores y tres operaciones (conjunción, disyunción y negación). Otras operaciones lógicas pueden definirse como composiciones de las operaciones básicas. Por ejemplo, la operación <strong>xor</strong>, que es verdadera sólo cuando exactamente uno de los operandos es verdadero, se puede definir como: <strong>P xor Q <span class="math notranslate nohighlight">\(\equiv\)</span> (P <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> Q) <span class="math notranslate nohighlight">\(\lor\)</span> (Q <span class="math notranslate nohighlight">\(\land\)</span> <span class="math notranslate nohighlight">\(\lnot\)</span> P)</strong>.
+Defina cada una de las siguientes operaciones y para cada una construya una tabla de verdad que muestre su comportamiento y le sirva para verificar su definición.</p></li>
+</ol>
+<ul class="simple">
+<li><p>xor (or exclusivo): es verdadero cuando exactamente un operando es verdadero.</p></li>
+<li><p>== (equivalencia): es verdadero cuando los operandos tienen el mismo valor.</p></li>
+<li><p>!= (desigualdad): es verdadero cuando los operandos tienen valores diferentes.</p></li>
+<li><p>nand: es falso sólo cuando los dos operandos son verdaderos.</p></li>
+<li><p>nor: es verdadero sólo cuando los dos operandos son falsos.</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="tf" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Para mantener las tablas relativamente pequeñas, usaremos T para valores verdaderos y F para valores falsos.</p>
+</aside>
+<aside class="footnote brackets" id="conm" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>En el álgebra elemental tanto la adición como la multiplicación son conmutativas.</p>
+</aside>
+<aside class="footnote brackets" id="assoc" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>En el álgebra elemental tanto la adición como la multiplicación son asociativas. Es decir que <strong>a + (b + c)</strong> es igual a <strong>(a + b) + c</strong>.</p>
+</aside>
+<aside class="footnote brackets" id="dist" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>El álgebra elemental, la multiplicación distribuye sobre la adición, pero no al contario. Es decir que <strong>a <span class="math notranslate nohighlight">\(\times\)</span>(b+c)=a<span class="math notranslate nohighlight">\(\times\)</span>b + a<span class="math notranslate nohighlight">\(\times\)</span>c</strong>, pero la ecuación no se mantiene si se intercambian las operaciones.</p>
+</aside>
+<aside class="footnote brackets" id="ident" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>Esto es equivalente a multiplicar por 1 o a sumar 0.</p>
+</aside>
+<aside class="footnote brackets" id="dom" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p>Esto es equivalente a multiplicar por 0. No existe algo similar para la adición.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./nivel2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="seccion2-1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Un programa para leer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="seccion2-3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Valores de verdad en Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-de-verdad-y-proposiciones">Valores de verdad y proposiciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebra-booleana">Álgebra Booleana</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-logicas-y-tablas-de-verdad">Operaciones lógicas y tablas de verdad</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tablas-de-verdad">Tablas de verdad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leyes-fundamentales">Leyes fundamentales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leyes-de-de-morgan">Leyes de De Morgan</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Ejercicios</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

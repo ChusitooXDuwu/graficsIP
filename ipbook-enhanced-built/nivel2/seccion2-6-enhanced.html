@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Módulos de la librería estándar &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nivel2/seccion2-6-enhanced';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/nivel2/seccion2-6-enhanced.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduccion/index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/programar.html">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-2.html">Lógica y valores de verdad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-3.html">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-5.html">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-8.html">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel3/intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-3.html">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-4.html">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel4/intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-2.html">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-4.html">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel4/seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nivel2/seccion2-6-enhanced.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Módulos de la librería estándar</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-modulo-math">El módulo math</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones">Funciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constantes">Constantes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-modulo-random">El módulo random</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-continuos">Valores continuos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-discretos">Valores discretos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-aleatorias">Variables aleatorias</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modulos-de-la-libreria-estandar">
+<h1>Módulos de la librería estándar<a class="headerlink" href="#modulos-de-la-libreria-estandar" title="Link to this heading">#</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es presentar un par de módulos para ilustrar el poder de las funcionalidades que ya están disponibles en la librería estándar de Python.</p>
+</div>
+<p>Afortunadamente vivimos en una época en la cual no tenemos que preocuparnos por programar absolutamente todo cada vez que queremos construir un nuevo programa. Por ejemplo, cuando en 1992 la compañía idSoftware empezó a trabajar en Wolfenstein 3D, tuvieron que construir desde cero todas las funcionalidades para representar espacios tridimensionales en la pantalla. Hoy en día, no sólo hay infinidad de librerías que hacen las mismas funcionalidades, sino que algunas de esas funcionalidades están implementadas dentro de las tarjetas de video para que su uso sea aún más fácil y su ejecución sea más rápida.</p>
+<p>Por otra parte, esta realidad hace que sea cada vez más importante tener la curiosidad de buscar librerías que puedan ayudarnos con nuestro trabajo y la habilidad para aprender a usarlas rápidamente.</p>
+<p>En esta sección enfrentamos esta realidad introduciendo dos módulos que hacen parte de la librería estándar de Python. Es decir, estos dos módulos hacen parte de la librería que debería acompañar a cualquier distribución de Python y que siempre deberíamos tener disponible. Esta librería incluye más de un centenar de módulos que cubren aspectos como procesamiento de texto, manipulación de fechas y calendarios, compresión de archivos, criptografía, comunicación por Internet e interacción con el sistema operativo.</p>
+<section id="el-modulo-math">
+<h2>El módulo math<a class="headerlink" href="#el-modulo-math" title="Link to this heading">#</a></h2>
+<p>El primer módulo que vamos a introducir es el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code>, cuya documentación actual se puede encontrar en <a class="reference external" href="https://docs.python.org/3.7/library/math.html">https://docs.python.org/3.7/library/math.html</a>.</p>
+<p>El módulo math define funciones que permiten hacer con facilidad importantes operaciones matemáticas y definen también unas constantes de uso frecuente.</p>
+<p>La manera de importar todo lo que ofrece este módulo es a través de la instrucción <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">math</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">🧮 Explorador Interactivo del Módulo Math</p>
+<p>¿Quieres experimentar con las funciones y constantes del módulo math? Usa nuestro explorador interactivo donde puedes probar diferentes funciones matemáticas en tiempo real.</p>
+<p>{% embed url=“<a class="reference external" href="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/math-module-explorer.html">https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/math-module-explorer.html</a>” %}
+Explora las funciones y constantes del módulo math de Python de manera interactiva
+{% endembed %}</p>
+</div>
+<section id="funciones">
+<h3>Funciones<a class="headerlink" href="#funciones" title="Link to this heading">#</a></h3>
+<p>Las siguientes son algunas de las funciones que define el módulo y cuyo conocimiento podría ser de mucha utilidad.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gcd(x,</span> <span class="pre">y)</span></code>: función para calcular el máximo común divisor de dos números (Gratest Common Denominator).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log(x,</span> <span class="pre">base)</span></code>: función para calcular el logaritmo de un número con respecto a una base.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log2(x)</span></code>: función para calcular el logaritmo de un número en base 2.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqrt</span></code>: función para calcular la raíz cuadrada de un número.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">tan</span></code>: funciones para calcular el seno, coseno y tangente de un ángulo medido en radianes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">degrees</span></code>: función para convertir un ángulo en radianes a un ángulo medido en grados.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">radians</span></code>: función para convertir un ángulo medido en grados a un ángulo medido en radianes.</p></li>
+</ul>
+<div class="note admonition">
+<p class="admonition-title">💡 Prueba estas funciones</p>
+<p>En el explorador interactivo puedes probar expresiones como:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(16)</span></code> - Calcula la raíz cuadrada de 16</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.sin(math.pi/2)</span></code> - Calcula el seno de π/2 radianes (90 grados)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.gcd(48,</span> <span class="pre">18)</span></code> - Encuentra el máximo común divisor de 48 y 18</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.degrees(math.pi)</span></code> - Convierte π radianes a grados</p></li>
+</ul>
+</div>
+</section>
+<section id="constantes">
+<h3>Constantes<a class="headerlink" href="#constantes" title="Link to this heading">#</a></h3>
+<p>Este módulo también define unas constantes que son de utilidad tanto para hacer otros cálculos como para detectar problemas con cálculos previos. Estos valores son:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\pi\)</span></p></li>
+<li><p>e (número de Euler)</p></li>
+<li><p>inf, el valor que utiliza Python para representar el infinito.</p></li>
+<li><p>nan, el valor que utiliza Python para representar un número indefinido (NaN significa Not A Number).</p></li>
+</ul>
+<p>Tenga cuidado: aunque en la mayoría de lenguajes las constantes se suelen expresar con mayúsculas, en el módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> las constantes tienen nombres en minúsculas, como se ve en el siguiente fragmento:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor de pi:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="go">El valor de pi: 3.141592653589793</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor de e:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
+<span class="go">El valor de e: 2.718281828459045</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor de infinito:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="go">El valor de infinito: inf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;El valor de un número indefinido:&quot;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="go">El valor de un número indefinido: nan</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="el-modulo-random">
+<h2>El módulo random<a class="headerlink" href="#el-modulo-random" title="Link to this heading">#</a></h2>
+<p>El segundo módulo que vamos a introducir es el módulo <code class="docutils literal notranslate"><span class="pre">random</span></code>, cuya documentación actual se puede encontrar en <a class="reference external" href="https://docs.python.org/3.7/library/random.html">https://docs.python.org/3.7/library/random.html</a>.</p>
+<p>El módulo random define funciones que generan números aleatorios de acuerdo con diferentes reglas. Por ejemplo, este módulo ofrece mecanismos para generar valores continuos, valores discretos y también valores que se ajusten a las principales distribuciones aleatorias.</p>
+<p>La manera de importar todo lo que ofrece este módulo es a través de la instrucción <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">🎲 Explorador Interactivo del Módulo Random</p>
+<p>Experimenta con diferentes tipos de generación de números aleatorios usando nuestro simulador interactivo. Incluye simulación de dados, generación de números en rangos personalizados y visualización de distribuciones normales.</p>
+<p>{% embed url=“<a class="reference external" href="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html">https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html</a>” %}
+Explora la generación de números aleatorios con el módulo random de Python
+{% endembed %}</p>
+</div>
+<section id="valores-continuos">
+<h3>Valores continuos<a class="headerlink" href="#valores-continuos" title="Link to this heading">#</a></h3>
+<p>Una variable aleatoria continua es una variable que puede asumir cualquiera de los valores dentro de un rango determinado, con una probabilidad que depende de la distribución asociada a la variable.</p>
+<p>Dentro del módulo <code class="docutils literal notranslate"><span class="pre">random</span></code>, la función también llamada <code class="docutils literal notranslate"><span class="pre">random</span></code> es tal vez la más utilizada porque permite generar valores uniformemente distribuidos entre 0 y 1. Es decir, cada vez que se invoque la función <code class="docutils literal notranslate"><span class="pre">random.random()</span></code> se obtendrá un número entre 0 y 1, escogido de forma completamente aleatoria. Note que 0 es un valor posible, pero 1 está por fuera del intervalo considerado.</p>
+<p>La gran ventaja que tiene esta distribución es que multiplicar el resultado de la función por un valor ‘x’ hace que se encuentren valores uniformemente distribuidos entre 0 y ‘x’.</p>
+<p>Por ejemplo, si quisiéramos generar un valor aleatorio entre 0 y 7, podríamos ejecutar el siguiente código:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">valor</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<p>Un efecto similar se puede lograr usando la función <code class="docutils literal notranslate"><span class="pre">uniform</span></code> que recibe dos parámetros ‘a’ y ‘b’ y genera un número aleatorio en el intervalo [a, b). Note que llamar <code class="docutils literal notranslate"><span class="pre">random.uniform(a,</span> <span class="pre">b)</span></code> es equivalente a invocar <code class="docutils literal notranslate"><span class="pre">random.random()*(b-a)</span> <span class="pre">+</span> <span class="pre">a</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">🎯 Experimenta con rangos personalizados</p>
+<p>En la visualización interactiva puedes:</p>
+<ul class="simple">
+<li><p>Cambiar los valores mínimo y máximo para generar números en cualquier rango</p></li>
+<li><p>Ver cómo se distribuyen los números generados</p></li>
+<li><p>Comparar diferentes rangos y observar los patrones</p></li>
+</ul>
+</div>
+</section>
+<section id="valores-discretos">
+<h3>Valores discretos<a class="headerlink" href="#valores-discretos" title="Link to this heading">#</a></h3>
+<p>Una variable aleatoria discreta toma sólo valores discretos dentro de un rango determinado, con una probabilidad que depende de la distribución asociada a la variable. A diferencia de las variables continuas, cuando las variables son discretas los posibles valores que pueden asumir son enumerables.</p>
+<p>La principal función para generar variables aleatorias discretas se llama <code class="docutils literal notranslate"><span class="pre">randint</span></code> y sirve para generar valores enteros entre dos números ‘a’ y ‘b’.
+En el siguiente programa se usa esta función para simular el lanzamiento de un dado:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">lanzamiento</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">🎲 Simula lanzamientos de dados</p>
+<p>La visualización incluye un simulador de dados que:</p>
+<ul class="simple">
+<li><p>Muestra animaciones realistas de lanzamiento</p></li>
+<li><p>Calcula estadísticas de frecuencia</p></li>
+<li><p>Permite lanzar múltiples dados para ver patrones</p></li>
+<li><p>Demuestra cómo la frecuencia se acerca a 1/6 para cada número</p></li>
+</ul>
+</div>
+<p>Una función relacionada es <code class="docutils literal notranslate"><span class="pre">randrange</span></code>, que genera valores enteros desde un número inicial (start), hasta un número final (stop), con un cierto intervalo (step). Por ejemplo, si queremos un número múltiplo de 3 entre 6 y 30 podemos usar la siguiente invocación:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note que esta función puede generar el número ‘start’ pero nunca generará el valor ‘stop’.</p>
+</section>
+<section id="variables-aleatorias">
+<h3>Variables aleatorias<a class="headerlink" href="#variables-aleatorias" title="Link to this heading">#</a></h3>
+<p>Finalmente, el módulo random incluye funciones para generar valores siguiendo la distribución triangular, Beta, exponencial, Gamma, Normal, y Pareto, entre otras.</p>
+<p>Como esta no pretende ser una revisión exhaustiva sólo revisaremos la función <code class="docutils literal notranslate"><span class="pre">random.normalvariate</span></code>, que genera números distribuidos de acuerdo a una distribución normal.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">)</span>
+<span class="go">Help on method normalvariate in module random:</span>
+
+<span class="go">normalvariate(mu, sigma) method of random.Random instance</span>
+<span class="go">    Normal distribution.</span>
+
+<span class="go">    mu is the mean, and sigma is the standard deviation.</span>
+
+</pre></div>
+</div>
+<p>Esta función requiere de un parámetro <code class="docutils literal notranslate"><span class="pre">mu</span></code> (el valor promedio de los valores en la distribución) y de un parámetro <code class="docutils literal notranslate"><span class="pre">sigma</span></code> (la desviación estándar de los valores) para generar valores que se distribuyan de forma normal de acuerdo con los parámetros. Los siguientes son 10 valores generados con esta función usando una media de 10 y una desviación estándar de 1.5:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># random.normalvariate(10,1.5)</span>
+<span class="mi">0</span> <span class="o">-</span> <span class="mf">9.74230603318132</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="mf">9.765339949262536</span>
+<span class="mi">2</span> <span class="o">-</span> <span class="mf">10.309760658154236</span>
+<span class="mi">3</span> <span class="o">-</span> <span class="mf">10.00652736167399</span>
+<span class="mi">4</span> <span class="o">-</span> <span class="mf">8.828709896119436</span>
+<span class="mi">5</span> <span class="o">-</span> <span class="mf">9.105408757081975</span>
+<span class="mi">6</span> <span class="o">-</span> <span class="mf">8.28137647679426</span>
+<span class="mi">7</span> <span class="o">-</span> <span class="mf">9.898607684096598</span>
+<span class="mi">8</span> <span class="o">-</span> <span class="mf">7.545894557163404</span>
+<span class="mi">9</span> <span class="o">-</span> <span class="mf">10.83177690308728</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">📊 Visualiza la distribución normal</p>
+<p>En la sección de distribución normal de la visualización puedes:</p>
+<ul class="simple">
+<li><p>Cambiar los parámetros μ (media) y σ (desviación estándar)</p></li>
+<li><p>Ver un histograma en tiempo real de 100 muestras</p></li>
+<li><p>Comparar los valores esperados vs. los calculados</p></li>
+<li><p>Entender visualmente cómo afectan los parámetros a la forma de la distribución</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Usando la función <code class="docutils literal notranslate"><span class="pre">random.normalvariate</span></code> genere 15 números aleatorios con media 3.8 y desviación estándar de 1. Calcule ahora usted la media de los números generados y la desviación estándar. ¿Qué tan lejos están de la media y la desviación planeada? Ejecute su programa y observe cómo cambian los resultados con cada ejecución.</p></li>
+</ol>
+<div class="exercise admonition">
+<p class="admonition-title">💻 Ejercicio interactivo</p>
+<p>Usa la visualización del módulo random para completar este ejercicio:</p>
+<ol class="arabic simple">
+<li><p>Configura la media en 3.8 y la desviación estándar en 1.0</p></li>
+<li><p>Genera múltiples muestras y observa las estadísticas</p></li>
+<li><p>Anota las diferencias entre los valores esperados y calculados</p></li>
+<li><p>Repite el proceso varias veces para ver la variabilidad</p></li>
+</ol>
+</div>
+</section>
+<section id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Link to this heading">#</a></h2>
+<p>Así como Python define una librería estándar con módulos para las tareas más comunes (¡y muchas tareas no tan comunes!), la mayoría de lenguajes de programación ofrecen su propia librería estándar que debería estar disponible para todos los que usen el lenguaje. A juzgar por las discusiones y procesos legales de los últimos años sobre la propiedad y la disponibilidad de las librerías estándar de Java, se podría creer que las librerías son incluso más importantes que el lenguaje mismo.</p>
+<p>Muchas veces, aprender a utilizar efectivamente las funcionalidades disponibles en las librerías estándar es más difícil y toma más tiempo que aprender a usar la sintaxis misma de un lenguaje. Por ejemplo, un programador experimentado debería ser capaz de dominar en un día la sintaxis del lenguaje de programación SmallTalk<a class="footnote-reference brackets" href="#st" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> , pero seguramente le tomaría mucho más tiempo dominar las librerías estándar que son absolutamente imprescindibles para construir incluso programas sencillos con el lenguaje. Algo similar le pasa a los programadores que pasan de Java a C# y viceversa: hay muchísimos conceptos comunes pero la principal dificultad en el proceso de aprendizaje es aprender a utilizar las librerías principales.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="st" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>SmallTalk es un lenguaje de programación muy poderoso, pero con una sintaxis extremadamente pequeña. Por ejemplo, en el lenguaje mismo no existen instrucciones condicionales, sino que estas están implementadas en las librerías estándar.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./nivel2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-modulo-math">El módulo math</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones">Funciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constantes">Constantes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-modulo-random">El módulo random</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-continuos">Valores continuos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-discretos">Valores discretos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-aleatorias">Variables aleatorias</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

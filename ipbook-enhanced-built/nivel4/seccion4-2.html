@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tuplas &#8212; IPBook - Introducción a la Programación (Versión Mejorada)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bcd09c06" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nivel4/seccion4-2';</script>
+    <link rel="canonical" href="https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced/nivel4/seccion4-2.html" />
+    <link rel="icon" href="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Matrices" href="seccion4-3.html" />
+    <link rel="prev" title="Un programa para leer" href="seccion4-1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../portada.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-light" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>
+    <script>document.write(`<img src="https://raw.githubusercontent.com/cupi2-ip/IPBook/master/imagenes/logo.png" class="logo__image only-dark" alt="IPBook - Introducción a la Programación (Versión Mejorada) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contenido</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduccion/index.html">Nivel 0 - Antes de empezar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/programar.html">¿Qué es programar?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/practicas.html">Prácticas fundamentales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/acerca.html">Sobre este libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/lenguaje.html">El lenguaje de programación Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/estructura.html">Estructura del libro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduccion/imagenes.html">Créditos de las imágenes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel1/intro.html">Nivel 1 - Empezando a programar</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-2.html">Ambiente básico de trabajo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-3.html">Valores y tipos de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-4.html">Variables, expresiones y operadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-5.html">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-6.html">Definición de funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-7.html">Estilo de programación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-8.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-9.html">Lógica vs. Interacción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-10.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel1/seccion1-11.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel2/intro.html">Nivel 2 - Tomando decisiones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-2.html">Lógica y valores de verdad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-3.html">Valores de verdad en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-4.html">Instrucciones condicionales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-5.html">Más sobre cadenas de caracteres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-6.html">Módulos de la librería estándar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-7.html">Diccionarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-8.html">Paso de parámetros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-9.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel2/seccion2-10.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../nivel3/intro.html">Nivel 3 - Repitiendo acciones</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-1.html">Un programa para leer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-2.html">Instrucciones repetidas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-3.html">Listas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-4.html">Slicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-5.html">Recorrido de secuencias</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-6.html">Más algorítmica</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-7.html">Archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-8.html">Nociones de complejidad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-9.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-10.html">Más sobre parámetros en Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-11.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../nivel3/seccion3-12.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Nivel 4 - Matrices y Librerías</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="seccion4-1.html">Un programa para leer</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tuplas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-3.html">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-4.html">Imágenes RGB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-5.html">Análisis de datos con Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-6.html">Gráficas usando Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-7.html">Un programa para leer (2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="seccion4-8.html">Errores frecuentes</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="seccion4-9.html">Ejercicios adicionales</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Referencias</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../referencias/index.html">Referencias y Recursos Adicionales</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nivel4/seccion4-2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tuplas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-tuple-en-python">El tipo tuple en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empaquetado-y-desempaquetado">Empaquetado y desempaquetado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-tuplas">Uso de tuplas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-rectangulos">Creación de rectángulos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-de-una-lista">Estadísticas de una lista</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="warning admonition">
+<p class="admonition-title">Versión borrador / preliminar</p>
+<p>Este documento es una versión preliminar para uso interno. Si encuentra algún problema o error, o si tiene algún comentario por favor repórtelo a los autores.</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="tuplas">
+<h1>Tuplas<a class="headerlink" href="#tuplas" title="Link to this heading">#</a></h1>
+<div class="admonition-objetivo-de-la-seccion admonition">
+<p class="admonition-title">Objetivo de la sección</p>
+<p>El objetivo de esta sección es presentar el tipo de dato <em>tupla</em> y explicar cuáles son las ventajas que trae su uso en casos muy particulares.</p>
+</div>
+<p>Al inicio de este libro presentamos los tipos <strong>str</strong>, <strong>int</strong>, <strong>float</strong> y <strong>bool</strong>. Todos estos son tipos en los cuales hay un único valor que nos interese. Luego estudiamos los tipos <strong>dict</strong> y <strong>list</strong>, que sirven para representar valores múltiples con muchísima libertad: una lista puede tener cualquier cantidad de elementos, así como un diccionario puede tener cualquier cantidad de llaves. Todos estos tipos son de utilidad en muchísimos casos, pero tienen una limitación: no nos sirven en casos en los que se quiera tener un conjunto limitado de valores.</p>
+<p>Par ilustrar el problema, tomemos el caso de una coordenada cartesiana <em>(x,y)</em>. Si queremos representar esta coordenada, podríamos utilizar dos variables de tipo <strong>float</strong>, o podríamos utilizar una lista con dos números flotantes. En el primer caso, el problema es que estaríamos usando dos valores para representar una sola coordenada. Así, consturir una función que retornara una coordenada sería un problema porque una función sólo puede retornar un valor. En el segundo caso, tendríamos una sola lista con los dos valores así que el problema del retorno no se presentaría. El problema acá sería que no habría ninguna garantía de que la lista retornada tenga exactamente 2 posiciones: podría tener 1, 2, 3, más de 3 o incluso podría ser una lista vacía. Aunque nosotros podríamos verificar el tamaño, sería mucho más conveniente tener un tipo de dato que nos permita agrupar múltiples valores y al mismo tiempo nos dé un poco más de garantía con respecto a la cantidad y a su orden.</p>
+<p>En Python, esto lo vamos a lograr con el tipo de dato <strong>tuple</strong>, llamado <em>tupla</em> en español, el cual sirve para representar una secuencia inmutable de valores. A continuación estudiaremos este tipo de datos e ilustraremos su uso con varios ejemplos.</p>
+<section id="el-tipo-tuple-en-python">
+<h2>El tipo tuple en Python<a class="headerlink" href="#el-tipo-tuple-en-python" title="Link to this heading">#</a></h2>
+<p>Para ilustrar el uso del tipo <strong>tuple</strong>, usaremos el ejemplo de las coordenadas cartesianas que introducimos más arriba.</p>
+<p>En primer lugar, veamos que la construcción de una nueva tupla requiere que se especifique desde el inicio cuáles van a ser sus valores:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coordenada</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">coordenada</span><span class="p">))</span>
+<span class="go">&lt;class &#39;tuple&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Como se ve en este ejemplo, una tupla se crea usando paréntesis redondos, a diferencia de los cuadrados que se usan para las listas, y las llaves que se usan para los diccionarios. Los valores que irán dentro de la tupla se separan siempre usando comas y, al igual que en las listas, se organizan dentro de la tupla en el orden en que se especifican iniciando con la posición 0.</p>
+<p>Si queremos consultar los valores dentro de una tupla tenemos que usar la posición al igual que como se hace en una lista:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">coordenada</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">coordenada</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="go">3 - 4.5</span>
+</pre></div>
+</div>
+<p>Las tuplas también se pueden recorrer exactamente igual a como se recorrería una lista:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">coordenada</span><span class="p">:</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="go">4.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coordenada</span><span class="p">)):</span>
+<span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">coordenada</span><span class="p">[</span><span class="n">pos</span><span class="p">])</span>
+<span class="gp">...</span>
+<span class="go">0 - 3</span>
+<span class="go">1 - 4.5</span>
+</pre></div>
+</div>
+<p>La gran diferencia entre las tuplas y las listas es que las tuplas son <strong>inmutables</strong>. Esto quiere decir que después de que una tupla se haya creado, es imposible modificar los valores que contiene. Esto quiere decir que no existen métodos equivalentes a <code class="docutils literal notranslate"><span class="pre">append</span></code> e <code class="docutils literal notranslate"><span class="pre">insert</span></code>, y que no es posible hacer una asignación a una tupla ya creada.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">coordenada</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+</section>
+<section id="empaquetado-y-desempaquetado">
+<h2>Empaquetado y desempaquetado<a class="headerlink" href="#empaquetado-y-desempaquetado" title="Link to this heading">#</a></h2>
+<p>Una característica muy útil de las tuplas en Python es que permiten hacer lo que denomina <em>empaquetado</em> y <em>desempaquetado</em> de valores. <em>Empaquetado</em> hace referencia a lo que ya vimos: tomar varios valores y agruparlos en una única tupla. El <em>desempaquetado</em> es el proceso inverso de tomar los valores contenidos en una tupla y dejarlos en variables separadas. Lo que hace esto  interesante es que, en lugar de requerir varias instrucciones con asignaciones, se puede hacer en una sola instrucción.</p>
+<p>El siguiente fragmento muestra cómo se podrían desempaquetar los valores de una coordenada sin tener que acceder a cada una de las posiciones en la tupla:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">coordenada</span>
+</pre></div>
+</div>
+<p>Si no se usara la capacidad de desempaquetar, el código habría tenido que ser el siguiente.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">coordenada</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">coordenada</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="uso-de-tuplas">
+<h2>Uso de tuplas<a class="headerlink" href="#uso-de-tuplas" title="Link to this heading">#</a></h2>
+<p>Las tuplas en Python pueden utilizarse en muchas situaciones diferente en las que también podrían utilizarse listas. Sin embargo, es recomendable que se usen cuando se requieran las siguientes características:</p>
+<ul class="simple">
+<li><p>Agrupar varios valores, asegurando la cantidad de valores</p></li>
+<li><p>Inmutabilidad</p></li>
+</ul>
+<p>Como ya vimos antes, un uso muy común para las tuplas es servir para agrupar y organizar valores retornados por una función. En este caso, el uso de tuplas nos ayuda a garantizar que los valores retornados por la función estén siempre en el orden que se espera y que no sean modificados más adelante.</p>
+<p>Otro uso muy común es agrupar valores que siempre deberían estar juntos. Por ejemplo, si se está trabajando con coordenadas cartesianas las tuplas servirán para agrupar los valores para cada uno de los ejes.</p>
+<p>Veamos a continuación otros ejemplos de uso de tuplas.</p>
+<section id="creacion-de-rectangulos">
+<h3>Creación de rectángulos<a class="headerlink" href="#creacion-de-rectangulos" title="Link to this heading">#</a></h3>
+<p>En este caso tenemos una función que recibe las coordenadas <em>(x,y)</em> de dos puntos y encuentra el rectángulo delimitado por esos puntos. Para esto, la función busca la esquina del rectángulo con menor coordenadas <em>x</em> y <em>y</em>, y calcula el ancho y alto del rectángulo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">crear_rectangulo</span><span class="p">(</span><span class="n">punto1</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">punto2</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+  <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">punto1</span>
+  <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">punto2</span>
+  <span class="n">ancho</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span>
+  <span class="n">alto</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">)</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ancho</span><span class="p">,</span> <span class="n">alto</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A continuación vemos cómo se puede utilizar el mecanismo de desempaquetado para llamar a la función y almacenar el resultado en cuatro variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ancho</span><span class="p">,</span> <span class="n">alto</span> <span class="o">=</span> <span class="n">crear_rectangulo</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="estadisticas-de-una-lista">
+<h3>Estadísticas de una lista<a class="headerlink" href="#estadisticas-de-una-lista" title="Link to this heading">#</a></h3>
+<p>En este caso tenemos una función que calcula 3 estadísticas sobre una lista: el menor valor, el mayor valor y el valor promedio. Esta función recibe la lista de valores y retorna una tupla con los tres números calculados. Lo interesante de este ejemplo es que normalmente se habrían necesitado 3 funciones, cada una con su propio recorrido sobre la lista, para calular los tres valores. En este caso estamos aprovechando para calcular todo lo que necesitamos con un único recorrido.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">estadisticas</span><span class="p">(</span><span class="n">valores</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+  <span class="n">mayor</span> <span class="o">=</span> <span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">menor</span> <span class="o">=</span> <span class="n">valores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">for</span> <span class="n">valor</span> <span class="ow">in</span> <span class="n">valores</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">valor</span>
+    <span class="k">if</span> <span class="n">valor</span> <span class="o">&gt;</span> <span class="n">mayor</span><span class="p">:</span>
+      <span class="n">mayor</span> <span class="o">=</span> <span class="n">valor</span>
+    <span class="k">elif</span> <span class="n">valor</span> <span class="o">&lt;</span> <span class="n">menor</span><span class="p">:</span>
+      <span class="n">menor</span> <span class="o">=</span> <span class="n">valor</span>
+  <span class="n">promedio</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">menor</span><span class="p">,</span> <span class="n">mayor</span><span class="p">,</span> <span class="n">promedio</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A continuación vemos cómo se puede utilizar el mecanismo de desempaquetado para llamar a la función y almacenar el resultado en tres variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">menor</span><span class="p">,</span> <span class="n">mayor</span><span class="p">,</span> <span class="n">promedio</span> <span class="o">=</span> <span class="n">estadisticas</span><span class="p">(</span><span class="n">valores</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Construya una función que reciba dos vectores y retorne un nuevo vector que sea la suma de los dos vectores recibidos. Cada vector debe recibirse como una tupla con dos valores flotantes.</p></li>
+<li><p>Construya una función que reciba una cadena de caracteres y retorne una lista de parejas (tuplas) donde la primera posición corresponda a una palabra que aparezca en la cadena y la segunda posición corresponda a la cantidad de veces que aparece la palabra en la cadena. La lista retornada tiene que tener tatas parejas como palabras <em>diferentes</em> haya en la cadena original.</p></li>
+<li><p>En este ejercicio vamos a construir un rudimentario algoritmo de compresión que nos va a servir para reducir cadenas de ceros y unos. Lo que va a hacer el algoritmo es encontrar las posiciones en las que haya secuencias de uno o más unos y retornar una lista con la posición y tamaño de cada secuencia. Usted tiene que construir entonces una función llamada <code class="docutils literal notranslate"><span class="pre">comprimir</span></code> que reciba una cadena de caracteres (que podemos asumir que va a tener sólo los caracteres <code class="docutils literal notranslate"><span class="pre">'0'</span></code> o <code class="docutils literal notranslate"><span class="pre">'1'</span></code>) y que retorne una tupla con dos elementos: el primer elemento, será la longitud original de la cadena; el segundo elemento será una lista de tuplas, donde cada tupla tiene primero el valor de una posición en la que había un <code class="docutils literal notranslate"><span class="pre">'1'</span></code> en la cadena original y luego tiene la cantidad de unos seguidos que había a partir de esa posición. Por ejemplo, si la cadena de entrada fuera <code class="docutils literal notranslate"><span class="pre">'101101111000110'</span></code>, el resultado debería ser <code class="docutils literal notranslate"><span class="pre">(15,</span> <span class="pre">[(0,</span> <span class="pre">1),</span> <span class="pre">(2,</span> <span class="pre">2),</span> <span class="pre">(5,</span> <span class="pre">4),</span> <span class="pre">(12,</span> <span class="pre">2)])</span></code> porque la cadena original tenía 15 caracteres y porque había 4 secuencias de unos.</p></li>
+<li><p>En este ejercicio usted debe construir la función llamada <code class="docutils literal notranslate"><span class="pre">descomprimir</span></code>, que debe ser capaz de tomar el resultado de la función <code class="docutils literal notranslate"><span class="pre">comprimir</span></code> y producir la cadena original. Es decir, si la función <code class="docutils literal notranslate"><span class="pre">descomprimir</span></code> recibe la tupla <code class="docutils literal notranslate"><span class="pre">(15,</span> <span class="pre">[(0,</span> <span class="pre">1),</span> <span class="pre">(2,</span> <span class="pre">2),</span> <span class="pre">(5,</span> <span class="pre">4),</span> <span class="pre">(12,</span> <span class="pre">2)])</span></code>, el resultado debería ser la cadena <code class="docutils literal notranslate"><span class="pre">'101101111000110'</span></code>.</p></li>
+<li><p>Una universidad tiene información sobre la cantidad de estudiantes inscritos en cada curso y sobre los salones (edificio y código de salón) donde se deben dictar las clases. Dada esta información, el departamento de seguridad de la Universidad está interesado en saber cuántos estudiantes debería haber dentro de cada edificio en caso de que se tenga que realizar una evacuación. Usted debe crear una función llamada <code class="docutils literal notranslate"><span class="pre">contar_estudiantes</span></code> que reciba la información de los cursos y un horario y retorne la cantidad de estudiantes por edificio. Las entradas de la función serán las siguientes: 1) un diccionario donde las llaves serán los nombres de los cursos y los valores serán también diccionarios con tres llaves: <code class="docutils literal notranslate"><span class="pre">'inscritos'</span></code> para indicar el número de estudiantes inscritos en el curso, <code class="docutils literal notranslate"><span class="pre">'horario'</span></code> para indicar el horario en el que se dicta el curso, y <code class="docutils literal notranslate"><span class="pre">'ubicacion'</span></code> para indicar el salón donde se dicta el curso. El horario de un curso se representa con una tupla que tiene en la primera posición el día de la semana (‘lunes’, ‘martes’, etc. ) y en la segunda posición tiene una cadena con la franja horaria (‘10:00 - 11:30’, ‘11:30 - 13:00’, etc.). La ubicación de un curso se representa también con una tupla que tiene en la primera posición el nombre de un edificio y en la segunda posición el código del salón (ambos son cadenas de caracteres). 2) El segundo parámetro de la función será el horario en el que se quieren contar los estudiantes (también se expresa con una tupla de número de día y franja horaria). Se puede asumir que las franjas horarias en las que se va a hacer la consulta son las mismas franjas horarias de los cursos. La función debe retornar una lista de tuplas donde cada tupla tendrá en la primera posición el nombre de un edificio y en la segunda posición la cantidad de estudiantes que deberían estar dentro del edificio en el horario consultado.</p></li>
+</ol>
+</section>
+<section id="mas-alla-de-python">
+<h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Link to this heading">#</a></h2>
+<p>No es usual que los lenguajes de programación ofrezcan un tipo básico para manejar tuplas, así que aprender a utilizar este nuevo tipo no necesariamente será de utilidad en otros lenguajes. Sin embargo, muchas librerías de Python utilizan tuplas de forma frecuente, así que es conveniente adquirir destreza en  su uso.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./nivel4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="seccion4-1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Un programa para leer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="seccion4-3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Matrices</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-tuple-en-python">El tipo tuple en Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empaquetado-y-desempaquetado">Empaquetado y desempaquetado</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uso-de-tuplas">Uso de tuplas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-rectangulos">Creación de rectángulos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estadisticas-de-una-lista">Estadísticas de una lista</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicios">Ejercicios</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-alla-de-python">Más allá de Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mario Sánchez & Equipo CUPI2 (Visualizaciones Interactivas por ChusitooXDuwu)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
