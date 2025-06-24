@@ -18,7 +18,7 @@ Un portal completo de visualizaciones interactivas para el libro "Introducción 
 | 🎯 Opción               | 📝 Descripción                      | 🔗 Enlace                                                                                                      |
 | ----------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | **🎯 Portal Principal** | Página principal con navegación     | [Abrir Portal](https://chusitooxduwu.github.io/graficsIP/)                                                     |
-| **📚 Libro Mejorado**   | IPBook completo con visualizaciones | [Ver Libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/)                                  |
+| **📚 Libro Mejorado**   | IPBook completo con visualizaciones | [Ver Libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/portada.html)                      |
 | **🧮 Math Explorer**    | Explorador del módulo Math          | [Usar Math](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/math-module-explorer.html)         |
 | **🎲 Módulo Random**    | Simuladores de aleatoriedad         | [Explorar Random](https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html) |
 
