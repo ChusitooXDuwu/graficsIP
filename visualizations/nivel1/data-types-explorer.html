@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Tipos de Datos - IPBook</title>
+    <link rel="stylesheet" href="../../shared/css/common.css">
+</head>
+<body>
+    <nav class="viz-nav">
+        <a href="../../index.html">🏠 Inicio</a>
+        <a href="../../docs/integration-guide.html">📚 Guía</a>
+        <span style="margin-left: auto; color: rgba(255,255,255,0.7);">Nivel 1 › Tipos de Datos</span>
+    </nav>
+    
+    <div class="viz-container">
+        <div class="viz-header">
+            <h1>🐍 Explorador de Tipos de Datos</h1>
+            <p>Descubre int, float y str de manera interactiva</p>
+        </div>
+        
+        <div class="interactive-section">
+            <h3>🧪 Laboratorio de Conversiones</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="card">
+                    <h4>🔢 int - Números Enteros</h4>
+                    <p>Ejemplos: 42, -17, 0</p>
+                    <div class="code-block">type(42)  # &lt;class 'int'&gt;</div>
+                </div>
+                <div class="card">
+                    <h4>🔘 float - Números Decimales</h4>
+                    <p>Ejemplos: 3.14, -2.5, 0.0</p>
+                    <div class="code-block">type(3.14)  # &lt;class 'float'&gt;</div>
+                </div>
+                <div class="card">
+                    <h4>📝 str - Cadenas de Texto</h4>
+                    <p>Ejemplos: 'Hola', "Python", """Multilínea"""</p>
+                    <div class="code-block">type('Hola')  # &lt;class 'str'&gt;</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="integration-info">
+            <h4>🔗 Integrar en GitBook</h4>
+            <div class="code-block">
+{% embed url="https://chusitooxduwu.github.io/ipbook-visualizations/visualizations/nivel1/data-types-explorer.html" %}
+Explora los tipos de datos int, float y str de manera interactiva
+{% endembed %}
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../shared/js/utils.js"></script>
+    <script>
+        console.log('🎯 Explorador de Tipos de Datos cargado');
+    </script>
+</body>
+</html> 

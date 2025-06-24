@@ -1,0 +1,59 @@
+{
+  "levels": [
+    {
+      "id": "nivel1",
+      "number": "1",
+      "title": "Nivel 1",
+      "subtitle": "Descubriendo la Programación",
+      "description": "Conceptos básicos: valores, tipos de datos, funciones y módulos.",
+      "color": "#4CAF50",
+      "visualizations": [
+        {
+          "id": "data-types",
+          "title": "Explorador de Tipos de Datos",
+          "description": "int, float, str y conversiones",
+          "file": "data-types-explorer.html",
+          "icon": "📊",
+          "status": "ready",
+          "gitbook_sections": ["2.3", "2.5.2.1"]
+        },
+        {
+          "id": "append-demo",
+          "title": "Demo de Append",
+          "description": "Cómo funciona list.append()",
+          "file": "append-demo.html",
+          "icon": "➕",
+          "status": "ready",
+          "gitbook_sections": ["lista-operaciones"]
+        },
+        {
+          "id": "functions-flow",
+          "title": "Flujo de Funciones",
+          "description": "Definición vs invocación",
+          "file": "functions-flow.html",
+          "icon": "🔄",
+          "status": "planned",
+          "gitbook_sections": ["2.6"]
+        }
+      ]
+    },
+    {
+      "id": "nivel2",
+      "number": "2",
+      "title": "Nivel 2",
+      "subtitle": "Tomando Decisiones",
+      "description": "Condicionales, expresiones booleanas y diccionarios.",
+      "color": "#2196F3",
+      "visualizations": [
+        {
+          "id": "conditionals",
+          "title": "Simulador de Condicionales",
+          "description": "if, elif, else interactivo",
+          "file": "conditionals-demo.html",
+          "icon": "🎯",
+          "status": "planned"
+        }
+      ]
+    }
+  ]
+}

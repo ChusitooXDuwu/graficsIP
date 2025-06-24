@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo de Append - IPBook</title>
+    <link rel="stylesheet" href="../../shared/css/common.css">
+    <style>
+        .demo-container {
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .list-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .list-item {
+            background: var(--success-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+        
+        .new-item {
+            background: var(--warning-color);
+            animation: slideIn 1s ease-in-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .arrow {
+            font-size: 2em;
+            color: var(--primary-color);
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="viz-nav">
+        <a href="../../index.html">🏠 Inicio</a>
+        <a href="../../docs/integration-guide.html">📚 Guía</a>
+        <span style="margin-left: auto; color: rgba(255,255,255,0.7);">Nivel 1 › Append Demo</span>
+    </nav>
+    
+    <div class="viz-container">
+        <div class="viz-header">
+            <h1>➕ Demo de list.append()</h1>
+            <p>Visualiza cómo append() agrega elementos al final de una lista</p>
+        </div>
+        
+        <div class="demo-container">
+            <h3>📋 Lista inicial: ['🍎', '🍌', '🍊']</h3>
+            <div class="list-visual" id="listVisual">
+                <div class="list-item">🍎</div>
+                <div class="list-item">🍌</div>
+                <div class="list-item">🍊</div>
+            </div>
+            
+            <div class="code-block">
+mi_lista = ['🍎', '🍌', '🍊']<br>
+mi_lista.append('🍇')  <span style="color: #50fa7b;"># Agregar uva al final</span>
+            </div>
+            
+            <button class="btn" onclick="demonstrateAppend()">▶️ Ver append() en acción</button>
+            <button class="btn btn-warning" onclick="resetDemo()">🔄 Reiniciar</button>
+        </div>
+        
+        <div class="interactive-section">
+            <h3>💡 ¿Qué hace append()?</h3>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li><strong>Agrega al final:</strong> Siempre coloca el elemento en la última posición</li>
+                <li><strong>Modifica la lista original:</strong> No crea una nueva lista</li>
+                <li><strong>Acepta cualquier tipo:</strong> Números, strings, listas, etc.</li>
+                <li><strong>Retorna None:</strong> Solo modifica, no devuelve nada</li>
+            </ul>
+        </div>
+        
+        <div class="integration-info">
+            <h4>🔗 Integrar en GitBook</h4>
+            <div class="code-block">
+{% embed url="https://chusitooxduwu.github.io/ipbook-visualizations/visualizations/nivel1/append-demo.html" %}
+Visualiza cómo funciona el método append() en listas de Python
+{% endembed %}
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../shared/js/utils.js"></script>
+    <script>
+        let isAnimating = false;
+        
+        function demonstrateAppend() {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            const listVisual = document.getElementById('listVisual');
+            
+            // Agregar flecha
+            const arrow = IPBookUtils.createElement('div', 'arrow', '→');
+            listVisual.appendChild(arrow);
+            
+            // Agregar nuevo elemento después de 1 segundo
+            setTimeout(() => {
+                const newItem = IPBookUtils.createElement('div', 'list-item new-item', '🍇');
+                listVisual.appendChild(newItem);
+                
+                // Remover flecha después de la animación
+                setTimeout(() => {
+                    arrow.remove();
+                    isAnimating = false;
+                }, 1000);
+            }, 1000);
+        }
+        
+        function resetDemo() {
+            if (isAnimating) return;
+            
+            const listVisual = document.getElementById('listVisual');
+            listVisual.innerHTML = `
+                <div class="list-item">🍎</div>
+                <div class="list-item">🍌</div>
+                <div class="list-item">🍊</div>
+            `;
+        }
+        
+        console.log('🎯 Demo de Append cargado');
+    </script>
+</body>
+</html> 
