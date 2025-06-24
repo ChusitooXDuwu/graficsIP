@@ -1,0 +1,65 @@
+name: 🚀 Deploy Enhanced IPBook
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ipbook-enhanced/**"
+      - ".github/workflows/deploy-enhanced-book.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "ipbook-enhanced/**"
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jupyter-book
+          pip install ghp-import
+
+      - name: 🔧 Build the enhanced book
+        run: |
+          cd ipbook-enhanced
+          jupyter-book clean .
+          jupyter-book build .
+
+      - name: 📊 Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: enhanced-book-html
+          path: ipbook-enhanced/_build/html/
+
+      - name: 🚀 Deploy to GitHub Pages (Enhanced Book)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          cd ipbook-enhanced
+          ghp-import -n -p -f _build/html -r origin -b gh-pages-enhanced
+
+      - name: 📝 Create deployment summary
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          echo "## 📚 Enhanced IPBook Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **Build Status**: Success" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 **Enhanced Book URL**: https://${{ github.repository_owner }}.github.io/graficsIP/ipbook-enhanced/" >> $GITHUB_STEP_SUMMARY
+          echo "🎯 **Visualizations Portal**: https://${{ github.repository_owner }}.github.io/graficsIP/" >> $GITHUB_STEP_SUMMARY
+          echo "📅 **Build Date**: $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🌟 New Features in Enhanced Version:" >> $GITHUB_STEP_SUMMARY
+          echo "- 🧮 Interactive Math module explorer" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎲 Random number generators with visualizations" >> $GITHUB_STEP_SUMMARY
+          echo "- 📊 Real-time histogram displays" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎯 Integrated practical exercises" >> $GITHUB_STEP_SUMMARY
