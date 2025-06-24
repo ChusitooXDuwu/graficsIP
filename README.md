@@ -36,29 +36,82 @@ Un portal completo de visualizaciones interactivas para el libro "Introducción 
 
 - **🐍 Explorador de Tipos de Datos**
 
+  - **🎬 Animaciones:** Conversiones automáticas entre tipos, efectos visuales de transformación
   - Visualización interactiva de int, float, str
   - Ejemplos y conversiones entre tipos
-  - Integrado en Sección 1.3 del libro
+  - **📖 Integrado en:** [Sección 1.3 del libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/nivel1/seccion1-3.html)
+
+- **🎪 Visualizador de Operadores**
+
+  - **🎬 Animaciones:** Efectos hover, transiciones de tabs, resaltado de resultados
+  - Explora operadores matemáticos, de comparación y lógicos
+  - Calculadora interactiva en tiempo real
+  - **📖 Integrado en:** [Sección 1.4 del libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/nivel1/seccion1-4.html)
 
 - **➕ Demo del Método append()**
-  - Animación de cómo append() agrega elementos a listas
-  - Visualización paso a paso del crecimiento de listas
-  - Integrado en Sección 3.3 del libro
+  - **🎬 Animaciones:** Elementos aparecen con efecto slide-in, lista crece visualmente
+  - Animación paso a paso de cómo append() agrega elementos a listas
+  - Visualización del crecimiento de listas
+  - **📖 Integrado en:** [Sección 3.3 del libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/nivel3/seccion3-3.html)
 
 #### Nivel 2 - Tomando Decisiones
 
+- **🔄 Simulador de Condicionales**
+
+  - **🎬 Animaciones:** Ejecución paso a paso animada, resaltado de código línea por línea, indicadores de flujo
+  - Visualización de estructuras if, elif y else con múltiples escenarios
+  - Diagrama de flujo interactivo y ejecución animada
+  - **📖 Integrado en:** [Sección 2.1 del libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/nivel2/seccion2-1.html)
+
 - **🧮 Explorador del Módulo Math**
 
+  - **🎬 Animaciones:** Efectos de cálculo en tiempo real, transiciones suaves entre funciones
   - Calculadora interactiva para funciones matemáticas
   - Conversor de ángulos (grados ↔ radianes)
   - Showcase de constantes (π, e, inf, nan)
-  - Ejercicios prácticos integrados
+  - **📖 Integrado en:** [Sección 2.6 del libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/nivel2/seccion2-6.html)
 
 - **🎲 Explorador del Módulo Random**
+  - **🎬 Animaciones:** Dados girando, histogramas actualizándose en tiempo real, efectos de generación
   - Simulador de dados con estadísticas
   - Generador de números aleatorios personalizable
   - Visualización de distribución normal
-  - Histogramas interactivos en tiempo real
+  - **📖 Integrado en:** [Sección 2.6 del libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/nivel2/seccion2-6.html)
+
+#### Nivel 3 - Repeticiones y Bucles
+
+- **🔁 Demo de Bucles for**
+  - **🎬 Animaciones:** Iteraciones visuales paso a paso, contadores animados, elementos apareciendo secuencialmente
+  - Visualización de bucles for con diferentes tipos de iteraciones
+  - Incluye range, listas, strings, enumerate y bucles anidados
+  - **📖 Integrado en:** [Sección 3.4 del libro](https://chusitooxduwu.github.io/graficsIP/ipbook-enhanced-built/nivel3/seccion3-4.html)
+
+## 🎬 Características de Animación Implementadas
+
+### ⚡ Ejecución Paso a Paso
+
+- **Simulador de Condicionales:** Código ejecutándose línea por línea con resaltado visual
+- **Demo de Bucles for:** Iteraciones animadas con contadores en tiempo real
+- **Efectos visuales:** Pulso, fade-in, resaltado con colores
+
+### 🎮 Controles Interactivos
+
+- **▶️ Reproducir/Pausar:** Control total de la velocidad de animación
+- **🔄 Reiniciar:** Volver al estado inicial en cualquier momento
+- **👣 Paso a Paso:** Avanzar manualmente a través de cada iteración
+
+### 📊 Visualización en Tiempo Real
+
+- **🎲 Dados Animados:** Rotación 3D realista en el explorador Random
+- **📈 Histogramas Dinámicos:** Barras creciendo con cada nuevo dato
+- **🧮 Calculadoras Live:** Resultados actualizándose instantáneamente
+
+### 🎯 Efectos Visuales Específicos
+
+- **Operadores:** Cards con hover y scale, transiciones suaves entre tabs
+- **Condicionales:** Indicadores de flujo, código resaltado con animación pulse
+- **Bucles:** Grid de elementos con estados visuales (pendiente → actual → completado)
+- **Listas:** Elementos apareciendo con slide-in, crecimiento visual de estructuras
 
 ### 📚 Libro IPBook Completo (`/ipbook-enhanced/`)
 
