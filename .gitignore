@@ -21,4 +21,50 @@ Thumbs.db
 
 # Build outputs
 dist/
-build/ 
+build/
+
+# IPBook specific ignores
+ipbook-enhanced/_build/
+ipbook-original/_build/
+ipbook-enhanced/.git/
+ipbook-original/.git/
+ipbook-enhanced/hooks/
+ipbook-original/hooks/
+ipbook-enhanced/logs/
+ipbook-original/logs/
+ipbook-enhanced/objects/
+ipbook-original/objects/
+ipbook-enhanced/refs/
+ipbook-original/refs/
+ipbook-enhanced/info/
+ipbook-original/info/
+ipbook-enhanced/HEAD
+ipbook-original/HEAD
+ipbook-enhanced/config
+ipbook-original/config
+ipbook-enhanced/description
+ipbook-original/description
+ipbook-enhanced/packed-refs
+ipbook-original/packed-refs
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg 
