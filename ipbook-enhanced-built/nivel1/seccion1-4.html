@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -699,15 +698,15 @@ document.write(`
 <td class="text-center"><p>+</p></td>
 <td class="text-center"><p>Binario</p></td>
 <td class="text-center"><p>1</p></td>
-<td><p>‘abc’ + ‘def’</p></td>
-<td><p>‘abcdef’</p></td>
+<td><p>&#39;abc&#39; + &#39;def&#39;</p></td>
+<td><p>&#39;abcdef&#39;</p></td>
 </tr>
 <tr class="row-odd"><td><p>Repetición</p></td>
 <td class="text-center"><p>*</p></td>
 <td class="text-center"><p>Binario</p></td>
 <td class="text-center"><p>1</p></td>
-<td><p>‘ab’ * 3</p></td>
-<td><p>‘ababab’</p></td>
+<td><p>&#39;ab&#39; * 3</p></td>
+<td><p>&#39;ababab&#39;</p></td>
 </tr>
 </tbody>
 </table>
@@ -807,6 +806,68 @@ document.write(`
 </li>
 </ol>
 </section>
+
+<!-- Visualización Interactiva de Operadores -->
+<section id="visualizacion-operadores">
+<h2>🎪 Visualización Interactiva de Operadores<a class="headerlink" href="#visualizacion-operadores" title="Link to this heading">#</a></h2>
+<p>Para reforzar tu comprensión de los operadores en Python, hemos preparado una visualización interactiva que te permite experimentar con todos los tipos de operadores de manera práctica.</p>
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: center;">
+    <h4>🎬 Características de la Visualización</h4>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+        <div>
+            <div style="font-size: 1.2em; margin-bottom: 5px;">⚡</div>
+            <div style="font-weight: bold;">Calculadora en Tiempo Real</div>
+        </div>
+        <div>
+            <div style="font-size: 1.2em; margin-bottom: 5px;">🎯</div>
+            <div style="font-weight: bold;">3 Categorías de Operadores</div>
+        </div>
+        <div>
+            <div style="font-size: 1.2em; margin-bottom: 5px;">💫</div>
+            <div style="font-weight: bold;">Explicaciones Dinámicas</div>
+        </div>
+        <div>
+            <div style="font-size: 1.2em; margin-bottom: 5px;">🎪</div>
+            <div style="font-weight: bold;">Ejemplos Interactivos</div>
+        </div>
+    </div>
+</div>
+
+<iframe src="../../visualizations/nivel1/operators-demo.html" 
+        width="100%" 
+        height="800px" 
+        frameborder="0" 
+        style="border: 2px solid #667eea; border-radius: 10px; margin: 20px 0;">
+</iframe>
+
+<div style="background: #e3f2fd; border-left: 4px solid #1976d2; padding: 15px; margin: 20px 0;">
+    <h4 style="color: #1976d2; margin-top: 0;">💡 Cómo usar la visualización:</h4>
+    <ol>
+        <li><strong>Explora las categorías:</strong> Usa las pestañas para navegar entre operadores aritméticos, de comparación y lógicos</li>
+        <li><strong>Experimenta con valores:</strong> Cambia los números en la calculadora para ver diferentes resultados</li>
+        <li><strong>Lee las explicaciones:</strong> Cada operación incluye una explicación detallada de cómo funciona</li>
+        <li><strong>Prueba casos especiales:</strong> Experimenta con división por cero, números negativos, etc.</li>
+    </ol>
+</div>
+
+<p>Esta visualización cubre todos los operadores que hemos estudiado en esta sección:</p>
+<ul>
+    <li><strong>Aritméticos:</strong> +, -, *, /, //, %, **</li>
+    <li><strong>Comparación:</strong> ==, !=, <, >, <=, >=</li>
+    <li><strong>Lógicos:</strong> and, or, not</li>
+</ul>
+
+<div style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 15px; margin: 20px 0;">
+    <p><strong>🔗 Enlaces útiles:</strong></p>
+    <ul>
+        <li><a href="../../visualizations/nivel1/operators-demo.html" target="_blank">Abrir visualización en nueva ventana</a></li>
+        <li><a href="../../visualizations/index.html" target="_blank">Ver todas las visualizaciones</a></li>
+        <li><a href="../../docs/integration-guide.html" target="_blank">Guía de integración</a></li>
+    </ul>
+</div>
+</section>
+
 <section id="mas-alla-de-python">
 <h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Link to this heading">#</a></h2>
 <p>Esta sección presentó en detalle los detalles más importantes de la sintaxis de Python. Sin embargo, los conceptos presentados son comunes a la mayoría de lenguajes de programación <em>imperativos</em> <a class="footnote-reference brackets" href="#para" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. Aunque puede parecer que las diferencias entre Python y otros lenguajes son muy grandes, en realidad los conceptos que se manejan son básicamente los mismos: todos los lenguajes tienen literales, tienen variables para almacenar temporalmente valores, tienen expresiones que se tienen que evaluar, y tienen mecanismos para invocar fragmentos de código definidos en algún otro lugar.</p>
