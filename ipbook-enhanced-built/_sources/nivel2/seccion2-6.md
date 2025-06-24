@@ -27,9 +27,19 @@ La manera de importar todo lo que ofrece este módulo es a través de la instruc
 :class: tip
 ¿Quieres experimentar con las funciones y constantes del módulo math? Usa nuestro explorador interactivo donde puedes probar diferentes funciones matemáticas en tiempo real.
 
-{% embed url="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/math-module-explorer.html" %}
-Explora las funciones y constantes del módulo math de Python de manera interactiva
-{% endembed %}
+<iframe src="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/math-module-explorer.html"
+        width="100%"
+        height="600px"
+        frameborder="0"
+        allowfullscreen
+        style="border: 2px solid #007acc; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    Tu navegador no soporta iframes.
+    <a href="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/math-module-explorer.html" target="_blank">
+        Haz clic aquí para abrir el Explorador del Módulo Math
+    </a>
+</iframe>
+
+*Explora las funciones y constantes del módulo math de Python de manera interactiva*
 ```
 
 ### Funciones
@@ -87,9 +97,19 @@ La manera de importar todo lo que ofrece este módulo es a través de la instruc
 :class: tip
 Experimenta con diferentes tipos de generación de números aleatorios usando nuestro simulador interactivo. Incluye simulación de dados, generación de números en rangos personalizados y visualización de distribuciones normales.
 
-{% embed url="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html" %}
-Explora la generación de números aleatorios con el módulo random de Python
-{% endembed %}
+<iframe src="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html"
+        width="100%"
+        height="600px"
+        frameborder="0"
+        allowfullscreen
+        style="border: 2px solid #28a745; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    Tu navegador no soporta iframes.
+    <a href="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html" target="_blank">
+        Haz clic aquí para abrir el Explorador del Módulo Random
+    </a>
+</iframe>
+
+*Explora la generación de números aleatorios con el módulo random de Python*
 ```
 
 ### Valores continuos

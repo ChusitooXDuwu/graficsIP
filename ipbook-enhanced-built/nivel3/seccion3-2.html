@@ -477,8 +477,8 @@ document.write(`
 <section id="elementos-de-un-while">
 <h3>Elementos de un while<a class="headerlink" href="#elementos-de-un-while" title="Link to this heading">#</a></h3>
 <p>Acabamos de mostrar con un ejemplo cómo es la ejecución de un <code class="docutils literal notranslate"><span class="pre">while</span></code>. Ahora estudiaremos con un poco más de cuidado los diferentes elementos que se tienen que considerar cuando se construya una instrucción iterativa. Para esto usaremos la siguiente función que sirve para calcular el factorial de un número recordando que:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-851aaca2-7618-473d-88a6-c7f3dedee9a1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-851aaca2-7618-473d-88a6-c7f3dedee9a1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2f795855-a8f9-4c4e-8c83-7a7a67bfde61">
+<span class="eqno">(1)<a class="headerlink" href="#equation-2f795855-a8f9-4c4e-8c83-7a7a67bfde61" title="Permalink to this equation">#</a></span>\[\begin{equation}
   n! = 1 · 2 · \dots (n-2) · (n-1) · n
 \end{equation}\]</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -636,8 +636,8 @@ document.write(`
 </pre></div>
 </div>
 <p>Esta nueva versión de la función se basa en la descomposición del factorial al contrario:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0e6772c4-be72-4bd8-9571-2b54c51ebcc1">
-<span class="eqno">(2)<a class="headerlink" href="#equation-0e6772c4-be72-4bd8-9571-2b54c51ebcc1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-84d72fe3-f1a1-4d57-b1e0-dae75e8a2f61">
+<span class="eqno">(2)<a class="headerlink" href="#equation-84d72fe3-f1a1-4d57-b1e0-dae75e8a2f61" title="Permalink to this equation">#</a></span>\[\begin{equation}
   n! = n · (n-1) · (n-2) · \dots · 1
 \end{equation}\]</div>
 <p>De esta forma, para calcular el factorial de <code class="docutils literal notranslate"><span class="pre">n</span></code> se tiene que tomar el valor <code class="docutils literal notranslate"><span class="pre">n</span></code> y multiplicarlo por todos los valores menores a él. En nuestra función esto lo logramos inicializando <code class="docutils literal notranslate"><span class="pre">resultado</span></code> en <code class="docutils literal notranslate"><span class="pre">n</span></code> y <code class="docutils literal notranslate"><span class="pre">numero_actual</span></code> en <code class="docutils literal notranslate"><span class="pre">n-1</span></code>, cambiando el avance para que vaya restándole 1 a <code class="docutils literal notranslate"><span class="pre">numero_actual</span></code> y cambiando la condición para que el ciclo termine cuando <code class="docutils literal notranslate"><span class="pre">numero_actual</span></code> sea 1.</p>
@@ -718,12 +718,12 @@ document.write(`
 <p>ejemplos de sumatorias</p>
 <p>sum i de 1 a n = n(n+1)/2</p>
 <p>Uso de ecuaciones dentro del markdown …</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f19d0767-407d-471e-a70a-cb17126d5cce">
-<span class="eqno">(3)<a class="headerlink" href="#equation-f19d0767-407d-471e-a70a-cb17126d5cce" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dda8353c-e3b6-415f-afb5-8961329cde4c">
+<span class="eqno">(3)<a class="headerlink" href="#equation-dda8353c-e3b6-415f-afb5-8961329cde4c" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9c2058bf-d3fe-4ad3-a772-e7885d0f3658">
-<span class="eqno">(4)<a class="headerlink" href="#equation-9c2058bf-d3fe-4ad3-a772-e7885d0f3658" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e4a0489e-a379-4747-8126-c21687e07a2d">
+<span class="eqno">(4)<a class="headerlink" href="#equation-e4a0489e-a379-4747-8126-c21687e07a2d" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \sum_{i=1}^n i = \frac{n(n+1)}{2}
 \end{equation}\]</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sumar_numeros</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -737,13 +737,13 @@ document.write(`
 </div>
 <p>ejemplos de series</p>
 <p>sum n: 1/2^n</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c227c23f-41e6-42e7-b445-8dab638a3301">
-<span class="eqno">(5)<a class="headerlink" href="#equation-c227c23f-41e6-42e7-b445-8dab638a3301" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1927c164-4fa4-401c-873f-2c7ab96f1c5e">
+<span class="eqno">(5)<a class="headerlink" href="#equation-1927c164-4fa4-401c-873f-2c7ab96f1c5e" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \sum_{n=0}^\infty \frac{1}{2n}
 \end{equation}\]</div>
 <p>sum i: -1^(i+1) * 4 / 2i - 1  == PI</p>
-<div class="amsmath math notranslate nohighlight" id="equation-407e75a4-e56c-4f27-96d9-e16fcb8629c9">
-<span class="eqno">(6)<a class="headerlink" href="#equation-407e75a4-e56c-4f27-96d9-e16fcb8629c9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-84894889-a07a-4b5e-8169-2a4682f747c8">
+<span class="eqno">(6)<a class="headerlink" href="#equation-84894889-a07a-4b5e-8169-2a4682f747c8" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \sum_{i=1}^\infty \frac{-1^{i+1}*4}{2i-1} = \pi
 \end{equation}\]</div>
 </section>
@@ -773,8 +773,8 @@ Buscar un número aleatorio (dados)</p>
 <section id="calculo-del-seno-de-un-angulo">
 <h3>Cálculo del seno de un ángulo<a class="headerlink" href="#calculo-del-seno-de-un-angulo" title="Link to this heading">#</a></h3>
 <p>Una de las formas para calcular el seno de un ángulo es utilizar la siguiente serie, donde <code class="docutils literal notranslate"><span class="pre">x</span></code> es el ángulo en radianes.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7aec65c7-b3b6-4d7c-aca5-7203474ddf6a">
-<span class="eqno">(7)<a class="headerlink" href="#equation-7aec65c7-b3b6-4d7c-aca5-7203474ddf6a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-540849fc-0029-4ec8-9b3b-275f0efcfd59">
+<span class="eqno">(7)<a class="headerlink" href="#equation-540849fc-0029-4ec8-9b3b-275f0efcfd59" title="Permalink to this equation">#</a></span>\[\begin{equation}
   \sum_{n=0}^\infty \frac{-1^n}{(2n+1)!} x^{2n+1} = \sin x
 \end{equation}\]</div>
 <p>Vamos a implementar una función que calcule el valor de la serie pero, como ya sabemos, no podemos construir un ciclo que realice un número infinito de operaciones. En la primera versión de nuestra función, vamos a utilizar un número fijo de iteraciones (<code class="docutils literal notranslate"><span class="pre">5</span></code>) y vamos a ver qué tan bien se comporta comparando el resultado que obtengamos con el que nos ofrece la función <code class="docutils literal notranslate"><span class="pre">math.sin</span></code>.</p>
@@ -941,8 +941,8 @@ Buscar un número aleatorio (dados)</p>
 <li><p>Escriba la función <code class="docutils literal notranslate"><span class="pre">hay_un_7</span></code> que reciba un número entero y retorne un booleano indicando si alguno de los dígitos el número es un 7.</p></li>
 <li><p>La conjetura de Collatz dice que si se aplica repetidamente la función <code class="docutils literal notranslate"><span class="pre">f</span></code> (definida a continuación) siempre se va a llegar al valor 1.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f9ebd65d-1273-42af-8ef9-5b0b611cd1f3">
-<span class="eqno">(8)<a class="headerlink" href="#equation-f9ebd65d-1273-42af-8ef9-5b0b611cd1f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1f1e021b-0c43-44ad-a74b-ce06cd0b9bb4">
+<span class="eqno">(8)<a class="headerlink" href="#equation-1f1e021b-0c43-44ad-a74b-ce06cd0b9bb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(n) =
 \begin{cases}
 n/2,  &amp; \text{si $n$ es par} \\
