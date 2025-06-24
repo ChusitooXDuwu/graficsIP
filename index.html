@@ -3,34 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPBook - Visualizaciones Interactivas</title>
+    <title>📚 GraficsIP - Portal de Visualizaciones IPBook</title>
     <link rel="stylesheet" href="shared/css/common.css">
     <link rel="stylesheet" href="shared/css/portal.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-title {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .option-card {
+            background: var(--bg-light);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .option-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .option-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .option-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .feature-list li {
+            padding: 5px 0;
+            color: #555;
+        }
+        
+        .feature-list li::before {
+            content: "✅ ";
+            margin-right: 8px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .stats-section {
+            background: var(--bg-dark);
+            color: white;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--success-color);
+        }
+        
+        .stat-label {
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2em;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">📚 GraficsIP</h1>
+            <p class="hero-subtitle">
+                Portal de Visualizaciones Interactivas para el Libro "Introducción a la Programación" (IPBook).
+                Aprende programación en Python con herramientas visuales e interactivas.
+            </p>
+        </div>
+    </div>
+    
     <div class="container">
-        <header class="header">
-            <h1>🐍 IPBook Visualizaciones</h1>
-            <p>Colección interactiva de visualizaciones para "Introducción a la Programación"</p>
-        </header>
-        
-        <main class="main-content">
-            <section class="quick-access">
-                <h3>🚀 Acceso Rápido</h3>
-                <div class="quick-buttons">
-                    <a href="visualizations/nivel1/data-types-explorer.html" class="quick-button">📊 Tipos de Datos</a>
-                    <a href="visualizations/nivel1/append-demo.html" class="quick-button">➕ Método Append</a>
-                    <a href="docs/integration-guide.html" class="quick-button">📚 Guía de Integración</a>
+        <!-- Opciones Principales -->
+        <div class="options-grid">
+            <!-- Visualizaciones Individuales -->
+            <div class="option-card">
+                <span class="option-icon">🎯</span>
+                <h2 class="option-title">Visualizaciones Individuales</h2>
+                <p class="option-description">
+                    Explora cada visualización de forma independiente. Perfectas para práctica específica o integración en otros proyectos.
+                </p>
+                <ul class="feature-list">
+                    <li>🧮 Explorador del Módulo Math</li>
+                    <li>🎲 Simulador del Módulo Random</li>
+                    <li>📊 Histogramas interactivos</li>
+                    <li>🔄 Conversores de unidades</li>
+                </ul>
+                <div class="cta-buttons">
+                    <a href="visualizations/" class="btn-primary">🚀 Explorar Visualizaciones</a>
+                    <a href="docs/integration-guide.html" class="btn-secondary">📖 Guía de Uso</a>
                 </div>
-            </section>
-            
-            <div id="levels-container">
-                <!-- Contenido cargado dinámicamente desde navigation.json -->
             </div>
-        </main>
+            
+            <!-- Libro Completo Mejorado -->
+            <div class="option-card">
+                <span class="option-icon">📚</span>
+                <h2 class="option-title">Libro IPBook Mejorado</h2>
+                <p class="option-description">
+                    Versión completa del libro con visualizaciones integradas. La experiencia de aprendizaje completa con teoría + práctica interactiva.
+                </p>
+                <ul class="feature-list">
+                    <li>📖 Contenido completo del IPBook original</li>
+                    <li>🎮 Visualizaciones integradas en contexto</li>
+                    <li>🔗 Navegación fluida entre teoría y práctica</li>
+                    <li>📱 Experiencia responsive</li>
+                </ul>
+                <div class="cta-buttons">
+                    <a href="ipbook-enhanced/" class="btn-primary">📚 Ver Libro Completo</a>
+                    <a href="build-enhanced-book.py" class="btn-secondary" download>⬇️ Script de Build</a>
+                </div>
+            </div>
+            
+            <!-- Libro Original -->
+            <div class="option-card">
+                <span class="option-icon">📄</span>
+                <h2 class="option-title">Libro Original (Referencia)</h2>
+                <p class="option-description">
+                    Copia completa del IPBook original para referencia y comparación. Útil para desarrolladores y educadores.
+                </p>
+                <ul class="feature-list">
+                    <li>📚 IPBook original completo</li>
+                    <li>🔍 Referencia para comparaciones</li>
+                    <li>👨‍🏫 Ideal para educadores</li>
+                    <li>🛠️ Base para desarrollos adicionales</li>
+                </ul>
+                <div class="cta-buttons">
+                    <a href="ipbook-original/" class="btn-primary">📖 Ver Original</a>
+                    <a href="https://cupi2-ip.github.io/IPBook/" class="btn-secondary" target="_blank">🌐 Sitio Oficial</a>
+                </div>
+            </div>
+            
+            <!-- Integración y Desarrollo -->
+            <div class="option-card">
+                <span class="option-icon">🛠️</span>
+                <h2 class="option-title">Desarrollo e Integración</h2>
+                <p class="option-description">
+                    Recursos para desarrolladores, educadores y contribuidores. Herramientas y guías para extender el proyecto.
+                </p>
+                <ul class="feature-list">
+                    <li>📋 Guías de integración completas</li>
+                    <li>🔧 Scripts de construcción automática</li>
+                    <li>🚀 Workflows de GitHub Actions</li>
+                    <li>📊 Configuraciones de navegación</li>
+                </ul>
+                <div class="cta-buttons">
+                    <a href="INTEGRACION-IPBOOK.md" class="btn-primary">📋 Guía de Integración</a>
+                    <a href="https://github.com/ChusitooXDuwu/graficsIP" class="btn-secondary" target="_blank">💻 Repositorio</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Estadísticas -->
+        <div class="stats-section">
+            <h2>📊 Estado del Proyecto</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Visualizaciones Nivel 2</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Sección 2.6 Mejorada</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">📚</div>
+                    <div class="stat-label">Libro Completo</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">🚀</div>
+                    <div class="stat-label">Auto-Deploy</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Acciones Rápidas -->
+        <div class="nav-grid">
+            <h2>🎯 Acciones Rápidas</h2>
+            <div class="level-card">
+                <h3>🧮 Módulo Math</h3>
+                <p>Calculadora interactiva y exploración de funciones matemáticas</p>
+                <a href="visualizations/nivel2/math-module-explorer.html" class="nav-link">
+                    Explorar Math →
+                </a>
+            </div>
+            
+            <div class="level-card">
+                <h3>🎲 Módulo Random</h3>
+                <p>Simuladores de números aleatorios y distribuciones estadísticas</p>
+                <a href="visualizations/nivel2/random-module-explorer.html" class="nav-link">
+                    Explorar Random →
+                </a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="portal-footer">
+            <p>
+                🎓 <strong>GraficsIP</strong> - Visualizaciones para el IPBook | 
+                ⭐ <a href="https://github.com/ChusitooXDuwu/graficsIP" target="_blank">Star en GitHub</a> |
+                📚 <a href="https://cupi2-ip.github.io/IPBook/" target="_blank">IPBook Original</a> |
+                👨‍💻 Desarrollado por <a href="https://github.com/ChusitooXDuwu" target="_blank">ChusitooXDuwu</a>
+            </p>
+            <p class="footer-note">
+                🔗 <strong>URLs estables:</strong> Todas las visualizaciones tienen URLs permanentes para integración en GitBook, Moodle, o cualquier LMS.
+            </p>
+        </footer>
     </div>
     
     <script src="shared/js/utils.js"></script>
     <script src="shared/js/portal.js"></script>
+    <script>
+        // Agregar interactividad adicional
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animar números en las estadísticas
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                if (stat.textContent.includes('%')) {
+                    animateNumber(stat, 0, 100, '%');
+                }
+            });
+            
+            // Efecto de hover en las cards
+            const cards = document.querySelectorAll('.option-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.borderLeftColor = 'var(--success-color)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.borderLeftColor = 'var(--primary-color)';
+                });
+            });
+            
+            console.log('🎉 Portal GraficsIP cargado con éxito');
+            console.log('📊 Estadísticas: 2 visualizaciones activas, 1 libro completo integrado');
+        });
+        
+        function animateNumber(element, start, end, suffix = '') {
+            const duration = 2000;
+            const increment = (end - start) / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.round(current) + suffix;
+            }, 16);
+        }
+    </script>
 </body>
 </html> 
