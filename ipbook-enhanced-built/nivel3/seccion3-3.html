@@ -395,9 +395,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-list-en-python">El tipo list en Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-listas">Modificar listas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-metodos-y-operadores-interesantes">Funciones, métodos y operadores interesantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-list-en-python">El tipo list en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-listas">Crear listas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexar-listas">Indexar listas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-calcular-el-promedio">Ejemplo: calcular el promedio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-listas">Modificar listas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-metodo-append">El método append()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otros-metodos-de-modificacion">Otros métodos de modificación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-metodos-y-operadores-utiles">Funciones, métodos y operadores útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-basicas">Funciones básicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-in">Operador in</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaciones">Comparaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-utiles">Métodos útiles</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-join">Split &amp; Join</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-complejas">Listas complejas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-de-listas">Listas de listas</a></li>
@@ -426,79 +441,264 @@ document.write(`
 <h1>Listas<a class="headerlink" href="#listas" title="Link to this heading">#</a></h1>
 <div class="admonition-objetivo-de-la-seccion admonition">
 <p class="admonition-title">Objetivo de la sección</p>
-<p>El objetivo de esta sección es …</p>
+<p>El objetivo de esta sección es introducir las listas como un tipo de datos mutable y secuencial, explorando cómo crear, modificar y trabajar con listas en Python.</p>
 </div>
-<p>Intro: un tipo de secuencia, mutable</p>
+<p>Las listas son uno de los tipos de datos más versátiles y utilizados en Python. A diferencia de las cadenas de caracteres, las listas son <strong>mutables</strong>, lo que significa que podemos modificar su contenido después de haberlas creado.</p>
 <section id="el-tipo-list-en-python">
 <h2>El tipo list en Python<a class="headerlink" href="#el-tipo-list-en-python" title="Link to this heading">#</a></h2>
-<p>crear: list() + append, [], list(range), *</p>
-<p>indexar: [i]</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">imprimir_elementos</span><span class="p">(</span><span class="n">lista</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
-	<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-	<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>  
+<p>Una lista es una colección ordenada de elementos que pueden ser de cualquier tipo. Las listas se crean usando corchetes <code class="docutils literal notranslate"><span class="pre">[]</span></code> y los elementos se separan por comas.</p>
+<section id="crear-listas">
+<h3>Crear listas<a class="headerlink" href="#crear-listas" title="Link to this heading">#</a></h3>
+<p>Hay varias formas de crear listas en Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista vacía</span>
+<span class="n">lista_vacia</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">lista_vacia2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="c1"># Lista con elementos</span>
+<span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;naranja&#39;</span><span class="p">]</span>
+<span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">mixta</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;texto&#39;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
+
+<span class="c1"># Usando range</span>
+<span class="n">numeros_rango</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>  <span class="c1"># [1, 2, 3, 4, 5]</span>
 </pre></div>
 </div>
-<p>ejemplo: calcular el promedio de los elementos de una lista</p>
+</section>
+<section id="indexar-listas">
+<h3>Indexar listas<a class="headerlink" href="#indexar-listas" title="Link to this heading">#</a></h3>
+<p>Al igual que las cadenas, podemos acceder a elementos individuales usando índices:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;naranja&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frutas</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>   <span class="c1"># manzana</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frutas</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># banana</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frutas</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># naranja (último elemento)</span>
+</pre></div>
+</div>
+<p>Ejemplo de función para imprimir todos los elementos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">imprimir_elementos</span><span class="p">(</span><span class="n">lista</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">lista</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="ejemplo-calcular-el-promedio">
+<h3>Ejemplo: calcular el promedio<a class="headerlink" href="#ejemplo-calcular-el-promedio" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calcular_promedio</span><span class="p">(</span><span class="n">numeros</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeros</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="n">numeros</span><span class="p">:</span>
+        <span class="n">suma</span> <span class="o">+=</span> <span class="n">numero</span>
+    <span class="k">return</span> <span class="n">suma</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeros</span><span class="p">)</span>
+
+<span class="c1"># Uso</span>
+<span class="n">notas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">88</span><span class="p">]</span>
+<span class="n">promedio</span> <span class="o">=</span> <span class="n">calcular_promedio</span><span class="p">(</span><span class="n">notas</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El promedio es: </span><span class="si">{</span><span class="n">promedio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="modificar-listas">
 <h2>Modificar listas<a class="headerlink" href="#modificar-listas" title="Link to this heading">#</a></h2>
-<p>append
-insert
-eliminar: remove, del
-copy</p>
-<p>OJO: mutabilidad!
-Referencias vs valores</p>
+<p>Una de las características más importantes de las listas es que son <strong>mutables</strong>, es decir, podemos cambiar su contenido.</p>
+<section id="el-metodo-append">
+<h3>El método append()<a class="headerlink" href="#el-metodo-append" title="Link to this heading">#</a></h3>
+<p>El método <code class="docutils literal notranslate"><span class="pre">append()</span></code> es fundamental para agregar elementos al final de una lista:</p>
+<div class="tip admonition">
+<p class="admonition-title">➕ Visualización Interactiva: append()</p>
+<p>¿Quieres ver exactamente cómo funciona <code class="docutils literal notranslate"><span class="pre">append()</span></code>? Nuestra visualización interactiva te muestra paso a paso cómo se agregan elementos al final de una lista.</p>
+<iframe src="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel1/append-demo.html"
+        width="100%"
+        height="500px"
+        frameborder="0"
+        allowfullscreen
+        style="border: 2px solid #ff6b6b; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    Tu navegador no soporta iframes.
+    <a href="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel1/append-demo.html" target="_blank">
+        Haz clic aquí para abrir la demostración de append()
+    </a>
+</iframe>
+<p><em>Experimenta con append() y observa cómo crecen las listas dinámicamente</em></p>
+</div>
 </section>
-<section id="funciones-metodos-y-operadores-interesantes">
-<h2>Funciones, métodos y operadores interesantes<a class="headerlink" href="#funciones-metodos-y-operadores-interesantes" title="Link to this heading">#</a></h2>
-<p>len
-min
-max</p>
-<p>in</p>
-<p>==
-&lt;</p>
-<p>count
-index
-sort
-reverse</p>
+<section id="otros-metodos-de-modificacion">
+<h3>Otros métodos de modificación<a class="headerlink" href="#otros-metodos-de-modificacion" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># append - agregar al final</span>
+<span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">]</span>
+<span class="n">frutas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;naranja&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frutas</span><span class="p">)</span>  <span class="c1"># [&#39;manzana&#39;, &#39;banana&#39;, &#39;naranja&#39;]</span>
+
+<span class="c1"># insert - insertar en posición específica</span>
+<span class="n">frutas</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;pera&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frutas</span><span class="p">)</span>  <span class="c1"># [&#39;manzana&#39;, &#39;pera&#39;, &#39;banana&#39;, &#39;naranja&#39;]</span>
+
+<span class="c1"># remove - eliminar por valor</span>
+<span class="n">frutas</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frutas</span><span class="p">)</span>  <span class="c1"># [&#39;manzana&#39;, &#39;pera&#39;, &#39;naranja&#39;]</span>
+
+<span class="c1"># del - eliminar por índice</span>
+<span class="k">del</span> <span class="n">frutas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frutas</span><span class="p">)</span>  <span class="c1"># [&#39;pera&#39;, &#39;naranja&#39;]</span>
+
+<span class="c1"># copy - crear una copia</span>
+<span class="n">copia_frutas</span> <span class="o">=</span> <span class="n">frutas</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">⚠️ ¡Cuidado con la mutabilidad!</p>
+<p>Cuando modificas una lista, todos los nombres que apuntan a esa lista ven el cambio:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lista_a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">lista_b</span> <span class="o">=</span> <span class="n">lista_a</span>  <span class="c1"># ¡No es una copia!</span>
+<span class="n">lista_a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_b</span><span class="p">)</span>  <span class="c1"># [1, 2, 3, 4] - ¡También cambió!</span>
+
+<span class="c1"># Para hacer una copia real:</span>
+<span class="n">lista_c</span> <span class="o">=</span> <span class="n">lista_a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="funciones-metodos-y-operadores-utiles">
+<h2>Funciones, métodos y operadores útiles<a class="headerlink" href="#funciones-metodos-y-operadores-utiles" title="Link to this heading">#</a></h2>
+<section id="funciones-basicas">
+<h3>Funciones básicas<a class="headerlink" href="#funciones-basicas" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">numeros</span><span class="p">)</span>    <span class="c1"># 8 - longitud</span>
+<span class="nb">min</span><span class="p">(</span><span class="n">numeros</span><span class="p">)</span>    <span class="c1"># 1 - valor mínimo</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">numeros</span><span class="p">)</span>    <span class="c1"># 9 - valor máximo</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">numeros</span><span class="p">)</span>    <span class="c1"># 31 - suma de elementos</span>
+</pre></div>
+</div>
+</section>
+<section id="operador-in">
+<h3>Operador in<a class="headerlink" href="#operador-in" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frutas</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;manzana&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;naranja&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;banana&#39;</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">)</span>     <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;uva&#39;</span> <span class="ow">in</span> <span class="n">frutas</span><span class="p">)</span>        <span class="c1"># False</span>
+</pre></div>
+</div>
+</section>
+<section id="comparaciones">
+<h3>Comparaciones<a class="headerlink" href="#comparaciones" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">lista2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">lista3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lista1</span> <span class="o">==</span> <span class="n">lista2</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista1</span> <span class="o">&lt;</span> <span class="n">lista3</span><span class="p">)</span>   <span class="c1"># True (comparación lexicográfica)</span>
+</pre></div>
+</div>
+</section>
+<section id="metodos-utiles">
+<h3>Métodos útiles<a class="headerlink" href="#metodos-utiles" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">numeros</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>      <span class="c1"># 2 - cuántas veces aparece 1</span>
+<span class="n">numeros</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="c1"># 2 - índice de la primera aparición de 4</span>
+<span class="n">numeros</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>        <span class="c1"># Ordena la lista in-place</span>
+<span class="n">numeros</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>     <span class="c1"># Invierte la lista in-place</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="split-join">
 <h2>Split &amp; Join<a class="headerlink" href="#split-join" title="Link to this heading">#</a></h2>
+<p>Dos métodos muy útiles para trabajar entre cadenas y listas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># split - convierte cadena en lista</span>
+<span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Python es genial&quot;</span>
+<span class="n">palabras</span> <span class="o">=</span> <span class="n">frase</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  <span class="c1"># [&#39;Python&#39;, &#39;es&#39;, &#39;genial&#39;]</span>
+<span class="n">palabras_coma</span> <span class="o">=</span> <span class="s2">&quot;a,b,c,d&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>  <span class="c1"># [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]</span>
+
+<span class="c1"># join - convierte lista en cadena</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;es&#39;</span><span class="p">,</span> <span class="s1">&#39;genial&#39;</span><span class="p">]</span>
+<span class="n">frase_nueva</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>  <span class="c1"># &quot;Python es genial&quot;</span>
+<span class="n">csv</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>  <span class="c1"># &quot;a,b,c&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="listas-complejas">
 <h2>Listas complejas<a class="headerlink" href="#listas-complejas" title="Link to this heading">#</a></h2>
 <section id="listas-de-listas">
 <h3>Listas de listas<a class="headerlink" href="#listas-de-listas" title="Link to this heading">#</a></h3>
-<p>una lista de estudiantes, donde cada uno es una lista que tiene un nombre y una nota</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cada estudiante es una lista [nombre, nota]</span>
+<span class="n">estudiantes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;Ana&#39;</span><span class="p">,</span> <span class="mi">85</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="mi">92</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Carlos&#39;</span><span class="p">,</span> <span class="mi">78</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1"># Acceder a datos</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">estudiantes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Ana</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">estudiantes</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 92</span>
+</pre></div>
+</div>
 </section>
 <section id="listas-de-diccionarios">
 <h3>Listas de diccionarios<a class="headerlink" href="#listas-de-diccionarios" title="Link to this heading">#</a></h3>
-<p>Una lista de actividades, donde cada actividad es un diccionario con tres llaves: actividad, curso y nota</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cada actividad es un diccionario</span>
+<span class="n">actividades</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;actividad&#39;</span><span class="p">:</span> <span class="s1">&#39;Examen 1&#39;</span><span class="p">,</span> <span class="s1">&#39;curso&#39;</span><span class="p">:</span> <span class="s1">&#39;Matemáticas&#39;</span><span class="p">,</span> <span class="s1">&#39;nota&#39;</span><span class="p">:</span> <span class="mi">85</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;actividad&#39;</span><span class="p">:</span> <span class="s1">&#39;Tarea 1&#39;</span><span class="p">,</span> <span class="s1">&#39;curso&#39;</span><span class="p">:</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;nota&#39;</span><span class="p">:</span> <span class="mi">92</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;actividad&#39;</span><span class="p">:</span> <span class="s1">&#39;Proyecto&#39;</span><span class="p">,</span> <span class="s1">&#39;curso&#39;</span><span class="p">:</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;nota&#39;</span><span class="p">:</span> <span class="mi">88</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="c1"># Calcular promedio de Python</span>
+<span class="n">notas_python</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">actividad</span> <span class="ow">in</span> <span class="n">actividades</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">actividad</span><span class="p">[</span><span class="s1">&#39;curso&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Python&#39;</span><span class="p">:</span>
+        <span class="n">notas_python</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actividad</span><span class="p">[</span><span class="s1">&#39;nota&#39;</span><span class="p">])</span>
+
+<span class="n">promedio_python</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">notas_python</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">notas_python</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="diccionario-con-listas">
 <h3>Diccionario con listas<a class="headerlink" href="#diccionario-con-listas" title="Link to this heading">#</a></h3>
-<p>Un diccionario donde las llaves son actividades y los valores son listas con las notas de los estudiantes en esa actividad. Podemos tener también una lista con los nombres de las actividades para no tener que recorrer el diccionario</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Las llaves son actividades, valores son listas de notas</span>
+<span class="n">notas_por_actividad</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Examen 1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">96</span><span class="p">],</span>
+    <span class="s1">&#39;Tarea 1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">91</span><span class="p">],</span>
+    <span class="s1">&#39;Proyecto&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Promedio del Examen 1</span>
+<span class="n">promedio_examen1</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">notas_por_actividad</span><span class="p">[</span><span class="s1">&#39;Examen 1&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">notas_por_actividad</span><span class="p">[</span><span class="s1">&#39;Examen 1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="ejercicios">
 <h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Link to this heading">#</a></h2>
+<div class="exercise admonition">
+<p class="admonition-title">💻 Ejercicios prácticos</p>
+<p>Prueba estos ejercicios usando la visualización de append cuando sea apropiado:</p>
 <ol class="arabic simple">
-<li><p>Crear una lista sólo con números pares</p></li>
-<li><p>Crear una lista con los números invertidos</p></li>
-<li><p>Crear una lista con números aleatorios</p></li>
-<li><p>Usar split para contar las palabras en mayúscula de una frase</p></li>
-<li><p>En cuántas palabras aparece una determinada cadena</p></li>
-<li><p>Insertar un elemento dentro de una lista que esté ordenada</p></li>
-<li><p>Calcular el promedio de las notas de un estudiante</p></li>
-<li><p>Encontrar la actividad con mayor nota promedio</p></li>
-<li><p>Eliminar los elementos del principio y el final hasta que la suma del primero y del último tenga una cierta propiedad</p></li>
+<li><p><strong>Lista de pares</strong>: Crear una lista con solo los números pares del 1 al 20</p></li>
+<li><p><strong>Invertir números</strong>: Dada una lista, crear otra con los números en orden inverso</p></li>
+<li><p><strong>Números aleatorios</strong>: Crear una lista con 10 números aleatorios</p></li>
+<li><p><strong>Contar mayúsculas</strong>: Usar split para contar palabras en mayúscula en una frase</p></li>
+<li><p><strong>Buscar subcadena</strong>: En cuántas palabras aparece una determinada cadena</p></li>
+<li><p><strong>Inserción ordenada</strong>: Insertar un elemento en una lista manteniendo el orden</p></li>
+<li><p><strong>Promedio de notas</strong>: Calcular el promedio de las notas de un estudiante</p></li>
+<li><p><strong>Mejor actividad</strong>: Encontrar la actividad con mayor nota promedio</p></li>
+<li><p><strong>Filtrar extremos</strong>: Eliminar elementos del principio y final hasta cumplir una condición</p></li>
 </ol>
+</div>
 </section>
 <section id="mas-alla-de-python">
 <h2>Más allá de Python<a class="headerlink" href="#mas-alla-de-python" title="Link to this heading">#</a></h2>
-<p>Además de …</p>
+<p>Las listas son estructuras fundamentales en programación. Otros lenguajes tienen conceptos similares:</p>
+<ul class="simple">
+<li><p><strong>Java</strong>: ArrayList, LinkedList</p></li>
+<li><p><strong>C++</strong>: vector, list</p></li>
+<li><p><strong>JavaScript</strong>: Array</p></li>
+<li><p><strong>C#</strong>: List<T>, Array</p></li>
+</ul>
+<p>La comprensión profunda de las listas te preparará para trabajar con estructuras de datos más avanzadas como pilas, colas y árboles.</p>
 </section>
 </section>
 
@@ -566,9 +766,24 @@ reverse</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-list-en-python">El tipo list en Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-listas">Modificar listas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-metodos-y-operadores-interesantes">Funciones, métodos y operadores interesantes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-tipo-list-en-python">El tipo list en Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-listas">Crear listas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexar-listas">Indexar listas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-calcular-el-promedio">Ejemplo: calcular el promedio</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modificar-listas">Modificar listas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-metodo-append">El método append()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otros-metodos-de-modificacion">Otros métodos de modificación</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-metodos-y-operadores-utiles">Funciones, métodos y operadores útiles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-basicas">Funciones básicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-in">Operador in</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparaciones">Comparaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-utiles">Métodos útiles</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-join">Split &amp; Join</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-complejas">Listas complejas</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#listas-de-listas">Listas de listas</a></li>
