@@ -42,9 +42,27 @@
       "number": "2",
       "title": "Nivel 2",
       "subtitle": "Tomando Decisiones",
-      "description": "Condicionales, expresiones booleanas y diccionarios.",
+      "description": "Condicionales, expresiones booleanas, diccionarios y módulos estándar.",
       "color": "#2196F3",
       "visualizations": [
+        {
+          "id": "math-module",
+          "title": "Explorador del Módulo Math",
+          "description": "Funciones matemáticas y constantes",
+          "file": "math-module-explorer.html",
+          "icon": "🧮",
+          "status": "ready",
+          "gitbook_sections": ["2.6.1"]
+        },
+        {
+          "id": "random-module",
+          "title": "Explorador del Módulo Random",
+          "description": "Generación de números aleatorios",
+          "file": "random-module-explorer.html",
+          "icon": "🎲",
+          "status": "ready",
+          "gitbook_sections": ["2.6.2"]
+        },
         {
           "id": "conditionals",
           "title": "Simulador de Condicionales",

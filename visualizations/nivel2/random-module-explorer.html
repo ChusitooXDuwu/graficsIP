@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador del Módulo Random - IPBook</title>
+    <link rel="stylesheet" href="../../shared/css/common.css">
+    <style>
+        .demo-container {
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .random-showcase {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 20px 0;
+        }
+        
+        .generator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .generator-card {
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--success-color);
+            transition: var(--transition);
+        }
+        
+        .generator-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .dice-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .dice {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+        }
+        
+        .dice.rolling {
+            animation: rollDice 0.5s ease-in-out;
+        }
+        
+        @keyframes rollDice {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(180deg); }
+            75% { transform: rotate(270deg); }
+        }
+        
+        .histogram {
+            display: flex;
+            align-items: end;
+            height: 200px;
+            gap: 5px;
+            margin: 20px 0;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 8px;
+        }
+        
+        .bar {
+            background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
+            border-radius: 4px 4px 0 0;
+            min-width: 30px;
+            transition: height 0.3s ease;
+            position: relative;
+        }
+        
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .random-numbers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .random-number {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .random-number.new {
+            animation: popIn 0.5s ease;
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .range-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        input[type="number"], input[type="range"] {
+            padding: 8px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+        
+        .stats-display {
+            background: var(--bg-dark);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <nav class="viz-nav">
+        <a href="../../index.html">🏠 Inicio</a>
+        <a href="../../docs/integration-guide.html">📚 Guía</a>
+        <span style="margin-left: auto; color: rgba(255,255,255,0.7);">Nivel 2 › Módulo Random</span>
+    </nav>
+    
+    <div class="viz-container">
+        <div class="viz-header">
+            <h1>🎲 Explorador del Módulo Random</h1>
+            <p>Descubre la generación de números aleatorios en Python</p>
+        </div>
+        
+        <!-- Introducción a Random -->
+        <div class="random-showcase">
+            <h3>🎯 ¿Qué hace el módulo random?</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div>
+                    <strong>✨ Valores Continuos</strong><br>
+                    <code>random.random()</code> - Entre 0 y 1<br>
+                    <code>random.uniform(a, b)</code> - Entre a y b
+                </div>
+                <div>
+                    <strong>🎲 Valores Discretos</strong><br>
+                    <code>random.randint(a, b)</code> - Enteros entre a y b<br>
+                    <code>random.randrange(start, stop, step)</code>
+                </div>
+                <div>
+                    <strong>📊 Distribuciones</strong><br>
+                    <code>random.normalvariate(mu, sigma)</code><br>
+                    Distribución normal con media μ y desviación σ
+                </div>
+            </div>
+        </div>
+        
+        <!-- Simulador de Dados -->
+        <div class="demo-container">
+            <h3>🎲 Simulador de Dados (random.randint)</h3>
+            <p>Simula el lanzamiento de dados usando <code>random.randint(1, 6)</code></p>
+            
+            <div class="controls">
+                <button class="btn" onclick="rollDice()">🎲 Lanzar Dados</button>
+                <button class="btn btn-warning" onclick="rollMultipleDice()">🎲🎲 Lanzar 10 veces</button>
+                <button class="btn btn-error" onclick="resetDiceStats()">🔄 Reiniciar</button>
+            </div>
+            
+            <div class="dice-container" id="diceContainer">
+                <div class="dice" id="dice1">?</div>
+                <div class="dice" id="dice2">?</div>
+            </div>
+            
+            <div class="stats-display" id="diceStats">
+                Estadísticas de lanzamientos: Lanza algunos dados para ver las estadísticas
+            </div>
+        </div>
+        
+        <!-- Generador de Números Aleatorios -->
+        <div class="demo-container">
+            <h3>🔢 Generador de Números (random.uniform)</h3>
+            <p>Genera números aleatorios en un rango personalizado</p>
+            
+            <div class="controls">
+                <div class="range-input">
+                    <label>Mínimo:</label>
+                    <input type="number" id="minRange" value="0" step="0.1">
+                </div>
+                <div class="range-input">
+                    <label>Máximo:</label>
+                    <input type="number" id="maxRange" value="10" step="0.1">
+                </div>
+                <button class="btn" onclick="generateRandomNumbers()">🎯 Generar 10 números</button>
+                <button class="btn btn-warning" onclick="clearRandomNumbers()">🗑️ Limpiar</button>
+            </div>
+            
+            <div class="random-numbers" id="randomNumbersContainer">
+                <!-- Los números aparecerán aquí -->
+            </div>
+        </div>
+        
+        <!-- Distribución Normal -->
+        <div class="demo-container">
+            <h3>📊 Distribución Normal (random.normalvariate)</h3>
+            <p>Visualiza la distribución normal con diferentes parámetros</p>
+            
+            <div class="controls">
+                <div class="range-input">
+                    <label>Media (μ):</label>
+                    <input type="number" id="mean" value="10" step="0.5">
+                </div>
+                <div class="range-input">
+                    <label>Desviación (σ):</label>
+                    <input type="number" id="stddev" value="2" step="0.1" min="0.1">
+                </div>
+                <button class="btn" onclick="generateNormalDistribution()">📈 Generar muestra (100 valores)</button>
+                <button class="btn btn-warning" onclick="clearHistogram()">🔄 Limpiar</button>
+            </div>
+            
+            <div class="histogram" id="histogram">
+                <!-- El histograma aparecerá aquí -->
+            </div>
+            
+            <div class="stats-display" id="normalStats">
+                Genera una muestra para ver las estadísticas
+            </div>
+        </div>
+        
+        <!-- Código de Integración -->
+        <div class="integration-info">
+            <h4>🔗 Integrar en GitBook</h4>
+            <div class="code-block">
+{% embed url="https://chusitooxduwu.github.io/graficsIP/visualizations/nivel2/random-module-explorer.html" %}
+Explora la generación de números aleatorios con el módulo random de Python
+{% endembed %}
+            </div>
+        </div>
+    </div>
+    
+    <script src="../../shared/js/utils.js"></script>
+    <script>
+        // Estado de los dados
+        let diceRolls = [];
+        let diceStats = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0};
+        
+        function rollDice() {
+            const dice1 = Math.floor(Math.random() * 6) + 1;
+            const dice2 = Math.floor(Math.random() * 6) + 1;
+            
+            const dice1Element = document.getElementById('dice1');
+            const dice2Element = document.getElementById('dice2');
+            
+            // Animación
+            dice1Element.classList.add('rolling');
+            dice2Element.classList.add('rolling');
+            
+            setTimeout(() => {
+                dice1Element.textContent = dice1;
+                dice2Element.textContent = dice2;
+                dice1Element.classList.remove('rolling');
+                dice2Element.classList.remove('rolling');
+                
+                // Actualizar estadísticas
+                diceStats[dice1]++;
+                diceStats[dice2]++;
+                diceRolls.push([dice1, dice2]);
+                
+                updateDiceStats();
+            }, 500);
+        }
+        
+        function rollMultipleDice() {
+            let count = 0;
+            const interval = setInterval(() => {
+                rollDice();
+                count++;
+                if (count >= 10) {
+                    clearInterval(interval);
+                }
+            }, 600);
+        }
+        
+        function updateDiceStats() {
+            const total = diceRolls.length * 2;
+            const statsDiv = document.getElementById('diceStats');
+            
+            let statsText = `Total de lanzamientos: ${diceRolls.length} (${total} dados)\n`;
+            statsText += `Distribución:\n`;
+            
+            for (let i = 1; i <= 6; i++) {
+                const percentage = total > 0 ? ((diceStats[i] / total) * 100).toFixed(1) : 0;
+                statsText += `${i}: ${diceStats[i]} veces (${percentage}%)\n`;
+            }
+            
+            statsDiv.textContent = statsText;
+        }
+        
+        function resetDiceStats() {
+            diceRolls = [];
+            diceStats = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0};
+            document.getElementById('dice1').textContent = '?';
+            document.getElementById('dice2').textContent = '?';
+            document.getElementById('diceStats').textContent = 'Estadísticas de lanzamientos: Lanza algunos dados para ver las estadísticas';
+        }
+        
+        function generateRandomNumbers() {
+            const min = parseFloat(document.getElementById('minRange').value);
+            const max = parseFloat(document.getElementById('maxRange').value);
+            const container = document.getElementById('randomNumbersContainer');
+            
+            // Limpiar números anteriores
+            container.innerHTML = '';
+            
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const randomNum = Math.random() * (max - min) + min;
+                    const numberDiv = document.createElement('div');
+                    numberDiv.className = 'random-number new';
+                    numberDiv.textContent = randomNum.toFixed(2);
+                    container.appendChild(numberDiv);
+                }, i * 100);
+            }
+        }
+        
+        function clearRandomNumbers() {
+            document.getElementById('randomNumbersContainer').innerHTML = '';
+        }
+        
+        function generateNormalDistribution() {
+            const mean = parseFloat(document.getElementById('mean').value);
+            const stddev = parseFloat(document.getElementById('stddev').value);
+            const samples = [];
+            
+            // Generar 100 muestras usando Box-Muller transform
+            for (let i = 0; i < 100; i++) {
+                const u1 = Math.random();
+                const u2 = Math.random();
+                const z0 = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
+                samples.push(z0 * stddev + mean);
+            }
+            
+            createHistogram(samples, mean, stddev);
+            updateNormalStats(samples, mean, stddev);
+        }
+        
+        function createHistogram(samples, mean, stddev) {
+            const histogram = document.getElementById('histogram');
+            histogram.innerHTML = '';
+            
+            // Crear bins
+            const minValue = Math.min(...samples);
+            const maxValue = Math.max(...samples);
+            const binCount = 10;
+            const binWidth = (maxValue - minValue) / binCount;
+            const bins = new Array(binCount).fill(0);
+            
+            // Contar frecuencias
+            samples.forEach(sample => {
+                const binIndex = Math.min(Math.floor((sample - minValue) / binWidth), binCount - 1);
+                bins[binIndex]++;
+            });
+            
+            // Crear barras
+            const maxFreq = Math.max(...bins);
+            bins.forEach((freq, index) => {
+                const bar = document.createElement('div');
+                bar.className = 'bar';
+                const height = (freq / maxFreq) * 160; // 160px es la altura máxima
+                bar.style.height = `${height}px`;
+                
+                const label = document.createElement('div');
+                label.className = 'bar-label';
+                const binCenter = minValue + (index + 0.5) * binWidth;
+                label.textContent = binCenter.toFixed(1);
+                
+                bar.appendChild(label);
+                histogram.appendChild(bar);
+            });
+        }
+        
+        function updateNormalStats(samples, expectedMean, expectedStddev) {
+            const actualMean = samples.reduce((sum, val) => sum + val, 0) / samples.length;
+            const variance = samples.reduce((sum, val) => sum + Math.pow(val - actualMean, 2), 0) / samples.length;
+            const actualStddev = Math.sqrt(variance);
+            
+            const statsDiv = document.getElementById('normalStats');
+            let statsText = `Parámetros esperados: μ=${expectedMean}, σ=${expectedStddev}\n`;
+            statsText += `Resultados de la muestra (n=100):\n`;
+            statsText += `Media calculada: ${actualMean.toFixed(3)}\n`;
+            statsText += `Desviación calculada: ${actualStddev.toFixed(3)}\n`;
+            statsText += `Diferencia en media: ${Math.abs(actualMean - expectedMean).toFixed(3)}\n`;
+            statsText += `Diferencia en desviación: ${Math.abs(actualStddev - expectedStddev).toFixed(3)}`;
+            
+            statsDiv.textContent = statsText;
+        }
+        
+        function clearHistogram() {
+            document.getElementById('histogram').innerHTML = '';
+            document.getElementById('normalStats').textContent = 'Genera una muestra para ver las estadísticas';
+        }
+        
+        console.log('🎲 Explorador del Módulo Random cargado');
+    </script>
+</body>
+</html> 
